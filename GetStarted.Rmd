@@ -1,0 +1,93 @@
+---
+title: "Sensor Mounting Instructions"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+    self_contained: true
+params:
+  image_path: "~/Downloads/"  # Uses your Mac Desktop as image location
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "70%")
+path <- params$image_path
+```
+
+## Required Components (Per Sensor)
+
+1. Bluetooth motion sensor  
+2. Silicone rubber wedding band  
+3. Plastic mount bracket  
+4. Neoprene rubber pad  
+5. Velcro strap  
+
+---
+
+## Assembly Instructions
+
+The silicone wedding band seals the sensor from water at the USB-C port and seam. Invert it so the **flat smooth side contacts the sensor**. Wrap it around the sensor as shown below.
+
+```{r}
+knitr::include_graphics(file.path(path, "IMG_2168.JPG"))
+```
+
+Insert the sensor (with band) into the plastic mount bracket. Ensure the button faces away from the curved underside. Verify the band hasn’t shifted off the port or seam.
+
+Place the neoprene pad between the bracket and the oar shaft. It adds friction and protects the oar.
+
+Secure the bracket to the oar using the Velcro. Tighten firmly to prevent movement.
+
+```{r}
+knitr::include_graphics(file.path(path, "IMG_2169.JPG"))
+```
+
+The bracket curvature fits standard sculling oars. It may work on sweep oars (standard or skinny), but is untested. It likely will not fit skinny sculling oars without a redesign.
+
+---
+
+## Sensor Orientation
+
+Correct sensor orientation is important, but not critical due to on-water calibration. The USB-C port (and text “ritmoForceCurve”) should face the **blade end**.
+
+During the drive, the sensor button should be horizontal; during recovery, vertical. Mount the sensor this way before launch.
+
+```{r}
+knitr::include_graphics(file.path(path, "IMG_2170.JPG"))
+```
+
+Place one sensor between the handle and the button, and the other about two-thirds between the button and blade. Refer to the image above.
+
+---
+
+## Connecting Sensors
+
+1. Turn on sensors before placing the oar in the oarlock or shoving from dock.  
+2. On the app main menu, press **Connect Oar Sensors**.  
+3. Press **Turn on scanning for surrounding devices**.  
+4. Turn OFF **Scan only for saved devices** if pairing for the first time.  
+5. Select both sensors (MAC addresses will appear), then press **DONE**.  
+
+---
+
+## Mount Calibration (On the Water)
+
+1. Boat should be still; blade flat on water; oar at ~90° to boat.  
+2. From main menu, press **Mount Calibration**.  
+3. Wait for **Live Mount Angles** to stabilize.  
+4. Press **Store & Use**, then **DONE**.  
+
+---
+
+## Bend Force Calibration
+
+This setting scales **Watts and ergSplit** but doesn’t affect:  
+- Max bend  
+- Force curve shape  
+- Stroke length  
+- Slip or wash  
+
+Bend varies with sensor distance and oar stiffness. For now, adjust the value until ergSplit looks correct. In future updates, we’ll provide auto-calibration using HR and steady-state watts.
+
+---
