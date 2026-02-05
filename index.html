@@ -55,6 +55,75 @@
     height: 100%;
     border: none;
   }
+
+  /* --- Video poster + play overlay --- */
+  .fc-video-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .fc-video-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .fc-video-poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .fc-video-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 96px;
+    height: 96px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background: rgba(0,0,0,0.55);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  }
+  .fc-video-play:hover {
+    background: rgba(0,0,0,0.70);
+  }
+  .fc-video-play:focus {
+    outline: 3px solid rgba(100,150,255,0.8);
+    outline-offset: 4px;
+  }
+
+  .fc-video-play svg {
+    width: 44px;
+    height: 44px;
+    margin-left: 6px;
+    fill: #fff;
+  }
+
+  .fc-video-overlay {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+
+  .fc-video-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: none;
+  }
 </style>
 
 <script>
@@ -81,6 +150,41 @@
     if (buttons.length > 0) {
       buttons[0].click();
     }
+
+    // Poster / play behavior
+    function startVideo(container) {
+      var iframe = container.querySelector('iframe.fc-video-iframe');
+      var overlay = container.querySelector('.fc-video-overlay');
+      if (!iframe || !overlay) return;
+
+      if (!iframe.getAttribute('src')) {
+        var base = iframe.getAttribute('data-src') || '';
+        var sep = base.indexOf('?') >= 0 ? '&' : '?';
+        iframe.setAttribute('src', base + sep + 'autoplay=1');
+      }
+
+      overlay.style.display = 'none';
+      iframe.style.display = 'block';
+    }
+
+    document.querySelectorAll('.fc-video-container').forEach(function(container) {
+      var overlay = container.querySelector('.fc-video-overlay');
+      if (!overlay) return;
+
+      overlay.addEventListener('click', function() {
+        startVideo(container);
+      });
+
+      var playBtn = container.querySelector('.fc-video-play');
+      if (playBtn) {
+        playBtn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            startVideo(container);
+          }
+        });
+      }
+    });
   });
 </script>
 
@@ -93,6 +197,7 @@
   <div class="fc-tab-buttons">
     <button class="fc-tab-button" data-target="tab-instructions">Oar Kit Instructions</button>
     <button class="fc-tab-button" data-target="tab-workout">Workout Auto Process Example</button>
+    <button class="fc-tab-button" data-target="tab-help-videos">Help Videos</button>
   </div>
 
   <!-- Instructions Tab -->
@@ -107,6 +212,39 @@
     <div class="fc-iframe-wrapper">
       <iframe src="example_workout.html"></iframe>
     </div>
+  </div>
+
+  <!-- Help Videos Tab -->
+  <div id="tab-help-videos" class="fc-tab-content">
+
+    <div class="fc-video-title">
+      How to mount sensors on the oar
+    </div>
+
+    <div class="fc-video-container">
+      <!-- Place this image next to index.html -->
+      <!-- e.g. sensor_mount_poster.jpg -->
+      <div class="fc-video-overlay" role="button" aria-label="Play video" tabindex="0">
+        <img
+          class="fc-video-poster"
+          src="sensor_mount_poster.jpg"
+          alt="How to mount sensors on the oar"
+        />
+        <button class="fc-video-play" aria-label="Play">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M24 18v28l26-14-26-14z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <iframe
+        class="fc-video-iframe"
+        data-src="https://drive.google.com/file/d/1fXylc4PhQFsWK-nGhTQurHxmAgeXAoW5/preview"
+        allow="autoplay"
+        allowfullscreen>
+      </iframe>
+    </div>
+
   </div>
 
 </div>
