@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+
+<title>RitmoForceCurve</title>
+
+<style>
+  /* --- Copied tab styling from example_workout.html --- */
+  #fc-tabset {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 1rem;
+  }
+  .fc-title {
+    text-align: center;
+    font-size: 2.0rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    margin-bottom: 1.0rem;
+  }
+  .fc-tab-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .fc-tab-button {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #f5f5f5;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .fc-tab-button.active {
+    background: #e0e0e0;
+    border-color: #888;
+    font-weight: 600;
+  }
+  .fc-tab-content {
+    display: none;
+  }
+  .fc-tab-content.active {
+    display: block;
+  }
+
+  .fc-iframe-wrapper {
+    width: 100%;
+    height: 85vh;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+  }
+  .fc-iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* --- Video poster + play overlay --- */
+  .fc-video-container {
+    position: relative;
+    width: 100%;
+    height: 85vh; /* match iframe wrapper height */
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .fc-video-poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .fc-video-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 96px;
+    height: 96px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background: rgba(0,0,0,0.55);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  }
+  .fc-video-play:hover {
+    background: rgba(0,0,0,0.70);
+  }
+  .fc-video-play:focus {
+    outline: 3px solid rgba(100,150,255,0.8);
+    outline-offset: 4px;
+  }
+
+  .fc-video-play svg {
+    width: 44px;
+    height: 44px;
+    margin-left: 6px; /* optical centering for triangle */
+    fill: #fff;
+  }
+
+  .fc-video-overlay {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+
+  .fc-video-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: none; /* shown after click */
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var buttons = document.querySelectorAll('.fc-tab-button');
+    var contents = document.querySelectorAll('.fc-tab-content');
+
+    function activateTab(targetId) {
+      contents.forEach(function(div) {
+        div.classList.toggle('active', div.id === targetId);
+      });
+    }
+
+    buttons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var target = this.getAttribute('data-target');
+        activateTab(target);
+        buttons.forEach(function(b) { b.classList.remove('active'); });
+        this.classList.add('active');
+      });
+    });
+
+    // Activate first tab on load
+    if (buttons.length > 0) {
+      buttons[0].click();
+    }
+
+    // --- Poster/play behavior for the sensor video tab ---
+    // Clicking poster or play button reveals iframe and starts playback (autoplay param).
+    function startVideo(container) {
+      var iframe = container.querySelector('iframe.fc-video-iframe');
+      var overlay = container.querySelector('.fc-video-overlay');
+      if (!iframe || !overlay) return;
+
+      if (!iframe.getAttribute('src')) {
+        var base = iframe.getAttribute('data-src') || '';
+        // Add autoplay=1 while preserving any existing query string
+        var sep = base.indexOf('?') >= 0 ? '&' : '?';
+        iframe.setAttribute('src', base + sep + 'autoplay=1');
+      }
+
+      overlay.style.display = 'none';
+      iframe.style.display = 'block';
+    }
+
+    document.querySelectorAll('.fc-video-container').forEach(function(container) {
+      var overlay = container.querySelector('.fc-video-overlay');
+      if (!overlay) return;
+
+      overlay.addEventListener('click', function(e) {
+        // Allow clicking anywhere on overlay (poster or button)
+        startVideo(container);
+      });
+
+      // Accessibility: allow Enter/Space on the play button
+      var playBtn = container.querySelector('.fc-video-play');
+      if (playBtn) {
+        playBtn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            startVideo(container);
+          }
+        });
+      }
+    });
+  });
+</script>
+
+</head>
+<body>
+
+<div id="fc-tabset">
+  <div class="fc-title">RitmoForceCurve</div>
+
+  <div class="fc-tab-buttons">
+    <button class="fc-tab-button" data-target="tab-instructions">Oar Kit Instructions</button>
+    <button class="fc-tab-button" data-target="tab-workout">Workout Auto Process Example</button>
+    <button class="fc-tab-button" data-target="tab-video">How to mount and connect sensors</button>
+  </div>
+
+  <!-- Instructions Tab -->
+  <div id="tab-instructions" class="fc-tab-content">
+    <div class="fc-iframe-wrapper">
+      <iframe src="instructions.html"></iframe>
+    </div>
+  </div>
+
+  <!-- Workout Example Tab -->
+  <div id="tab-workout" class="fc-tab-content">
+    <div class="fc-iframe-wrapper">
+      <iframe src="example_workout.html"></iframe>
+    </div>
+  </div>
+
+  <!-- Sensor Mounting Video Tab -->
+  <div id="tab-video" class="fc-tab-content">
+    <div class="fc-video-container">
+      <!--
+        Put your poster image file next to index.html and name it:
+          sensor_mount_poster.jpg
+        (Or change the src below.)
+      -->
+      <div class="fc-video-overlay" role="button" aria-label="Play video" tabindex="0">
+        <img
+          class="fc-video-poster"
+          src="sensor_mount_poster.jpg"
+          alt="How to mount and connect sensors (poster image)"
+        />
+        <button class="fc-video-play" aria-label="Play">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M24 18v28l26-14-26-14z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <iframe
+        class="fc-video-iframe"
+        data-src="https://drive.google.com/file/d/1fXylc4PhQFsWK-nGhTQurHxmAgeXAoW5/preview"
+        allow="autoplay"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

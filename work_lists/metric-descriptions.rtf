@@ -1,0 +1,64 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2868
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww29700\viewh16040\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 pwr \
+mb - maxBnd\
+The maximum difference of rotation measured on the oar where the sensors are placed.\
+\
+psp - pSplit \'93Power Split\'94\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx6967\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Similar to a rowing machine where the split is derived from the calculated work the rower is doing to the flywheel this is based on the work the rower is doing to the boat. It takes more effort or \'93work\'94 to move a boat at the same speed into a headwind as it does a tailwind. pSplit tracks your effort, not your actual boat speed.\
+\
+\
+\
+\
+Scale Factor - What is it?\
+\
+The Scale Factor is nothing more than a number we multiply the measured oar bend to obtain force.  Because our system is linear, this single scale factor accounts for the stiffness of the oar, the distance between the sensors and their location about the pin etc. It\'92s important to note that changing the scale factor will only change the values related to your effort: Force, Work, Power (and pSplit which is derived from power).  It won\'92t change the shape of the force curve, ratio, the angles of how much water you are missing at the catch or finish, percent stroke length at 50% work, percent stroke length at max bend etc.  Go here for guidance on how to set the scale factor.\
+\
+\
+strokeLength\
+Stroke Length is arc length measured from where 5% of max bend is first achieved in the oar at the beginning of the stroke to where it has reduced to 5% at the end of the stroke.  Stroke length does not include the missed portion at the beginning or end of the stroke (CatchMiss and FinishMiss).\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+ctm -catchM\
+Catch miss is stroke arc degrees measured from where the blade is fully square just before it moves sternward to where 5% of max bend has developed on the oar. \
+\
+fnm - finishM\
+Finish miss is stroke arc degrees from where the oar bend has dropped to 5% of max bend to where the blade has started to feather. \
+\
+rat - ratio\
+Ratio = stroke duration / drive time.   Specifically drive time is the timing of when the strokeLength is measured and does not include time during CatchMiss and FinishMiss.\
+\
+mrs - maxRot\
+This is the max rotational speed of the oar during the drive.\
+\
+drv - drivework\
+\
+This is the work done by the rower during the drive portion of the stroke. \
+\
+mid - midWork\
+The value is a percentage (0-100% - NOT stroke arc degrees) This value is the percentage of stroke length representing the median of work distribution. For example, a value less than 50 represents a front end loaded force distribution.\
+\
+mb% maxBper\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 The value is a percentage (0-100% - NOT stroke arc degrees) This value is the percentage of stroke length where maxBend (and maxForce) occurs.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+dst dist.\
+500 split\
+pas pAvgS\
+pds pDist\
+wtm wTime\
+ptm pTime\
+sr. SR\
+hr. HR\
+spd speed\
+len strLen\
+slp - catchM (redundant)\
+wsh - finishM (redundant) }
