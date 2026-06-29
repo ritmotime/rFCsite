@@ -1,0 +1,18 @@
+---
+title: "Assembly Instructions"
+output: html_document
+---
+
+```{r, results='asis', echo=FALSE}
+pdf_path <- "docs/assembly_instructions_draft_110925.pdf"
+cat(sprintf('
+<div class="pdf-wrap">
+  <object data="%s#view=FitH" type="application/pdf" width="100%%" height="100%%">
+    <p>Can’t display the PDF. <a href="%s">Open the PDF</a>.</p>
+  </object>
+</div>
+<style>
+  html, body { height: 100%%; margin: 0; }
+  .pdf-wrap   { height: 100vh; }
+</style>
+', pdf_path, pdf_path))
