@@ -1,130 +1,336 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Connecting Oar Sensors</title>
-<style>
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f7f9fc;
-    color: #1a1a1a;
-    line-height: 1.6;
-  }
-  .container {
-    max-width: 920px;
-    margin: 52px auto;
-    padding: 0 24px 70px;
-  }
-  h1 {
-    font-size: 2.35rem;
-    line-height: 1.12;
-    margin: 0 0 12px;
-    letter-spacing: -0.4px;
-  }
-  h2 {
-    font-size: 1.45rem;
-    margin-top: 34px;
-    margin-bottom: 10px;
-  }
-  h3 {
-    font-size: 1.08rem;
-    margin: 22px 0 8px;
-  }
-  p {
-    font-size: 1.05rem;
-    margin: 0 0 16px;
-  }
-  ul, ol {
-    font-size: 1.02rem;
-    margin-top: 8px;
-    margin-bottom: 20px;
-  }
-  li { margin-bottom: 8px; }
-  .lead {
-    font-size: 1.16rem;
-    color: #333;
-    margin-bottom: 24px;
-  }
-  .card {
-    background: white;
-    border: 1px solid #dfe5ee;
-    border-radius: 12px;
-    padding: 18px 20px;
-    margin: 18px 0;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  }
-  .placeholder {
-    border-left: 4px solid #9aa9b7;
-    background: #eef3f7;
-    padding: 12px 14px;
-    border-radius: 8px;
-    color: #3e4b56;
-    font-style: italic;
-  }
-  .button-link {
-    display: inline-block;
-    margin: 4px 8px 14px 0;
-    padding: 10px 14px;
-    border: 1px solid #b7c6d6;
-    border-radius: 8px;
-    background: #ffffff;
-    color: #0b5cad;
-    text-decoration: none;
-    font-weight: 650;
-  }
-  .button-link:hover { text-decoration: underline; }
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    background: white;
-    margin: 14px 0 22px;
-  }
-  th, td {
-    border: 1px solid #dfe5ee;
-    padding: 10px 12px;
-    text-align: left;
-    vertical-align: top;
-  }
-  th { background: #eef3f7; }
-  footer {
-    margin-top: 46px;
-    font-size: 0.9rem;
-    color: #666;
-  }
-</style>
 <link rel="stylesheet" href="site.css">
+<style>
+
+/* Page-specific styles for Connecting Oar Sensors.  These are scoped so they work inside the main site. */
+.ios-connect-page {
+  --ios-blue: #1597f5;
+  --ios-green: #41d36b;
+  --ios-red: #ff4b55;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.ios-connect-page .lead {
+  font-size: 1.12rem !important;
+  margin-bottom: 18px !important;
+}
+
+.ios-connect-page .quick-note,
+.ios-connect-page .tip-box,
+.ios-connect-page .warning-box {
+  background: var(--rfc-bg-lift, #303132) !important;
+  border: 1px solid var(--rfc-border, #50514f) !important;
+  border-left: 5px solid var(--rfc-accent-strong, #f0cf62) !important;
+  border-radius: 12px !important;
+  padding: 14px 16px !important;
+  margin: 16px 0 !important;
+  box-shadow: var(--rfc-shadow-soft, 0 4px 16px rgba(0,0,0,0.25)) !important;
+}
+
+.ios-connect-page .warning-box {
+  border-left-color: var(--ios-red) !important;
+}
+
+.ios-connect-page .tip-box {
+  border-left-color: var(--ios-green) !important;
+}
+
+.ios-connect-page .step-card {
+  background: var(--rfc-bg-lift, #303132) !important;
+  border: 1px solid var(--rfc-border, #50514f) !important;
+  border-radius: 16px !important;
+  padding: 18px !important;
+  margin: 20px 0 !important;
+  box-shadow: var(--rfc-shadow-soft, 0 4px 16px rgba(0,0,0,0.25)) !important;
+}
+
+.ios-connect-page .step-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  gap: 18px;
+  align-items: start;
+}
+
+.ios-connect-page .step-eyebrow {
+  display: inline-block;
+  font-size: 0.84rem !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--rfc-heading, #fff7cc) !important;
+  background: rgba(21, 151, 245, 0.22) !important;
+  border: 1px solid rgba(21, 151, 245, 0.55) !important;
+  border-radius: 999px;
+  padding: 4px 10px;
+  margin-bottom: 8px;
+}
+
+.ios-connect-page h1,
+.ios-connect-page h2,
+.ios-connect-page h3 {
+  color: var(--rfc-heading, #fff7cc) !important;
+}
+
+.ios-connect-page h2 {
+  margin-top: 34px !important;
+}
+
+.ios-connect-page h3 {
+  margin: 6px 0 8px !important;
+}
+
+.ios-connect-page p,
+.ios-connect-page li {
+  color: var(--rfc-text, #fff1b8) !important;
+}
+
+.ios-connect-page strong,
+.ios-connect-page b {
+  color: var(--rfc-heading, #fff7cc) !important;
+}
+
+.ios-connect-page .phone-shot {
+  margin: 0;
+  background: #111 !important;
+  border: 1px solid var(--rfc-border, #50514f) !important;
+  border-radius: 18px;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.ios-connect-page .phone-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.ios-connect-page .phone-shot figcaption {
+  color: var(--rfc-muted, #e3d38d) !important;
+  font-size: 0.88rem !important;
+  line-height: 1.35;
+  margin: 8px 4px 2px;
+}
+
+.ios-connect-page .mini-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0 6px;
+}
+
+.ios-connect-page .mini-checklist div {
+  background: var(--rfc-surface-muted, #2a2b2c) !important;
+  border: 1px solid var(--rfc-border, #50514f) !important;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.ios-connect-page .status-pill {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-weight: 850 !important;
+}
+
+.ios-connect-page .status-red {
+  color: #fff !important;
+  background: var(--ios-red) !important;
+}
+
+.ios-connect-page .status-green {
+  color: #06140a !important;
+  background: var(--ios-green) !important;
+}
+
+.ios-connect-page .status-blue {
+  color: #fff !important;
+  background: var(--ios-blue) !important;
+}
+
+.ios-connect-page .small-muted {
+  color: var(--rfc-muted, #e3d38d) !important;
+  font-size: 0.94rem !important;
+}
+
+@media (max-width: 760px) {
+  .ios-connect-page .step-layout {
+    grid-template-columns: 1fr;
+  }
+  .ios-connect-page .phone-shot {
+    max-width: 390px;
+    margin: 0 auto;
+  }
+  .ios-connect-page .mini-checklist {
+    grid-template-columns: 1fr;
+  }
+  .ios-connect-page .step-card {
+    padding: 15px !important;
+  }
+}
+
+</style>
 </head>
 <body>
-<div class="container">
+<div class="container ios-connect-page">
 
 <h1>Connecting Oar Sensors</h1>
 <p class="lead">
-  Use this page for the app-side process of finding and connecting the Bluetooth oar sensors before launching.
+  Use this page to connect the RitmoForceCurve iOS app to the two Bluetooth oar sensors before a row.
+  The safest routine is: power the sensors, connect them deliberately, turn on Autoconnect, then leave the Bluetooth menu.
 </p>
-<div class="card">
-  <h2>Basic connection flow</h2>
-  <ol>
-    <li>Turn on both oar sensors before placing the oars in the oarlocks or pushing off from the dock.</li>
-    <li>Open the app and go to <b>Main Menu → Connect Oar Sensors</b>.</li>
-    <li>Tap <b>Turn on scanning</b> to search for nearby devices.</li>
-    <li>If pairing for the first time, disable <b>Scan only for saved devices</b>.</li>
-    <li>Select both sensors when they appear. They may appear by MAC address.</li>
-    <li>Tap <b>DONE</b>.</li>
-    <li>After the sensors are connected, go to <b>Oar Sensor Setup</b> to confirm side, orientation, and alignment.</li>
-  </ol>
+
+<div class="tip-box">
+  <strong>Important before a busy dock or regatta:</strong>
+  you do <strong>not</strong> need to remember which Bluetooth name is the shaft sensor and which is the sleeve sensor.
+  But if other sensors may be nearby, connect to your own pair at home first and write down the sensor name/address endings.
+  The last 4–6 letters or digits is usually enough to recognize your sensors on the dock.
 </div>
-<div class="card">
-  <h2>After connecting</h2>
-  <p>
-    Choose port or starboard, then check that both sensors are reasonably aligned before launch. The app can auto-calibrate while rowing, but the sensors should start close enough that the readings are stable.
-  </p>
+
+<div class="quick-note">
+  <strong>What Autoconnect does:</strong> once your two sensors have been selected, turn <strong>Autoconnect</strong> on before pressing <strong>DONE</strong>.
+  Autoconnect is used both to connect only to sensors that were paired/saved earlier and to automatically reconnect the next time the app is opened with those sensors powered on.
 </div>
-<p class="placeholder">
-  Placeholder: add current app screenshots for scanning, saved-device mode, selected sensors, and the connected-sensor confirmation screen.
-</p>
+
+<section class="step-card">
+  <div class="step-layout">
+    <div>
+      <span class="step-eyebrow">Step 1</span>
+      <h2>Start from the Home screen</h2>
+      <ol>
+        <li>Turn on both oar sensors before opening the Bluetooth connection screen.</li>
+        <li>Open RitmoForceCurve.</li>
+        <li>If the status says <span class="status-pill status-red">Sensors Not Connected</span>, tap <strong>Connect Oar Sensors</strong>.</li>
+        <li>If the status says <span class="status-pill status-red">Searching for Previous Sensors</span> for more than a few seconds, also tap <strong>Connect Oar Sensors</strong> and do a clean connection.</li>
+      </ol>
+      <p class="small-muted">Do not start a rowing session until the Home screen says Sensors Connected.</p>
+    </div>
+    <figure class="phone-shot">
+      <img src="ios_connection_pics/01_home_not_connected.png" alt="RitmoForceCurve Home screen showing Sensors Not Connected and the Connect Oar Sensors button">
+      <figcaption>Home screen before the oar sensors are connected.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="step-card">
+  <div class="step-layout">
+    <div>
+      <span class="step-eyebrow">Step 2</span>
+      <h2>Use a clean start when pairing or when things seem confused</h2>
+      <ol>
+        <li>In the Bluetooth menu, start with <strong>Turn on scanning for surrounding devices</strong> turned <strong>off</strong>.</li>
+        <li>Start with <strong>Autoconnect</strong> turned <strong>off</strong>.</li>
+        <li>If any individual sensor switch is already on and you are not sure it is yours, turn it off before continuing.</li>
+      </ol>
+      <p>
+        This prevents the app from grabbing an old saved pair or a nearby sensor before you have confirmed the two sensors you want.
+      </p>
+    </div>
+    <figure class="phone-shot">
+      <img src="ios_connection_pics/02_clean_start_scanning_off.png" alt="Bluetooth connection menu with scanning off and Autoconnect off">
+      <figcaption>Clean start: scanning off, Autoconnect off.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="step-card">
+  <div class="step-layout">
+    <div>
+      <span class="step-eyebrow">Step 3</span>
+      <h2>Turn scanning on and connect your two sensors</h2>
+      <ol>
+        <li>Turn on <strong>Turn on scanning for surrounding devices</strong>.</li>
+        <li>Wait for the two <strong>WT901BLE67</strong> sensors to appear.</li>
+        <li>Use the name/address endings you wrote down at home to identify your own sensors if other sensors are nearby.</li>
+        <li>Turn on the switch for each of your two sensors.</li>
+        <li>Both sensors should show <strong>Connected</strong>.</li>
+      </ol>
+      <p>
+        At this stage, the app just needs the correct two sensors. You do not have to decide which one is shaft or sleeve from the Bluetooth name.
+      </p>
+    </div>
+    <figure class="phone-shot">
+      <img src="ios_connection_pics/03_scanning_on_sensors_connected.png" alt="Bluetooth menu with scanning on and two WT901BLE67 sensors connected">
+      <figcaption>Scanning on: select the two sensors that belong to your setup.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="step-card">
+  <div class="step-layout">
+    <div>
+      <span class="step-eyebrow">Step 4</span>
+      <h2>Turn Autoconnect on before leaving the Bluetooth menu</h2>
+      <ol>
+        <li>After both sensors show <strong>Connected</strong>, turn <strong>Autoconnect</strong> on.</li>
+        <li>Then tap <strong>DONE</strong>.</li>
+      </ol>
+      <p>
+        Turning Autoconnect on at this point tells the app to save this pair. Next time, with these sensors powered on, the app will search for the saved pair instead of asking you to pick from every nearby Bluetooth sensor.
+      </p>
+    </div>
+    <figure class="phone-shot">
+      <img src="ios_connection_pics/04_autoconnect_on_before_done.png" alt="Bluetooth menu with scanning on, Autoconnect on, and both sensors connected">
+      <figcaption>Before tapping DONE, turn Autoconnect on.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="step-card">
+  <div class="step-layout">
+    <div>
+      <span class="step-eyebrow">Next time</span>
+      <h2>Normal launch after a saved pair exists</h2>
+      <ol>
+        <li>Turn on the two oar sensors first.</li>
+        <li>Open RitmoForceCurve.</li>
+        <li>The Home screen may say <span class="status-pill status-red">Searching for Previous Sensors</span> while the app looks for the saved pair.</li>
+        <li>Wait a few seconds. If the sensors are on and nearby, the status should change to <span class="status-pill status-green">Sensors Connected</span>.</li>
+      </ol>
+      <p>
+        If it keeps searching, tap <strong>Connect Oar Sensors</strong> and repeat the clean-start process above.
+      </p>
+    </div>
+    <figure class="phone-shot">
+      <img src="ios_connection_pics/05_searching_previous_sensors.png" alt="Home screen showing Searching for Previous Sensors">
+      <figcaption>With Autoconnect enabled, this is normal while the app reconnects to the saved pair.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="step-card">
+  <div class="step-layout">
+    <div>
+      <span class="step-eyebrow">Ready</span>
+      <h2>Confirm connection before rowing</h2>
+      <ol>
+        <li>Look for <span class="status-pill status-green">Sensors Connected</span> on the Home screen.</li>
+        <li>Go to <strong>Sensor Mount / Oar Calibration</strong> if you need to check side, mount orientation, or calibration.</li>
+        <li>When everything looks correct, tap <strong>Start Session</strong>.</li>
+      </ol>
+    </div>
+    <figure class="phone-shot">
+      <img src="ios_connection_pics/06_sensors_connected_home.png" alt="RitmoForceCurve Home screen showing Sensors Connected">
+      <figcaption>Green Sensors Connected means the app is ready to use the oar sensors.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="warning-box">
+  <h2>Troubleshooting</h2>
+  <div class="mini-checklist">
+    <div><strong>Only one sensor appears:</strong><br>Turn scanning off and back on, move the phone closer, or power-cycle the missing sensor.</div>
+    <div><strong>Wrong sensors are nearby:</strong><br>Turn Autoconnect off, use the address endings you wrote down, and connect only your two sensors.</div>
+    <div><strong>It keeps searching:</strong><br>Open <strong>Connect Oar Sensors</strong>, turn scanning and Autoconnect off, then reconnect both sensors and turn Autoconnect back on before DONE.</div>
+    <div><strong>Another phone/app was connected:</strong><br>Close the other app or disconnect the sensors there, then scan again.</div>
+  </div>
+</section>
 
 <footer>© 2026 RitmoForceCurve</footer>
 </div>
