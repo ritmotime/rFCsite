@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>RitmoForceCurve</title>
-<link rel="stylesheet" href="site.css">
+<link href="site.css" rel="stylesheet"/>
 <style id="rfc-embedded-page-styles">
 /* Page styles from welcome.html */
 
@@ -1397,6 +1398,179 @@
   }
 
 
+
+
+/* Updated page styles from connecting_oar_sensors.html */
+
+
+/* Page-specific styles for Connecting Oar Sensors.  These are scoped so they work inside the main site. */
+.ios-connect-page {
+  --ios-blue: #1597f5;
+  --ios-green: #41d36b;
+  --ios-red: #ff4b55;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.ios-connect-page .lead {
+  font-size: 1.12rem !important;
+  margin-bottom: 18px !important;
+}
+
+.ios-connect-page .quick-note,
+.ios-connect-page .tip-box,
+.ios-connect-page .warning-box {
+  background: var(--rfc-bg-lift, #303132) !important;
+  border: 1px solid var(--rfc-border, #50514f) !important;
+  border-left: 5px solid var(--rfc-accent-strong, #f0cf62) !important;
+  border-radius: 12px !important;
+  padding: 14px 16px !important;
+  margin: 16px 0 !important;
+  box-shadow: var(--rfc-shadow-soft, 0 4px 16px rgba(0,0,0,0.25)) !important;
+}
+
+.ios-connect-page .warning-box {
+  border-left-color: var(--ios-red) !important;
+}
+
+.ios-connect-page .tip-box {
+  border-left-color: var(--ios-green) !important;
+}
+
+.ios-connect-page .step-card {
+  background: var(--rfc-bg-lift, #303132) !important;
+  border: 1px solid var(--rfc-border, #50514f) !important;
+  border-radius: 16px !important;
+  padding: 18px !important;
+  margin: 20px 0 !important;
+  box-shadow: var(--rfc-shadow-soft, 0 4px 16px rgba(0,0,0,0.25)) !important;
+}
+
+.ios-connect-page .step-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  gap: 18px;
+  align-items: start;
+}
+
+.ios-connect-page .step-eyebrow {
+  display: inline-block;
+  font-size: 0.84rem !important;
+  font-weight: 850 !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--rfc-heading, #fff7cc) !important;
+  background: rgba(21, 151, 245, 0.22) !important;
+  border: 1px solid rgba(21, 151, 245, 0.55) !important;
+  border-radius: 999px;
+  padding: 4px 10px;
+  margin-bottom: 8px;
+}
+
+.ios-connect-page h1,
+.ios-connect-page h2,
+.ios-connect-page h3 {
+  color: var(--rfc-heading, #fff7cc) !important;
+}
+
+.ios-connect-page h2 {
+  margin-top: 34px !important;
+}
+
+.ios-connect-page h3 {
+  margin: 6px 0 8px !important;
+}
+
+.ios-connect-page p,
+.ios-connect-page li {
+  color: var(--rfc-text, #fff1b8) !important;
+}
+
+.ios-connect-page strong,
+.ios-connect-page b {
+  color: var(--rfc-heading, #fff7cc) !important;
+}
+
+.ios-connect-page .phone-shot {
+  margin: 0;
+  background: #111 !important;
+  border: 1px solid var(--rfc-border, #50514f) !important;
+  border-radius: 18px;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.ios-connect-page .phone-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.ios-connect-page .phone-shot figcaption {
+  color: var(--rfc-muted, #e3d38d) !important;
+  font-size: 0.88rem !important;
+  line-height: 1.35;
+  margin: 8px 4px 2px;
+}
+
+.ios-connect-page .mini-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0 6px;
+}
+
+.ios-connect-page .mini-checklist div {
+  background: var(--rfc-surface-muted, #2a2b2c) !important;
+  border: 1px solid var(--rfc-border, #50514f) !important;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.ios-connect-page .status-pill {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-weight: 850 !important;
+}
+
+.ios-connect-page .status-red {
+  color: #fff !important;
+  background: var(--ios-red) !important;
+}
+
+.ios-connect-page .status-green {
+  color: #06140a !important;
+  background: var(--ios-green) !important;
+}
+
+.ios-connect-page .status-blue {
+  color: #fff !important;
+  background: var(--ios-blue) !important;
+}
+
+.ios-connect-page .small-muted {
+  color: var(--rfc-muted, #e3d38d) !important;
+  font-size: 0.94rem !important;
+}
+
+@media (max-width: 760px) {
+  .ios-connect-page .step-layout {
+    grid-template-columns: 1fr;
+  }
+  .ios-connect-page .phone-shot {
+    max-width: 390px;
+    margin: 0 auto;
+  }
+  .ios-connect-page .mini-checklist {
+    grid-template-columns: 1fr;
+  }
+  .ios-connect-page .step-card {
+    padding: 15px !important;
+  }
+}
+
 </style>
 <style id="rfc-live-page-styles"></style>
 <style id="rfc-flat-site-shell">
@@ -1592,6 +1766,129 @@
     }
   }
 
+
+
+/* --- Mobile/desktop nav scroller upgrade: visible horizontal button rows --- */
+.fc-nav-row-wrap {
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  max-width: 100%;
+}
+.fc-nav-scroll-btn {
+  flex: 0 0 auto !important;
+  width: 34px !important;
+  min-width: 34px !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  padding: 0 !important;
+  border-radius: 999px !important;
+  font-size: 1.05rem !important;
+  line-height: 1 !important;
+  display: grid !important;
+  place-items: center !important;
+  opacity: 0.96;
+}
+.fc-nav-scroll-btn[disabled] {
+  opacity: 0.28;
+  pointer-events: none;
+}
+.fc-nav-row-window {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.fc-nav-row-window::before,
+.fc-nav-row-window::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 9px;
+  width: 24px;
+  z-index: 2;
+  pointer-events: none;
+}
+.fc-nav-row-window::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(38,39,40,0.97), rgba(38,39,40,0));
+}
+.fc-nav-row-window::after {
+  right: 0;
+  background: linear-gradient(270deg, rgba(38,39,40,0.97), rgba(38,39,40,0));
+}
+.fc-top-buttons,
+.fc-sub-buttons-current {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: var(--rfc-accent-strong, #f0cf62) rgba(255,255,255,0.10) !important;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: 26px;
+  overscroll-behavior-inline: contain;
+  padding-bottom: 9px !important;
+  margin-bottom: -4px !important;
+}
+.fc-top-buttons::-webkit-scrollbar,
+.fc-sub-buttons-current::-webkit-scrollbar {
+  height: 9px;
+}
+.fc-top-buttons::-webkit-scrollbar-track,
+.fc-sub-buttons-current::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.10);
+  border-radius: 999px;
+}
+.fc-top-buttons::-webkit-scrollbar-thumb,
+.fc-sub-buttons-current::-webkit-scrollbar-thumb {
+  background: var(--rfc-accent-strong, #f0cf62);
+  border-radius: 999px;
+}
+.fc-tab-button,
+.fc-sub-button {
+  scroll-snap-align: start;
+}
+.fc-helper-note {
+  clear: both;
+}
+@media (max-width: 720px) {
+  .fc-nav-shell {
+    position: sticky;
+    top: 0;
+  }
+  .fc-nav-row-wrap {
+    gap: 4px;
+  }
+  .fc-nav-scroll-btn {
+    width: 30px !important;
+    min-width: 30px !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    font-size: 0.98rem !important;
+  }
+  .fc-tab-button,
+  .fc-sub-button {
+    font-size: 0.84rem !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+@media (pointer: coarse) {
+  .fc-nav-scroll-btn {
+    display: none !important;
+  }
+  .fc-nav-row-wrap {
+    display: block !important;
+  }
+  .fc-nav-row-window {
+    overflow: visible;
+  }
+}
+
 </style>
 <script>
   window.RFC_NAV = [{"id": "welcome", "title": "Welcome", "pages": [{"id": "welcome", "title": "Welcome", "file": "welcome.html"}]}, {"id": "oar-kit", "title": "Oar Kit", "pages": [{"id": "oar-kit", "title": "Oar Kit", "file": "instructions.html"}, {"id": "oar-kit-videos", "title": "Oar Kit Videos", "file": "oar_kit_videos.html"}]}, {"id": "mobile-app", "title": "Mobile App", "pages": [{"id": "mobile-overview", "title": "Overview", "file": "mobile_app.html"}, {"id": "android-recording", "title": "Android Recording", "file": "android_recording.html"}, {"id": "connect-oar-sensors", "title": "Connecting Oar Sensors", "file": "connecting_oar_sensors.html"}, {"id": "workout-auto-timer", "title": "Workout & Auto Timer Settings", "file": "workout_auto_timer_settings.html"}, {"id": "oar-calibration", "title": "Sensor Mount / Oar Calibration", "file": "oar_calibration.html"}, {"id": "sharing-views-settings", "title": "Sharing Views, Settings & Calibrations", "file": "sharing_views_settings_calibrations.html"}, {"id": "custom-views", "title": "Creating Custom Views", "file": "creating_custom_views.html"}]}, {"id": "data-metrics", "title": "Data & Metrics Guide", "pages": [{"id": "data-metrics-guide", "title": "Metrics Guide", "file": "data_metrics.html"}, {"id": "force-curve-physics", "title": "Force Curve Physics", "file": "force_curve_physics.html"}]}, {"id": "cloud-analysis", "title": "Cloud Analysis", "pages": [{"id": "cloud-analysis", "title": "Cloud Analysis", "file": "cloud_analysis.html"}]}, {"id": "pricing", "title": "Pricing", "pages": [{"id": "pricing", "title": "Pricing", "file": "pricing.html"}]}];
@@ -1607,6 +1904,45 @@
     var panels = Array.prototype.slice.call(document.querySelectorAll('.rfc-page-panel'));
     var pageArea = document.getElementById('fc-page-area');
     var firstLoad = true;
+    enhanceHorizontalNavRows();
+
+
+
+    function enhanceHorizontalNavRows() {
+      ['.fc-top-buttons', '#fc-current-sub-buttons'].forEach(function(selector) {
+        var row = document.querySelector(selector);
+        if (!row || row.closest('.fc-nav-row-wrap')) return;
+        var wrap = document.createElement('div');
+        wrap.className = 'fc-nav-row-wrap';
+        var win = document.createElement('div');
+        win.className = 'fc-nav-row-window';
+        var left = document.createElement('button');
+        var right = document.createElement('button');
+        left.type = right.type = 'button';
+        left.className = right.className = 'fc-nav-scroll-btn';
+        left.setAttribute('aria-label', 'Scroll navigation left');
+        right.setAttribute('aria-label', 'Scroll navigation right');
+        left.textContent = '‹';
+        right.textContent = '›';
+        row.parentNode.insertBefore(wrap, row);
+        win.appendChild(row);
+        wrap.appendChild(left);
+        wrap.appendChild(win);
+        wrap.appendChild(right);
+        function amount() { return Math.max(220, Math.floor(row.clientWidth * 0.78)); }
+        function update() {
+          var max = row.scrollWidth - row.clientWidth - 2;
+          left.disabled = row.scrollLeft <= 2;
+          right.disabled = row.scrollLeft >= max;
+          wrap.classList.toggle('is-scrollable', row.scrollWidth > row.clientWidth + 4);
+        }
+        left.addEventListener('click', function() { row.scrollBy({ left: -amount(), behavior: 'smooth' }); });
+        right.addEventListener('click', function() { row.scrollBy({ left: amount(), behavior: 'smooth' }); });
+        row.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        setTimeout(update, 0);
+      });
+    }
 
     function findCategory(catId) {
       return nav.find(function(cat) { return cat.id === catId; });
@@ -1703,6 +2039,14 @@
 
       currentLabel.textContent = found.category.title === found.page.title ? found.page.title : found.category.title + ' / ' + found.page.title;
       document.title = found.page.title + ' - RitmoForceCurve';
+      enhanceHorizontalNavRows();
+      setTimeout(function() {
+        var activeSub = subNav.querySelector('.fc-sub-button.active');
+        if (activeSub && activeSub.scrollIntoView) activeSub.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        var activeTop = document.querySelector('.fc-top-buttons .fc-tab-button.active');
+        if (activeTop && activeTop.scrollIntoView) activeTop.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        window.dispatchEvent(new Event('resize'));
+      }, 60);
 
       if (options.push && window.history && history.pushState) {
         history.pushState({ page: pageId }, '', '#' + pageId);
@@ -1749,30 +2093,97 @@
     firstLoad = false;
   });
 </script>
-</head>
+<style id="rfc-mobile-nav-scroll-patch">
+
+/* Mobile nav scroll patch: keep only the button rows horizontally scrollable. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+.fc-nav-shell,
+.fc-title-row,
+.fc-page-area,
+.rfc-page-panel {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.fc-top-buttons,
+.fc-sub-buttons-current {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  padding-bottom: 0.55rem !important;
+}
+
+.fc-top-buttons::-webkit-scrollbar,
+.fc-sub-buttons-current::-webkit-scrollbar {
+  height: 6px;
+}
+
+.fc-top-buttons::-webkit-scrollbar-thumb,
+.fc-sub-buttons-current::-webkit-scrollbar-thumb {
+  background: var(--rfc-border-strong, #777158);
+  border-radius: 999px;
+}
+
+.fc-top-buttons::-webkit-scrollbar-track,
+.fc-sub-buttons-current::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+}
+
+.fc-tab-button,
+.fc-sub-button {
+  flex: 0 0 auto !important;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 720px) {
+  .fc-nav-shell {
+    overflow: hidden !important;
+  }
+  .fc-sub-buttons-current {
+    padding-top: 0.5rem !important;
+  }
+  .fc-sub-button {
+    max-width: 84vw;
+    white-space: normal !important;
+    line-height: 1.15 !important;
+  }
+}
+</style></head>
 <body>
-<div id="fc-tabset" class="rfc-flat-site">
-  <nav class="fc-nav-shell" aria-label="RitmoForceCurve site navigation">
-    <div class="fc-title-row">
-      <div class="fc-title">RitmoForceCurve</div>
-      <div id="fc-current-label" class="fc-current-label" aria-live="polite"></div>
-    </div>
-    <div class="fc-top-buttons" role="navigation" aria-label="Main sections">
-      <button type="button" class="fc-tab-button" data-category="welcome">Welcome</button>
-      <button type="button" class="fc-tab-button" data-category="oar-kit">Oar Kit</button>
-      <button type="button" class="fc-tab-button" data-category="mobile-app">Mobile App</button>
-      <button type="button" class="fc-tab-button" data-category="data-metrics">Data &amp; Metrics Guide</button>
-      <button type="button" class="fc-tab-button" data-category="cloud-analysis">Cloud Analysis</button>
-      <button type="button" class="fc-tab-button" data-category="pricing">Pricing</button>
-    </div>
-    <div id="fc-current-sub-buttons" class="fc-sub-buttons fc-sub-buttons-current" aria-label="Subsections" data-empty="true"></div>
-    <p class="fc-helper-note">Use the section buttons above. This page uses one normal browser scrollbar, with no nested page frames.</p>
-  </nav>
-
-  <main id="fc-page-area" class="fc-page-area">
-
-      <section id="page-welcome" class="rfc-page-panel" data-page="welcome" data-category="welcome" data-source="welcome.html" hidden>
-
+<div class="rfc-flat-site" id="fc-tabset">
+<nav aria-label="RitmoForceCurve site navigation" class="fc-nav-shell">
+<div class="fc-title-row">
+<div class="fc-title">RitmoForceCurve</div>
+<div aria-live="polite" class="fc-current-label" id="fc-current-label"></div>
+</div>
+<div aria-label="Main sections" class="fc-top-buttons" role="navigation">
+<button class="fc-tab-button" data-category="welcome" type="button">Welcome</button>
+<button class="fc-tab-button" data-category="oar-kit" type="button">Oar Kit</button>
+<button class="fc-tab-button" data-category="mobile-app" type="button">Mobile App</button>
+<button class="fc-tab-button" data-category="data-metrics" type="button">Data &amp; Metrics Guide</button>
+<button class="fc-tab-button" data-category="cloud-analysis" type="button">Cloud Analysis</button>
+<button class="fc-tab-button" data-category="pricing" type="button">Pricing</button>
+</div>
+<div aria-label="Subsections" class="fc-sub-buttons fc-sub-buttons-current" data-empty="true" id="fc-current-sub-buttons"></div>
+<p class="fc-helper-note">Use the section buttons above. Swipe the button rows sideways to see more choices; the page itself uses one normal vertical scroll.</p>
+</nav>
+<main class="fc-page-area" id="fc-page-area">
+<section class="rfc-page-panel" data-category="welcome" data-page="welcome" data-source="welcome.html" hidden="" id="page-welcome">
 <div class="container">
 <h1>RitmoForceCurve</h1>
 <p>
@@ -1802,10 +2213,8 @@
         © 2026 RitmoForceCurve
     </footer>
 </div>
-
-      </section>
-      <section id="page-oar-kit" class="rfc-page-panel" data-page="oar-kit" data-category="oar-kit" data-source="instructions.html" hidden>
-
+</section>
+<section class="rfc-page-panel" data-category="oar-kit" data-page="oar-kit" data-source="instructions.html" hidden="" id="page-oar-kit">
 <p class="p1">
 <img alt="Assembly Instructions Image" decoding="async" loading="lazy" src="assembly_instructions_files/image001.jpg"/>
 </p>
@@ -2067,10 +2476,8 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
 </ul>
 </div>
 <p class="p5"><span class="s10"><a href="mailto:ritmoforcecurve@gmail.com">ritmoforcecurve@gmail.com</a></span></p>
-
-      </section>
-      <section id="page-oar-kit-videos" class="rfc-page-panel" data-page="oar-kit-videos" data-category="oar-kit" data-source="oar_kit_videos.html" hidden>
-
+</section>
+<section class="rfc-page-panel" data-category="oar-kit" data-page="oar-kit-videos" data-source="oar_kit_videos.html" hidden="" id="page-oar-kit-videos">
 <div class="container">
 <h1>Oar Kit Videos</h1>
 <p class="intro">Short setup videos for mounting and using the RitmoForceCurve oar sensors.</p>
@@ -2087,10 +2494,8 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
     This video link is also listed at the bottom of the Oar Kit instructions page.
   </p>
 </div>
-
-      </section>
-      <section id="page-mobile-overview" class="rfc-page-panel" data-page="mobile-overview" data-category="mobile-app" data-source="mobile_app.html" hidden>
-
+</section>
+<section class="rfc-page-panel" data-category="mobile-app" data-page="mobile-overview" data-source="mobile_app.html" hidden="" id="page-mobile-overview">
 <div class="container">
 <h1>Mobile App</h1>
 <p class="lead">
@@ -2122,10 +2527,8 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
 </p>
 <footer>© 2026 RitmoForceCurve</footer>
 </div>
-
-      </section>
-      <section id="page-android-recording" class="rfc-page-panel" data-page="android-recording" data-category="mobile-app" data-source="android_recording.html" hidden>
-
+</section>
+<section class="rfc-page-panel" data-category="mobile-app" data-page="android-recording" data-source="android_recording.html" hidden="" id="page-android-recording">
 <main class="android-recording-page">
 <h1>Android Recording with the WitMotion App</h1>
 <p class="lead">
@@ -2237,42 +2640,155 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
 </section>
 <footer>© 2026 RitmoForceCurve</footer>
 </main>
-
-      </section>
-      <section id="page-connect-oar-sensors" class="rfc-page-panel" data-page="connect-oar-sensors" data-category="mobile-app" data-source="connecting_oar_sensors.html" hidden>
-
-<div class="container">
+</section>
+<section class="rfc-page-panel" data-category="mobile-app" data-page="connect-oar-sensors" data-source="connecting_oar_sensors.html" hidden="" id="page-connect-oar-sensors">
+<div class="container ios-connect-page">
 <h1>Connecting Oar Sensors</h1>
 <p class="lead">
-  Use this page for the app-side process of finding and connecting the Bluetooth oar sensors before launching.
+  Use this page to connect the RitmoForceCurve iOS app to the two Bluetooth oar sensors before a row.
+  The safest routine is: power the sensors, connect them deliberately, turn on Autoconnect, then leave the Bluetooth menu.
 </p>
-<div class="card">
-<h2>Basic connection flow</h2>
+<div class="tip-box">
+<strong>Important before a busy dock or regatta:</strong>
+  you do <strong>not</strong> need to remember which Bluetooth name is the shaft sensor and which is the sleeve sensor.
+  But if other sensors may be nearby, connect to your own pair at home first and write down the sensor name/address endings.
+  The last 4–6 letters or digits is usually enough to recognize your sensors on the dock.
+</div>
+<div class="quick-note">
+<strong>What Autoconnect does:</strong> once your two sensors have been selected, turn <strong>Autoconnect</strong> on before pressing <strong>DONE</strong>.
+  Autoconnect is used both to connect only to sensors that were paired/saved earlier and to automatically reconnect the next time the app is opened with those sensors powered on.
+</div>
+<section class="step-card">
+<div class="step-layout">
+<div>
+<span class="step-eyebrow">Step 1</span>
+<h2>Start from the Home screen</h2>
 <ol>
-<li>Turn on both oar sensors before placing the oars in the oarlocks or pushing off from the dock.</li>
-<li>Open the app and go to <b>Main Menu → Connect Oar Sensors</b>.</li>
-<li>Tap <b>Turn on scanning</b> to search for nearby devices.</li>
-<li>If pairing for the first time, disable <b>Scan only for saved devices</b>.</li>
-<li>Select both sensors when they appear. They may appear by MAC address.</li>
-<li>Tap <b>DONE</b>.</li>
-<li>After the sensors are connected, go to <b>Oar Sensor Setup</b> to confirm side, orientation, and alignment.</li>
+<li>Turn on both oar sensors before opening the Bluetooth connection screen.</li>
+<li>Open RitmoForceCurve.</li>
+<li>If the status says <span class="status-pill status-red">Sensors Not Connected</span>, tap <strong>Connect Oar Sensors</strong>.</li>
+<li>If the status says <span class="status-pill status-red">Searching for Previous Sensors</span> for more than a few seconds, also tap <strong>Connect Oar Sensors</strong> and do a clean connection.</li>
+</ol>
+<p class="small-muted">Do not start a rowing session until the Home screen says Sensors Connected.</p>
+</div>
+<figure class="phone-shot">
+<img alt="RitmoForceCurve Home screen showing Sensors Not Connected and the Connect Oar Sensors button" src="ios_connection_pics/01_home_not_connected.png"/>
+<figcaption>Home screen before the oar sensors are connected.</figcaption>
+</figure>
+</div>
+</section>
+<section class="step-card">
+<div class="step-layout">
+<div>
+<span class="step-eyebrow">Step 2</span>
+<h2>Use a clean start when pairing or when things seem confused</h2>
+<ol>
+<li>In the Bluetooth menu, start with <strong>Turn on scanning for surrounding devices</strong> turned <strong>off</strong>.</li>
+<li>Start with <strong>Autoconnect</strong> turned <strong>off</strong>.</li>
+<li>If any individual sensor switch is already on and you are not sure it is yours, turn it off before continuing.</li>
+</ol>
+<p>
+        This prevents the app from grabbing an old saved pair or a nearby sensor before you have confirmed the two sensors you want.
+      </p>
+</div>
+<figure class="phone-shot">
+<img alt="Bluetooth connection menu with scanning off and Autoconnect off" src="ios_connection_pics/02_clean_start_scanning_off.png"/>
+<figcaption>Clean start: scanning off, Autoconnect off.</figcaption>
+</figure>
+</div>
+</section>
+<section class="step-card">
+<div class="step-layout">
+<div>
+<span class="step-eyebrow">Step 3</span>
+<h2>Turn scanning on and connect your two sensors</h2>
+<ol>
+<li>Turn on <strong>Turn on scanning for surrounding devices</strong>.</li>
+<li>Wait for the two <strong>WT901BLE67</strong> sensors to appear.</li>
+<li>Use the name/address endings you wrote down at home to identify your own sensors if other sensors are nearby.</li>
+<li>Turn on the switch for each of your two sensors.</li>
+<li>Both sensors should show <strong>Connected</strong>.</li>
+</ol>
+<p>
+        At this stage, the app just needs the correct two sensors. You do not have to decide which one is shaft or sleeve from the Bluetooth name.
+      </p>
+</div>
+<figure class="phone-shot">
+<img alt="Bluetooth menu with scanning on and two WT901BLE67 sensors connected" src="ios_connection_pics/03_scanning_on_sensors_connected.png"/>
+<figcaption>Scanning on: select the two sensors that belong to your setup.</figcaption>
+</figure>
+</div>
+</section>
+<section class="step-card">
+<div class="step-layout">
+<div>
+<span class="step-eyebrow">Step 4</span>
+<h2>Turn Autoconnect on before leaving the Bluetooth menu</h2>
+<ol>
+<li>After both sensors show <strong>Connected</strong>, turn <strong>Autoconnect</strong> on.</li>
+<li>Then tap <strong>DONE</strong>.</li>
+</ol>
+<p>
+        Turning Autoconnect on at this point tells the app to save this pair. Next time, with these sensors powered on, the app will search for the saved pair instead of asking you to pick from every nearby Bluetooth sensor.
+      </p>
+</div>
+<figure class="phone-shot">
+<img alt="Bluetooth menu with scanning on, Autoconnect on, and both sensors connected" src="ios_connection_pics/04_autoconnect_on_before_done.png"/>
+<figcaption>Before tapping DONE, turn Autoconnect on.</figcaption>
+</figure>
+</div>
+</section>
+<section class="step-card">
+<div class="step-layout">
+<div>
+<span class="step-eyebrow">Next time</span>
+<h2>Normal launch after a saved pair exists</h2>
+<ol>
+<li>Turn on the two oar sensors first.</li>
+<li>Open RitmoForceCurve.</li>
+<li>The Home screen may say <span class="status-pill status-red">Searching for Previous Sensors</span> while the app looks for the saved pair.</li>
+<li>Wait a few seconds. If the sensors are on and nearby, the status should change to <span class="status-pill status-green">Sensors Connected</span>.</li>
+</ol>
+<p>
+        If it keeps searching, tap <strong>Connect Oar Sensors</strong> and repeat the clean-start process above.
+      </p>
+</div>
+<figure class="phone-shot">
+<img alt="Home screen showing Searching for Previous Sensors" src="ios_connection_pics/05_searching_previous_sensors.png"/>
+<figcaption>With Autoconnect enabled, this is normal while the app reconnects to the saved pair.</figcaption>
+</figure>
+</div>
+</section>
+<section class="step-card">
+<div class="step-layout">
+<div>
+<span class="step-eyebrow">Ready</span>
+<h2>Confirm connection before rowing</h2>
+<ol>
+<li>Look for <span class="status-pill status-green">Sensors Connected</span> on the Home screen.</li>
+<li>Go to <strong>Sensor Mount / Oar Calibration</strong> if you need to check side, mount orientation, or calibration.</li>
+<li>When everything looks correct, tap <strong>Start Session</strong>.</li>
 </ol>
 </div>
-<div class="card">
-<h2>After connecting</h2>
-<p>
-    Choose port or starboard, then check that both sensors are reasonably aligned before launch. The app can auto-calibrate while rowing, but the sensors should start close enough that the readings are stable.
-  </p>
+<figure class="phone-shot">
+<img alt="RitmoForceCurve Home screen showing Sensors Connected" src="ios_connection_pics/06_sensors_connected_home.png"/>
+<figcaption>Green Sensors Connected means the app is ready to use the oar sensors.</figcaption>
+</figure>
 </div>
-<p class="placeholder">
-  Placeholder: add current app screenshots for scanning, saved-device mode, selected sensors, and the connected-sensor confirmation screen.
-</p>
+</section>
+<section class="warning-box">
+<h2>Troubleshooting</h2>
+<div class="mini-checklist">
+<div><strong>Only one sensor appears:</strong><br/>Turn scanning off and back on, move the phone closer, or power-cycle the missing sensor.</div>
+<div><strong>Wrong sensors are nearby:</strong><br/>Turn Autoconnect off, use the address endings you wrote down, and connect only your two sensors.</div>
+<div><strong>It keeps searching:</strong><br/>Open <strong>Connect Oar Sensors</strong>, turn scanning and Autoconnect off, then reconnect both sensors and turn Autoconnect back on before DONE.</div>
+<div><strong>Another phone/app was connected:</strong><br/>Close the other app or disconnect the sensors there, then scan again.</div>
+</div>
+</section>
 <footer>© 2026 RitmoForceCurve</footer>
 </div>
-
-      </section>
-      <section id="page-workout-auto-timer" class="rfc-page-panel" data-page="workout-auto-timer" data-category="mobile-app" data-source="workout_auto_timer_settings.html" hidden>
-
+</section>
+<section class="rfc-page-panel" data-category="mobile-app" data-page="workout-auto-timer" data-source="workout_auto_timer_settings.html" hidden="" id="page-workout-auto-timer">
 <div class="container">
 <h1>Workout &amp; Auto Timer Settings</h1>
 <p class="lead">
@@ -2377,10 +2893,8 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
 </p>
 <footer>© 2026 RitmoForceCurve</footer>
 </div>
-
-      </section>
-      <section id="page-oar-calibration" class="rfc-page-panel" data-page="oar-calibration" data-category="mobile-app" data-source="oar_calibration.html" hidden>
-
+</section>
+<section class="rfc-page-panel" data-category="mobile-app" data-page="oar-calibration" data-source="oar_calibration.html" hidden="" id="page-oar-calibration">
 <div class="container">
 <h1>Sensor Mount / Oar Calibration</h1>
 <nav aria-label="Sensor Mount / Oar Calibration app tabs" class="calib-tabs">
@@ -2425,10 +2939,8 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
 </div>
 <footer>© 2026 RitmoForceCurve</footer>
 </div>
-
-      </section>
-      <section id="page-sharing-views-settings" class="rfc-page-panel" data-page="sharing-views-settings" data-category="mobile-app" data-source="sharing_views_settings_calibrations.html" hidden>
-
+</section>
+<section class="rfc-page-panel" data-category="mobile-app" data-page="sharing-views-settings" data-source="sharing_views_settings_calibrations.html" hidden="" id="page-sharing-views-settings">
 <div class="container">
 <h1>Sharing Views, Settings &amp; Calibrations</h1>
 <p class="lead">
@@ -2523,10 +3035,8 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
 </div>
 <footer>© 2026 RitmoForceCurve</footer>
 </div>
-
-      </section>
-      <section id="page-custom-views" class="rfc-page-panel" data-page="custom-views" data-category="mobile-app" data-source="creating_custom_views.html" hidden>
-
+</section>
+<section class="rfc-page-panel" data-category="mobile-app" data-page="custom-views" data-source="creating_custom_views.html" hidden="" id="page-custom-views">
 <div class="container">
 <h1>Creating Custom Views</h1>
 <p class="lead">
@@ -2562,10 +3072,8 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
 </p>
 <footer>© 2026 RitmoForceCurve</footer>
 </div>
-
-      </section>
-      <section id="page-data-metrics-guide" class="rfc-page-panel" data-page="data-metrics-guide" data-category="data-metrics" data-source="data_metrics.html" hidden>
-
+</section>
+<section class="rfc-page-panel" data-category="data-metrics" data-page="data-metrics-guide" data-source="data_metrics.html" hidden="" id="page-data-metrics-guide">
 <div class="container">
 <h1>Data &amp; Metrics Guide</h1>
 <p class="intro">
@@ -2783,10 +3291,8 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
     © 2026 RitmoForceCurve
   </footer>
 </div>
-
-      </section>
-      <section id="page-force-curve-physics" class="rfc-page-panel" data-page="force-curve-physics" data-category="data-metrics" data-source="force_curve_physics.html" hidden>
-
+</section>
+<section class="rfc-page-panel" data-category="data-metrics" data-page="force-curve-physics" data-source="force_curve_physics.html" hidden="" id="page-force-curve-physics">
 <div class="container">
 <h1>Force Curve Physics</h1>
 <p class="intro">
@@ -2890,10 +3396,8 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
 </section>
 <footer>© 2026 RitmoForceCurve</footer>
 </div>
-
-      </section>
-      <section id="page-cloud-analysis" class="rfc-page-panel" data-page="cloud-analysis" data-category="cloud-analysis" data-source="cloud_analysis.html" hidden>
-
+</section>
+<section class="rfc-page-panel" data-category="cloud-analysis" data-page="cloud-analysis" data-source="cloud_analysis.html" hidden="" id="page-cloud-analysis">
 <div class="container">
 <h1>Cloud Analysis</h1>
 <div class="top-example">
@@ -2933,10 +3437,8 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
         </p>
 </div>
 </div>
-
-      </section>
-      <section id="page-pricing" class="rfc-page-panel" data-page="pricing" data-category="pricing" data-source="pricing.html" hidden>
-
+</section>
+<section class="rfc-page-panel" data-category="pricing" data-page="pricing" data-source="pricing.html" hidden="" id="page-pricing">
 <div class="container">
 <h1>Pricing</h1>
 <p class="lead">Current pricing for the RitmoForceCurve oar kit, iOS app, and Cloud Analysis.</p>
@@ -2983,9 +3485,8 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
 </ul>
 </section>
 </div>
-
-      </section>
-  </main>
+</section>
+</main>
 </div>
 </body>
 </html>
