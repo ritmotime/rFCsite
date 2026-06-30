@@ -4,104 +4,360 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Android Recording</title>
+<link rel="stylesheet" href="site.css">
 <style>
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f7f9fc;
-    color: #1a1a1a;
-    line-height: 1.6;
+  :root {
+    --rfc-bg: #1f2021;
+    --rfc-bg-soft: #272829;
+    --rfc-bg-lift: #303132;
+    --rfc-surface: #333435;
+    --rfc-surface-muted: #2a2b2c;
+    --rfc-border: #50514f;
+    --rfc-border-strong: #777158;
+    --rfc-text: #fff1b8;
+    --rfc-muted: #e3d38d;
+    --rfc-heading: #fff7cc;
+    --rfc-accent: #d8b64a;
+    --rfc-accent-strong: #f0cf62;
+    --rfc-link: #ffe38b;
+    --rfc-link-hover: #fff5c7;
+    --rfc-radius: 16px;
+    --rfc-radius-small: 10px;
+    --rfc-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
-  .container {
-    max-width: 920px;
-    margin: 52px auto;
-    padding: 0 24px 70px;
+
+  body.android-recording-body {
+    margin: 0 !important;
+    font-family: var(--rfc-font) !important;
+    background:
+      radial-gradient(circle at top left, rgba(216, 182, 74, 0.12), transparent 28rem),
+      linear-gradient(180deg, #2a2b2c 0%, var(--rfc-bg) 100%) !important;
+    color: var(--rfc-text) !important;
+    line-height: 1.62;
   }
-  h1 {
-    font-size: 2.35rem;
-    line-height: 1.12;
-    margin: 0 0 12px;
-    letter-spacing: -0.4px;
+
+  .android-recording-page {
+    max-width: 1080px !important;
+    margin: 34px auto !important;
+    padding: 32px 34px 56px !important;
+    background: rgba(51, 52, 53, 0.94) !important;
+    border: 1px solid var(--rfc-border) !important;
+    border-radius: var(--rfc-radius) !important;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.38) !important;
   }
-  h2 {
-    font-size: 1.45rem;
-    margin-top: 34px;
-    margin-bottom: 10px;
+
+  .android-recording-page *:not(img) {
+    box-sizing: border-box;
+    color: var(--rfc-text) !important;
   }
-  p, li {
-    font-size: 1.05rem;
+
+  .android-recording-page h1,
+  .android-recording-page h2,
+  .android-recording-page h3,
+  .android-recording-page strong {
+    color: var(--rfc-heading) !important;
   }
-  .lead {
-    font-size: 1.16rem;
-    color: #333;
-    margin-bottom: 24px;
+
+  .android-recording-page h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem) !important;
+    line-height: 1.08 !important;
+    margin: 0 0 12px !important;
+    letter-spacing: -0.025em;
   }
-  .card {
-    background: white;
-    border: 1px solid #dfe5ee;
-    border-radius: 12px;
-    padding: 18px 20px;
-    margin: 18px 0;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+
+  .android-recording-page h2 {
+    font-size: clamp(1.35rem, 2.5vw, 1.7rem) !important;
+    margin: 30px 0 12px !important;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--rfc-border) !important;
   }
-  .button-link {
-    display: inline-block;
-    margin: 4px 8px 14px 0;
-    padding: 10px 14px;
-    border: 1px solid #b7c6d6;
+
+  .android-recording-page h3 {
+    margin: 0 0 8px !important;
+    font-size: 1.08rem !important;
+  }
+
+  .android-recording-page p,
+  .android-recording-page li {
+    font-size: 1.05rem !important;
+  }
+
+  .android-recording-page .lead {
+    color: var(--rfc-muted) !important;
+    font-size: 1.15rem !important;
+    margin: 0 0 22px !important;
+  }
+
+  .android-recording-page .rfc-button,
+  .android-recording-page a.rfc-button {
+    display: inline-block !important;
+    margin: 5px 8px 12px 0 !important;
+    padding: 10px 16px !important;
+    border-radius: 999px !important;
+    border: 1px solid var(--rfc-border-strong) !important;
+    background: linear-gradient(180deg, #4a4b49 0%, #2b2c2d 100%) !important;
+    color: var(--rfc-heading) !important;
+    text-decoration: none !important;
+    font-weight: 750 !important;
+  }
+
+  .android-recording-page .rfc-button:hover,
+  .android-recording-page a.rfc-button:hover {
+    background: linear-gradient(180deg, #5a5438 0%, #393520 100%) !important;
+    color: var(--rfc-link-hover) !important;
+    text-decoration: none !important;
+  }
+
+  .android-recording-page .rfc-card,
+  .android-recording-page .rfc-note,
+  .android-recording-page .rfc-warning,
+  .android-recording-page .rfc-gallery figure,
+  .android-recording-page .rfc-mini-card {
+    background: var(--rfc-bg-lift) !important;
+    border: 1px solid var(--rfc-border) !important;
+    border-radius: var(--rfc-radius-small) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28) !important;
+  }
+
+  .android-recording-page .rfc-card {
+    padding: 20px 22px !important;
+    margin: 20px 0 !important;
+  }
+
+  .android-recording-page .rfc-note,
+  .android-recording-page .rfc-warning {
+    border-left: 5px solid var(--rfc-accent-strong) !important;
+    padding: 14px 16px !important;
+    margin: 16px 0 !important;
+  }
+
+  .android-recording-page .rfc-quick-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 12px;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .android-recording-page .rfc-quick-list li,
+  .android-recording-page .rfc-mini-card {
+    padding: 12px 14px !important;
+    background: var(--rfc-surface-muted) !important;
+    border-color: var(--rfc-border) !important;
+  }
+
+  .android-recording-page .rfc-steps {
+    counter-reset: step;
+    list-style: none;
+    padding-left: 0 !important;
+    margin: 12px 0 0 !important;
+  }
+
+  .android-recording-page .rfc-steps > li {
+    counter-increment: step;
+    position: relative;
+    padding: 0 0 18px 48px !important;
+    margin: 0 !important;
+  }
+
+  .android-recording-page .rfc-steps > li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #4d4424 !important;
+    border: 1px solid var(--rfc-accent-strong);
+    color: var(--rfc-heading) !important;
+    display: grid;
+    place-items: center;
+    font-weight: 850;
+  }
+
+  .android-recording-page .rfc-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin: 16px 0 26px;
+  }
+
+  .android-recording-page .rfc-gallery figure {
+    margin: 0 !important;
+    overflow: hidden;
+  }
+
+  .android-recording-page .rfc-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #000;
+  }
+
+  .android-recording-page .rfc-gallery figcaption {
+    padding: 12px 14px !important;
+    background: #202122 !important;
+    color: var(--rfc-muted) !important;
+    font-size: 0.96rem !important;
+    line-height: 1.38;
+  }
+
+  .android-recording-page code {
+    background: #171819 !important;
+    color: var(--rfc-heading) !important;
+    border: 1px solid var(--rfc-border) !important;
     border-radius: 8px;
-    background: #ffffff;
-    color: #0b5cad;
-    text-decoration: none;
-    font-weight: 650;
+    padding: 1px 5px;
   }
-  .button-link:hover { text-decoration: underline; }
-  .placeholder {
-    border-left: 4px solid #9aa9b7;
-    background: #eef3f7;
-    padding: 12px 14px;
-    border-radius: 8px;
-    color: #3e4b56;
-    font-style: italic;
+
+  .android-recording-page .rfc-transition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
   }
-  footer {
-    margin-top: 46px;
-    font-size: 0.9rem;
-    color: #666;
+
+  .android-recording-page footer {
+    margin-top: 42px !important;
+    color: var(--rfc-muted) !important;
+    font-size: 0.92rem !important;
+  }
+
+  @media (max-width: 720px) {
+    .android-recording-page {
+      margin: 14px !important;
+      padding: 22px 18px 38px !important;
+      border-radius: 14px !important;
+    }
+    .android-recording-page .rfc-gallery {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
-<link rel="stylesheet" href="site.css">
 </head>
-<body>
-<div class="container">
-  <h1>Android Recording</h1>
+<body class="android-recording-body">
+<main class="android-recording-page">
+  <h1>Android Recording with the WitMotion App</h1>
   <p class="lead">
-    RitmoForceCurve currently has an iOS app. Android users can still record data from the WitMotion oar sensors using the WitMotion Android app. Those recorded files can then be uploaded for a complete post-workout report through Cloud Analysis.
+    RitmoForceCurve currently has an iOS app. Android users can still record data from the WitMotion oar sensors using the WitMotion app. After recording, upload the saved WitMotion text file or zipped recording folder for Cloud Analysis.
   </p>
 
   <p>
-    <a class="button-link" href="cloud_analysis.html">Learn about Cloud Analysis</a>
-    <a class="button-link" href="https://autoanalysis.ritmoforcecurve.com/" target="_blank" rel="noopener noreferrer">Open Cloud Analysis</a>
+    <a class="rfc-button" href="cloud_analysis.html">Learn about Cloud Analysis</a>
+    <a class="rfc-button" href="https://autoanalysis.ritmoforcecurve.com/" target="_blank" rel="noopener noreferrer">Open Cloud Analysis</a>
+    <a class="rfc-button" href="https://play.google.com/store/apps/details?id=com.wit.wit_app&amp;hl=en_US" target="_blank" rel="noopener noreferrer">Download WitMotion on Google Play</a>
   </p>
 
-  <div class="card">
-    <h2>Download the WitMotion Android app</h2>
-    <p>
-      Use the WitMotion app from Google Play to connect to supported WitMotion sensors, view live sensor data, record data, and export recorded files.
+  <section class="rfc-card">
+    <h2>Before you start</h2>
+    <ul class="rfc-quick-list">
+      <li>Turn on phone Bluetooth and approve any Bluetooth/location permissions Android requests.</li>
+      <li>Charge and turn on both WitMotion sensors before opening the connection screen.</li>
+      <li>Connect sensors inside the WitMotion app, not from the phone’s normal Bluetooth settings.</li>
+      <li>Before using the sensors at a busy dock, connect them at home once and note the visible sensor names/addresses. The last 4 characters are usually enough to tell which sensors are yours.</li>
+    </ul>
+    <p class="rfc-warning">
+      You do not need to memorize which sensor is “shaft” or “sleeve” while pairing in the WitMotion app. The main reason to note the sensor IDs is to avoid accidentally connecting to someone else’s WitMotion sensors when several are nearby.
     </p>
-    <p>
-      <a class="button-link" href="https://play.google.com/store/apps/details?id=com.wit.wit_app&hl=en_US" target="_blank" rel="noopener noreferrer">Download WitMotion on Google Play</a>
-    </p>
+  </section>
+
+  <section class="rfc-card">
+    <h2>Screen-to-screen path</h2>
+    <div class="rfc-transition-grid">
+      <div class="rfc-mini-card"><strong>Main</strong><br>Tap the chain/link icon to open the connection screen.</div>
+      <div class="rfc-mini-card"><strong>Available Devices</strong><br>Confirm the product type, switch to <strong>Multip</strong>, then connect both of your sensors by name/address.</div>
+      <div class="rfc-mini-card"><strong>Select Product</strong><br>Only use this if the product bar is not already correct. Pick the WitMotion model, then go back.</div>
+      <div class="rfc-mini-card"><strong>Main again</strong><br>Verify live values, start recording, stop, then open the folder.</div>
+    </div>
+  </section>
+
+  <section class="rfc-card">
+    <h2>Connect / pair the sensors</h2>
+    <ol class="rfc-steps">
+      <li><strong>Start on the Main screen.</strong> This is the first screen users should see. Tap the chain/link icon near the top right to open the sensor connection screen.</li>
+      <li><strong>Check the product type.</strong> On the Available Devices screen, use the <strong>Select Product…</strong> bar if the displayed model is wrong. In these screenshots, <strong>WT9011DCL-BT50</strong> is selected.</li>
+      <li><strong>Return from Select Product.</strong> After choosing the product, use the back arrow to return to Available Devices.</li>
+      <li><strong>Use multiple-sensor mode.</strong> Tap <strong>Multip</strong> if you are recording two sensors.</li>
+      <li><strong>Connect your sensors.</strong> Tap the switch beside each of your sensor names. If other WitMotion sensors are nearby, compare the visible names/addresses to the last 4 characters you wrote down at home.</li>
+      <li><strong>Return to Main.</strong> Use the back arrow and confirm live Acc/Gyr/Angle numbers are changing. If both sensor cards are shown, swipe between them and check both before recording.</li>
+    </ol>
+  </section>
+
+  <div class="rfc-gallery" aria-label="WitMotion sensor connection screenshots in correct order">
+    <figure>
+      <img src="witmotionpics/IMG_3284.PNG" alt="WitMotion Main landing screen before sensors are connected">
+      <figcaption><strong>1. Main landing view.</strong> Start here. Tap the chain/link icon to open the Available Devices screen. This is now the first screenshot in the sequence.</figcaption>
+    </figure>
+    <figure>
+      <img src="witmotionpics/IMG_3285.PNG" alt="WitMotion Available Devices screen with product selector, Multip mode, and sensor switches off">
+      <figcaption><strong>2. Available Devices.</strong> Check the product selector, choose <strong>Multip</strong>, then use the switches to connect your sensors. In a busy area, use the name/address endings you noted at home.</figcaption>
+    </figure>
+    <figure>
+      <img src="witmotionpics/IMG_3287.PNG" alt="WitMotion Select Product screen with WT9011DCL-BT50 highlighted">
+      <figcaption><strong>3. Select Product, if needed.</strong> Choose the correct product type, then use the back arrow to return to Available Devices.</figcaption>
+    </figure>
+    <figure>
+      <img src="witmotionpics/IMG_3286.PNG" alt="WitMotion Available Devices screen after both sensors are connected">
+      <figcaption><strong>4. Connected sensors.</strong> Both switches are on. Use the back arrow to return to Main and verify live data.</figcaption>
+    </figure>
   </div>
 
-  <div class="card">
-    <h2>What this page will cover</h2>
-    <p class="placeholder">
-      Placeholder: add step-by-step instructions for Android users to connect sensors, start a recording, stop/save the recording, and export the recorded file.
-    </p>
+  <section class="rfc-card">
+    <h2>Start and stop recording</h2>
+    <ol class="rfc-steps">
+      <li><strong>Verify live data first.</strong> On Main, move each sensor slightly and confirm the values change.</li>
+      <li><strong>Start recording.</strong> Tap the red record circle. Start a few seconds before rowing so the file includes a clean beginning.</li>
+      <li><strong>Keep the app active while recording.</strong> The timer means recording is running. Avoid disconnecting Bluetooth or force-closing the app during the row.</li>
+      <li><strong>Stop recording.</strong> Tap the stop square. Then tap the folder icon to open saved recordings.</li>
+    </ol>
+  </section>
+
+  <div class="rfc-gallery" aria-label="WitMotion recording screenshots in correct order">
+    <figure>
+      <img src="witmotionpics/IMG_3289.PNG" alt="WitMotion Main screen showing live sensor values and the record button">
+      <figcaption><strong>5. Live data ready.</strong> Live values confirm the sensor is streaming. Tap the red circle to start recording.</figcaption>
+    </figure>
+    <figure>
+      <img src="witmotionpics/IMG_3288.PNG" alt="WitMotion Main screen while recording with timer and stop button">
+      <figcaption><strong>6. Recording is active.</strong> The timer shows the recording is running. Tap the square stop button when finished.</figcaption>
+    </figure>
   </div>
+
+  <section class="rfc-card">
+    <h2>Find, export, and upload the recording</h2>
+    <ol class="rfc-steps">
+      <li><strong>Open saved recordings.</strong> Tap the folder icon on Main, then open the folder named with the date/time of the row. The date/time naming makes the correct recording fairly easy to identify.</li>
+      <li><strong>Use the <code>.txt</code> file.</strong> The text file contains the data table with time, DeviceName, Acc, Gyro, Angle, magnetic field, quaternion, temperature, version, and battery columns.</li>
+      <li><strong>Check that both sensors are present.</strong> In a two-sensor recording, the DeviceName column should include both of your sensor IDs somewhere in the file.</li>
+      <li><strong>Export/share the file from the app.</strong> Open the date-named recording folder, select the <code>.txt</code> file, and use the share icon to send it to yourself, save it to cloud storage, or move it to the computer used for upload.</li>
+      <li><strong>Upload to Cloud Analysis.</strong> Upload the <code>.txt</code> file. If the uploader asks for a zip file, zip the whole timestamped recording folder and upload that zip.</li>
+    </ol>
+  </section>
+
+  <div class="rfc-gallery" aria-label="WitMotion export screenshots in correct order">
+    <figure>
+      <img src="witmotionpics/IMG_3290.PNG" alt="WitMotion saved recording folder with text and wplay files">
+      <figcaption><strong>7. Saved folder.</strong> The date/time folder structure makes recordings easy to identify. Choose the <code>.txt</code> file; the <code>.wplay</code> files are not the main upload file.</figcaption>
+    </figure>
+    <figure>
+      <img src="witmotionpics/IMG_3292.PNG" alt="WitMotion text data file showing sensor columns and share icon">
+      <figcaption><strong>8. Opened text file.</strong> The file should show sensor column headings and rows of data. Use the share icon to export it.</figcaption>
+    </figure>
+  </div>
+
+  <section class="rfc-card">
+    <h2>Common problems</h2>
+    <ul>
+      <li><strong>No sensors appear:</strong> make sure the sensors are on and close to the phone, then tap refresh. Android may also require Bluetooth and location permission for BLE scanning.</li>
+      <li><strong>Only one sensor connects:</strong> switch to <strong>Multip</strong>, then turn on both sensor switches again.</li>
+      <li><strong>Values are not changing:</strong> return to the connection screen and reconnect the sensor before recording.</li>
+      <li><strong>Several nearby sensors appear:</strong> use the sensor name/address endings you wrote down at home so you only connect to your own sensors.</li>
+      <li><strong>Finding the recording:</strong> tap the folder icon in the app and use the date/time-named recording folder. Then share the <code>.txt</code> file directly from the app.</li>
+    </ul>
+  </section>
 
   <footer>© 2026 RitmoForceCurve</footer>
-</div>
+</main>
 </body>
 </html>
