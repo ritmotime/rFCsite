@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workout &amp; Auto Timer Settings</title>
+<style>
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #1a1a1a;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 920px;
+    margin: 52px auto;
+    padding: 0 24px 70px;
+  }
+  h1 {
+    font-size: 2.35rem;
+    line-height: 1.12;
+    margin: 0 0 12px;
+    letter-spacing: -0.4px;
+  }
+  h2 {
+    font-size: 1.45rem;
+    margin-top: 34px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-size: 1.08rem;
+    margin: 22px 0 8px;
+  }
+  p {
+    font-size: 1.05rem;
+    margin: 0 0 16px;
+  }
+  ul, ol {
+    font-size: 1.02rem;
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+  li { margin-bottom: 8px; }
+  .lead {
+    font-size: 1.16rem;
+    color: #333;
+    margin-bottom: 24px;
+  }
+  .card {
+    background: white;
+    border: 1px solid #dfe5ee;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 18px 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .placeholder {
+    border-left: 4px solid #9aa9b7;
+    background: #eef3f7;
+    padding: 12px 14px;
+    border-radius: 8px;
+    color: #3e4b56;
+    font-style: italic;
+  }
+  .button-link {
+    display: inline-block;
+    margin: 4px 8px 14px 0;
+    padding: 10px 14px;
+    border: 1px solid #b7c6d6;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #0b5cad;
+    text-decoration: none;
+    font-weight: 650;
+  }
+  .button-link:hover { text-decoration: underline; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+    margin: 14px 0 22px;
+  }
+  th, td {
+    border: 1px solid #dfe5ee;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: #eef3f7; }
+  footer {
+    margin-top: 46px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+</style>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="container">
+
+<h1>Workout &amp; Auto Timer Settings</h1>
+<p class="lead">
+  These settings control how the app interprets rowing data, detects pieces, summarizes workout history, and adjusts oar-derived power values.
+</p>
+<div class="card">
+  <h2>Auto Piece Timer</h2>
+  <p>
+    The Auto Piece Timer, or APT, is an algorithm that automatically determines when the rower is doing a piece versus taking rest strokes. This lets a separate piece timer start and stop without the rower pressing start, ready, or stop during the workout.
+  </p>
+  <p>
+    In the current app, the trigger can be based on <b>Rate</b>, <b>Power</b>, <b>Both</b>, or <b>Either</b>. The older description based only on stroke-rate threshold still applies when APT Trigger is set to Rate, but the new app also supports power-based piece detection.
+  </p>
+  <p>
+    The algorithm confirms the start of a piece after repeated qualifying strokes. It ends the piece retroactively when strokes no longer meet the trigger criteria or when the inactivity time exceeds the Auto Piece Time Cutoff, so the inactive time is not counted as part of the piece.
+  </p>
+</div>
+<div class="card">
+  <h2>APT Settings</h2>
+  <table>
+    <thead>
+      <tr><th>Setting</th><th>What it does</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>APT Trigger</b></td>
+        <td>Chooses how the app decides that a piece has started. Options are Rate, Power, Both, and Either.</td>
+      </tr>
+      <tr>
+        <td><b>Rate Threshold</b></td>
+        <td>The stroke-rate threshold used when APT Trigger includes rate: Rate, Both, or Either.</td>
+      </tr>
+      <tr>
+        <td><b>Power Threshold</b></td>
+        <td>The power threshold used when APT Trigger includes power: Power, Both, or Either.</td>
+      </tr>
+      <tr>
+        <td><b>Min Distance</b></td>
+        <td>Removes very short detected pieces from the piece list and workout summary. This is useful for excluding short warmups, drill segments, or accidental starts.</td>
+      </tr>
+      <tr>
+        <td><b>Auto Piece Time Cutoff</b></td>
+        <td>The amount of inactivity time used to determine that a piece has ended. The logic works retroactively so the inactive time is not counted as part of the piece. The current algorithm also ends a piece after repeated non-qualifying strokes.</td>
+      </tr>
+      <tr>
+        <td><b>Piece Rounding</b></td>
+        <td>Choose whether pieces are summarized by distance or time.</td>
+      </tr>
+      <tr>
+        <td><b>Distance Rounding</b></td>
+        <td>When Piece Rounding is set to Distance, choose the distance increment used to round piece summaries.</td>
+      </tr>
+      <tr>
+        <td><b>Time Rounding</b></td>
+        <td>When Piece Rounding is set to Time, choose the time increment used to round piece summaries.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="card">
+  <h2>Workout Settings</h2>
+  <table>
+    <thead>
+      <tr><th>Setting</th><th>What it does</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Boat Class</b></td>
+        <td>Sets the boat class used in workout metadata and titles. Current options include 1x, 2x, 2-, 4x, 4-, 4+, and 8+.</td>
+      </tr>
+      <tr>
+        <td><b>Speed Cutoff</b></td>
+        <td>Removes data assumed to be inactive so average speed, stroke rate, and heart rate better represent time actually rowing.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="card">
+  <h2>Oar Setup settings on this screen</h2>
+  <table>
+    <thead>
+      <tr><th>Setting</th><th>What it does</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Side</b></td>
+        <td>Selects Port or Starboard so the app interprets the oar motion in the correct direction.</td>
+      </tr>
+      <tr>
+        <td><b>Oar Type</b></td>
+        <td>Selects Scull or Sweep. This is connected to the chosen boat class.</td>
+      </tr>
+      <tr>
+        <td><b>Scale Factor</b></td>
+        <td>Scales measured oar bend into force-related values. It affects force, work, power, and power split, but not the shape of the force curve.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="placeholder">
+  Placeholder: add screenshots of the current Workout Settings screen and examples showing how different APT settings change detected pieces.
+</p>
+
+<footer>© 2026 RitmoForceCurve</footer>
+</div>
+</body>
+</html>

@@ -4,13 +4,11 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>RitmoForceCurve</title>
-
 <style>
   #fc-tabset {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     margin: 1rem;
   }
-
   .fc-title {
     text-align: center;
     font-size: 2.0rem;
@@ -18,7 +16,6 @@
     margin-top: 0.5rem;
     margin-bottom: 1.0rem;
   }
-
   .fc-top-buttons,
   .fc-sub-buttons {
     display: flex;
@@ -26,11 +23,7 @@
     margin-bottom: 1rem;
     flex-wrap: wrap;
   }
-
-  .fc-sub-buttons {
-    margin-top: 0.25rem;
-  }
-
+  .fc-sub-buttons { margin-top: 0.25rem; }
   .fc-tab-button,
   .fc-sub-button {
     padding: 0.4rem 0.8rem;
@@ -40,46 +33,28 @@
     cursor: pointer;
     font-size: 0.9rem;
   }
-
   .fc-tab-button.active,
   .fc-sub-button.active {
     background: #e0e0e0;
     border-color: #888;
     font-weight: 600;
   }
-
   .fc-category-content,
-  .fc-sub-content {
-    display: none;
-  }
-
+  .fc-sub-content { display: none; }
   .fc-category-content.active,
-  .fc-sub-content.active {
-    display: block;
-  }
-
+  .fc-sub-content.active { display: block; }
   .fc-iframe-wrapper {
     width: 100%;
     height: 85vh;
     border: 1px solid #ddd;
     box-sizing: border-box;
   }
-
   .fc-iframe-wrapper iframe {
     width: 100%;
     height: 100%;
     border: none;
   }
-
-  .fc-page-intro {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    font-size: 1.05rem;
-    line-height: 1.6;
-  }
 </style>
-
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var categoryButtons = document.querySelectorAll('.fc-tab-button');
@@ -88,91 +63,46 @@
     function activateSubTab(button) {
       var category = button.closest('.fc-category-content');
       if (!category) return;
-
       var targetId = button.getAttribute('data-target');
       var subButtons = category.querySelectorAll('.fc-sub-button');
       var subContents = category.querySelectorAll('.fc-sub-content');
-
-      subButtons.forEach(function(btn) {
-        btn.classList.toggle('active', btn === button);
-      });
-
-      subContents.forEach(function(content) {
-        content.classList.toggle('active', content.id === targetId);
-      });
+      subButtons.forEach(function(btn) { btn.classList.toggle('active', btn === button); });
+      subContents.forEach(function(content) { content.classList.toggle('active', content.id === targetId); });
     }
 
     function activateCategory(button) {
       var targetId = button.getAttribute('data-target');
-
-      categoryButtons.forEach(function(btn) {
-        btn.classList.toggle('active', btn === button);
-      });
-
-      categories.forEach(function(category) {
-        category.classList.toggle('active', category.id === targetId);
-      });
-
+      categoryButtons.forEach(function(btn) { btn.classList.toggle('active', btn === button); });
+      categories.forEach(function(category) { category.classList.toggle('active', category.id === targetId); });
       var activeCategory = document.getElementById(targetId);
       if (activeCategory) {
         var firstSubButton = activeCategory.querySelector('.fc-sub-button');
-        if (firstSubButton) {
-          activateSubTab(firstSubButton);
-        }
+        if (firstSubButton) activateSubTab(firstSubButton);
       }
     }
 
-    categoryButtons.forEach(function(button) {
-      button.addEventListener('click', function() {
-        activateCategory(this);
-      });
-    });
-
-    document.querySelectorAll('.fc-sub-button').forEach(function(button) {
-      button.addEventListener('click', function() {
-        activateSubTab(this);
-      });
-    });
-
-    if (categoryButtons.length > 0) {
-      activateCategory(categoryButtons[0]);
-    }
+    categoryButtons.forEach(function(button) { button.addEventListener('click', function() { activateCategory(this); }); });
+    document.querySelectorAll('.fc-sub-button').forEach(function(button) { button.addEventListener('click', function() { activateSubTab(this); }); });
+    if (categoryButtons.length > 0) activateCategory(categoryButtons[0]);
   });
 </script>
-
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-
 <div id="fc-tabset">
   <div class="fc-title">RitmoForceCurve</div>
 
   <div class="fc-top-buttons">
     <button class="fc-tab-button" data-target="category-welcome">Welcome</button>
-    <button class="fc-tab-button" data-target="category-mobile-app">Mobile App</button>
-    <button class="fc-tab-button" data-target="category-cloud-analysis">Cloud Analysis</button>
     <button class="fc-tab-button" data-target="category-oar-kit">Oar Kit</button>
+    <button class="fc-tab-button" data-target="category-mobile-app">Mobile App</button>
+    <button class="fc-tab-button" data-target="category-data-metrics">Data &amp; Metrics Guide</button>
+    <button class="fc-tab-button" data-target="category-cloud-analysis">Cloud Analysis</button>
+    <button class="fc-tab-button" data-target="category-pricing">Pricing</button>
   </div>
 
   <div id="category-welcome" class="fc-category-content">
-    <div class="fc-iframe-wrapper">
-      <iframe src="welcome.html"></iframe>
-    </div>
-  </div>
-
-  <div id="category-mobile-app" class="fc-category-content">
-    <div class="fc-page-intro">
-      <h2>Mobile App</h2>
-      <p>
-        Mobile app setup and usage notes can go here. For server-generated workout reports,
-        use the separate Cloud Analysis section.
-      </p>
-    </div>
-  </div>
-
-  <div id="category-cloud-analysis" class="fc-category-content">
-    <div class="fc-iframe-wrapper">
-      <iframe src="cloud_analysis.html"></iframe>
-    </div>
+    <div class="fc-iframe-wrapper"><iframe src="welcome.html"></iframe></div>
   </div>
 
   <div id="category-oar-kit" class="fc-category-content">
@@ -180,20 +110,67 @@
       <button class="fc-sub-button" data-target="tab-oar-kit">Oar Kit</button>
       <button class="fc-sub-button" data-target="tab-oar-kit-videos">Oar Kit Videos</button>
     </div>
-
     <div id="tab-oar-kit" class="fc-sub-content">
-      <div class="fc-iframe-wrapper">
-        <iframe src="instructions.html"></iframe>
-      </div>
+      <div class="fc-iframe-wrapper"><iframe src="instructions.html"></iframe></div>
     </div>
-
     <div id="tab-oar-kit-videos" class="fc-sub-content">
-      <div class="fc-iframe-wrapper">
-        <iframe src="instructions.html#oar-kit-videos"></iframe>
-      </div>
+      <div class="fc-iframe-wrapper"><iframe src="oar_kit_videos.html"></iframe></div>
     </div>
   </div>
-</div>
 
+  <div id="category-mobile-app" class="fc-category-content">
+    <div class="fc-sub-buttons">
+      <button class="fc-sub-button" data-target="tab-mobile-overview">Overview</button>
+      <button class="fc-sub-button" data-target="tab-android-recording">Android Recording</button>
+      <button class="fc-sub-button" data-target="tab-connect-oar-sensors">Connecting Oar Sensors</button>
+      <button class="fc-sub-button" data-target="tab-workout-auto-timer">Workout &amp; Auto Timer Settings</button>
+      <button class="fc-sub-button" data-target="tab-oar-calibration">Sensor Mount / Oar Calibration</button>
+      <button class="fc-sub-button" data-target="tab-sharing-views-settings">Sharing Views, Settings &amp; Calibrations</button>
+      <button class="fc-sub-button" data-target="tab-custom-views">Creating Custom Views</button>
+    </div>
+    <div id="tab-mobile-overview" class="fc-sub-content">
+      <div class="fc-iframe-wrapper"><iframe src="mobile_app.html"></iframe></div>
+    </div>
+    <div id="tab-android-recording" class="fc-sub-content">
+      <div class="fc-iframe-wrapper"><iframe src="android_recording.html"></iframe></div>
+    </div>
+    <div id="tab-connect-oar-sensors" class="fc-sub-content">
+      <div class="fc-iframe-wrapper"><iframe src="connecting_oar_sensors.html"></iframe></div>
+    </div>
+    <div id="tab-workout-auto-timer" class="fc-sub-content">
+      <div class="fc-iframe-wrapper"><iframe src="workout_auto_timer_settings.html"></iframe></div>
+    </div>
+    <div id="tab-oar-calibration" class="fc-sub-content">
+      <div class="fc-iframe-wrapper"><iframe src="oar_calibration.html"></iframe></div>
+    </div>
+    <div id="tab-sharing-views-settings" class="fc-sub-content">
+      <div class="fc-iframe-wrapper"><iframe src="sharing_views_settings_calibrations.html"></iframe></div>
+    </div>
+    <div id="tab-custom-views" class="fc-sub-content">
+      <div class="fc-iframe-wrapper"><iframe src="creating_custom_views.html"></iframe></div>
+    </div>
+  </div>
+
+  <div id="category-data-metrics" class="fc-category-content">
+    <div class="fc-sub-buttons">
+      <button class="fc-sub-button" data-target="tab-data-metrics-guide">Metrics Guide</button>
+      <button class="fc-sub-button" data-target="tab-force-curve-physics">Force Curve Physics</button>
+    </div>
+    <div id="tab-data-metrics-guide" class="fc-sub-content">
+      <div class="fc-iframe-wrapper"><iframe src="data_metrics.html"></iframe></div>
+    </div>
+    <div id="tab-force-curve-physics" class="fc-sub-content">
+      <div class="fc-iframe-wrapper"><iframe src="force_curve_physics.html"></iframe></div>
+    </div>
+  </div>
+
+  <div id="category-cloud-analysis" class="fc-category-content">
+    <div class="fc-iframe-wrapper"><iframe src="cloud_analysis.html"></iframe></div>
+  </div>
+
+  <div id="category-pricing" class="fc-category-content">
+    <div class="fc-iframe-wrapper"><iframe src="pricing.html"></iframe></div>
+  </div>
+</div>
 </body>
 </html>

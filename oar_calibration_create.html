@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calib - create</title>
+<style>
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #1a1a1a;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 1040px;
+    margin: 36px auto 52px;
+    padding: 0 24px 70px;
+  }
+  h1 {
+    font-size: 2.35rem;
+    line-height: 1.12;
+    margin: 0 0 12px;
+    letter-spacing: -0.4px;
+  }
+  h2 {
+    font-size: 1.45rem;
+    margin-top: 34px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-size: 1.08rem;
+    margin: 20px 0 8px;
+  }
+  p {
+    font-size: 1.05rem;
+    margin: 0 0 16px;
+  }
+  ul, ol {
+    font-size: 1.02rem;
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+  li { margin-bottom: 8px; }
+  .lead {
+    font-size: 1.16rem;
+    color: #333;
+    margin-bottom: 24px;
+  }
+  .calib-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 20px;
+    padding: 8px;
+    background: #e9eef5;
+    border: 1px solid #d3dce8;
+    border-radius: 14px;
+  }
+  .calib-tab {
+    flex: 1 1 190px;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 12px;
+    border: 1px solid #c3cfdd;
+    border-radius: 10px;
+    background: #fff;
+    color: #0b5cad;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .calib-tab.active {
+    background: #1769aa;
+    border-color: #1769aa;
+    color: #fff;
+  }
+  .calib-tab:hover { text-decoration: underline; }
+  .card {
+    background: white;
+    border: 1px solid #dfe5ee;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 18px 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .note {
+    border-left: 4px solid #386573;
+    background: #eef6f8;
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin: 16px 0;
+  }
+  .warning {
+    border-left: 4px solid #d98b24;
+    background: #fff7ea;
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin: 16px 0;
+  }
+  .button-link, .app-tab-button {
+    display: inline-block;
+    margin: 4px 8px 10px 0;
+    padding: 10px 14px;
+    border: 1px solid #b7c6d6;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #0b5cad;
+    text-decoration: none;
+    font-weight: 650;
+  }
+  .app-tab-button {
+    color: #fff;
+    background: #1769aa;
+    border-color: #1769aa;
+    min-width: 150px;
+    text-align: center;
+  }
+  .button-link:hover, .app-tab-button:hover { text-decoration: underline; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+    margin: 14px 0 22px;
+  }
+  th, td {
+    border: 1px solid #dfe5ee;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: #eef3f7; }
+  code {
+    background: #eef3f7;
+    padding: 1px 4px;
+    border-radius: 4px;
+  }
+  figure {
+    margin: 18px 0;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #dfe5ee;
+    border-radius: 12px;
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  figcaption {
+    font-size: 0.95rem;
+    color: #4d5964;
+    margin-top: 10px;
+  }
+  .back-link {
+    margin-top: 28px;
+  }
+  footer {
+    margin-top: 34px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+</style>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="container">
+<h1>Calib - create</h1>
+<nav class="calib-tabs" aria-label="Sensor Mount / Oar Calibration app tabs">
+<a class="calib-tab" href="oar_calibration_mnt_angle_check.html">Mnt Ang check</a>
+<a class="calib-tab" href="oar_calibration_select_edit.html">Calib - sel/edit</a>
+<a class="calib-tab" href="oar_calibration_manage.html">Calib - manage</a>
+<a class="calib-tab active" href="oar_calibration_create.html">Calib - create</a>
+</nav>
+
+<p class="lead">
+  This tab creates a calibration from a known-weight bend test. Many rowers will never need this page if they use the default calibration, a coach-supplied calibration, or a calibration shared from another device.
+</p>
+
+<div class="card">
+  <h2>When to use it</h2>
+  <p>
+    Use <b>Calib - create</b> when you want to create a new Scale Factor from a measured oar setup and a known weight. This is the most technical calibration workflow because it requires both geometry measurements and a controlled bend test.
+  </p>
+</div>
+
+<div class="card">
+  <h2>Basic workflow</h2>
+  <ol>
+    <li>Enter or scan the oar setup, including sensor positions, inboard, outboard, load point, support point, and shaft profile.</li>
+    <li>Enter the known calibration weight and units.</li>
+    <li>Connect the two sensors and position the oar in the calibration setup.</li>
+    <li>Use <b>Tare</b> to zero the unloaded bend reading.</li>
+    <li>Apply the known weight and let the live values settle.</li>
+    <li>Review bend, calibration moment, <b>Cperm</b>, <b>Keff</b>, and <b>SF</b>.</li>
+    <li>Press <b>Save</b> to store the completed calibration.</li>
+  </ol>
+</div>
+
+<figure>
+  <img src="create_test_7pos.png" alt="Oar measurement reference guide for creating a calibration with a known-weight test">
+  <figcaption>
+    The Create workflow uses seven reference points: <b>Blade Tip</b>, <b>L1 load point</b>, <b>S1 sensor</b>, <b>Button reference face</b>, <b>S2 sensor</b>, <b>L2 support point</b>, and <b>Handle End</b>. L1 is where the known load is applied. L2 is the second support/restraint. The calibration setup requires the order <b>Load L1 &lt; Outboard &lt; Support L2</b> so the known load and supports create the bend used to solve for the calibration.
+  </figcaption>
+</figure>
+
+<div class="card">
+  <h2>Saving the result</h2>
+  <p>
+    After saving, the result becomes a saved calibration that can be selected, edited, exported, printed as a label, or scanned back into another device. The saved calibration can then supply the Scale Factor used for force, work, power, and pSplit magnitude.
+  </p>
+</div>
+
+<p class="back-link"><a class="button-link" href="oar_calibration.html">Back to Sensor Mount / Oar Calibration overview</a></p>
+
+<footer>© 2026 RitmoForceCurve</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data &amp; Metrics Guide</title>
+<style>
+  :root {
+    --bg: #f7f9fc;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #e1e5ea;
+    --soft: #eef3f7;
+    --accent: #386573;
+  }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1020px;
+    margin: 54px auto 70px auto;
+    padding: 0 22px;
+  }
+
+  h1 {
+    font-size: 2.45rem;
+    letter-spacing: -0.5px;
+    text-align: center;
+    margin: 0 0 12px 0;
+  }
+
+  .intro {
+    max-width: 790px;
+    margin: 0 auto 32px auto;
+    text-align: center;
+    font-size: 1.12rem;
+    color: #333;
+  }
+
+  h2 {
+    font-size: 1.65rem;
+    margin: 34px 0 12px 0;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin: 26px 0 10px 0;
+  }
+
+  p, li {
+    font-size: 1.02rem;
+  }
+
+  .note,
+  .legacy-note {
+    background: var(--soft);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 20px 0;
+    color: #27353a;
+  }
+
+  .category-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin: 24px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin-top: 14px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 760px;
+    background: #fff;
+  }
+
+  th, td {
+    border-bottom: 1px solid var(--border);
+    padding: 11px 12px;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  th {
+    background: #f1f4f7;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  td:first-child {
+    font-weight: 650;
+    width: 22%;
+  }
+
+  td:nth-child(2) {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: 0.96rem;
+    white-space: nowrap;
+    color: #1d5061;
+    width: 14%;
+  }
+
+  td:nth-child(3) {
+    width: 22%;
+    color: #333;
+  }
+
+  .small {
+    color: var(--muted);
+    font-size: 0.94rem;
+  }
+
+  .anchor-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 18px 0 28px 0;
+  }
+
+  .anchor-links a {
+    color: #0066cc;
+    text-decoration: none;
+    border: 1px solid #cfd8e2;
+    background: #fff;
+    border-radius: 999px;
+    padding: 0.42rem 0.75rem;
+    font-weight: 600;
+  }
+
+  .anchor-links a:hover {
+    text-decoration: underline;
+  }
+
+  footer {
+    margin-top: 42px;
+    color: #666;
+    font-size: 0.92rem;
+    text-align: center;
+  }
+</style>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="container">
+  <h1>Data &amp; Metrics Guide</h1>
+  <p class="intro">
+    Definitions for the GPS, oar-derived, and time-based measurements shown in the RitmoForceCurve app.
+    The names and abbreviations below are aligned to the current Swift metric labels used in the app.
+  </p>
+
+  <div class="anchor-links">
+    <a href="#gps-metrics">GPS metrics</a>
+    <a href="#oar-metrics">Oar metrics</a>
+    <a href="#time-metrics">Time metrics</a>
+    <a href="#scale-factor-discussion">Scale Factor discussion</a>
+  </div>
+
+  <div class="note">
+    <strong>How to read the table:</strong> “App label” is the short label shown in the app display. “App name” is the longer name used in the metric picker or data views.
+  </div>
+
+  <section id="gps-metrics" class="category-card">
+    <h2>GPS metrics</h2>
+    <p class="small">These values are derived from GPS/location distance and speed.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>App label</th>
+            <th>App name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Distance</td>
+            <td>dist.</td>
+            <td>Distance</td>
+            <td>Total distance recorded for the workout or selected interval, shown in meters.</td>
+          </tr>
+          <tr>
+            <td>500m Split</td>
+            <td>split</td>
+            <td>500mSplit</td>
+            <td>Current pace expressed as time per 500 meters. This is calculated from GPS speed and shown as minutes:seconds.</td>
+          </tr>
+          <tr>
+            <td>Piece Avg Split</td>
+            <td>pAvgS</td>
+            <td>pieceAvgSplit</td>
+            <td>Average 500m split for the active piece, calculated from piece distance divided by piece elapsed time.</td>
+          </tr>
+          <tr>
+            <td>Piece Distance</td>
+            <td>pDist</td>
+            <td>pieceDistance</td>
+            <td>Distance covered during the current detected piece, shown in meters.</td>
+          </tr>
+          <tr>
+            <td>Speed</td>
+            <td>speed</td>
+            <td>speed</td>
+            <td>Current GPS speed, shown in meters per second in data/detail views. For rowing pace, the app usually displays 500m split instead.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="oar-metrics" class="category-card">
+    <h2>Oar metrics</h2>
+    <p class="small">These values come from oar motion and oar-bend measurements from the sensor kit.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>App label</th>
+            <th>App name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Power</td>
+            <td>pwr</td>
+            <td>Power</td>
+            <td>Force-curve-derived rowing power. It is scaled by the workout scale factor, so changing scale factor changes Power, Work, and pSplit values.</td>
+          </tr>
+          <tr>
+            <td>Max Bend</td>
+            <td>maxBnd</td>
+            <td>maxBend</td>
+            <td>Maximum oar-bend value during the drive, derived from the difference in rotation measured by the sensors on the oar.</td>
+          </tr>
+          <tr>
+            <td>Power Split</td>
+            <td>pSplit</td>
+            <td>powerSplit</td>
+            <td>Effort-based split derived from oar work/power rather than GPS boat speed. It is meant to track rowing effort, so it can differ from GPS split in wind, current, or other conditions.</td>
+          </tr>
+          <tr>
+            <td>Stroke Length</td>
+            <td>strLen</td>
+            <td>strokeLength</td>
+            <td>Arc length of the drive, measured from when oar bend first reaches about 5% of max bend to when it falls back to about 5% near the finish. It excludes Catch Miss and Finish Miss.</td>
+          </tr>
+          <tr>
+            <td>Catch Miss</td>
+            <td>catchM</td>
+            <td>catchMiss</td>
+            <td>Stroke arc missed at the beginning of the drive, from the fully squared blade moving sternward until about 5% of max bend has developed.</td>
+          </tr>
+          <tr>
+            <td>Finish Miss</td>
+            <td>finishM</td>
+            <td>finishMiss</td>
+            <td>Stroke arc missed at the finish, from when oar bend drops to about 5% of max bend until the blade starts to feather.</td>
+          </tr>
+          <tr>
+            <td>Ratio</td>
+            <td>ratio</td>
+            <td>Ratio</td>
+            <td>Stroke duration divided by drive time. Drive time is based on the Stroke Length interval and does not include Catch Miss or Finish Miss.</td>
+          </tr>
+          <tr>
+            <td>Max Oar Rotation Speed</td>
+            <td>maxRot</td>
+            <td>max oar rotation speed</td>
+            <td>Maximum rotational speed of the oar during the drive.</td>
+          </tr>
+          <tr>
+            <td>Work During Drive</td>
+            <td>drivework</td>
+            <td>work during drive</td>
+            <td>Work done by the rower during the drive portion of the stroke.</td>
+          </tr>
+          <tr>
+            <td>Percent Stroke Length at 50% Work</td>
+            <td>midWork</td>
+            <td>percent Stroke Length at 50% work</td>
+            <td>Where the median of work distribution occurs, expressed as a percentage of stroke length. Less than 50 means the work distribution is more front-loaded.</td>
+          </tr>
+          <tr>
+            <td>Percent Stroke Length at Max Bend</td>
+            <td>maxBper</td>
+            <td>percent Stroke Length at maxBend</td>
+            <td>Where Max Bend occurs, expressed as a percentage of stroke length.</td>
+          </tr>
+          <tr>
+            <td>Max Force</td>
+            <td>MaxF</td>
+            <td>Max Force</td>
+            <td>Maximum scaled force value shown in workout detail views. It is closely related to Max Bend but displayed as a force value after scaling.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="time-metrics" class="category-card">
+    <h2>Time metrics</h2>
+    <p class="small">These values come from workout timing, piece timing, stroke timing, and heart-rate data.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>App label</th>
+            <th>App name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Workout Time</td>
+            <td>wTime</td>
+            <td>WorkoutTime</td>
+            <td>Elapsed time since the start of the workout, shown as hours:minutes.</td>
+          </tr>
+          <tr>
+            <td>Piece Time</td>
+            <td>pTime</td>
+            <td>pieceTime</td>
+            <td>Elapsed time during the current detected piece, shown as minutes:seconds.</td>
+          </tr>
+          <tr>
+            <td>Stroke Rate</td>
+            <td>SR</td>
+            <td>strokeRate</td>
+            <td>Stroke rate in strokes per minute. The app can show half-rate increments using a small “1/2” marker.</td>
+          </tr>
+          <tr>
+            <td>Heart Rate</td>
+            <td>HR</td>
+            <td>heartRate</td>
+            <td>Heart rate in beats per minute when heart-rate data is available.</td>
+          </tr>
+          <tr>
+            <td>Time</td>
+            <td>Time</td>
+            <td>Time</td>
+            <td>Elapsed time shown in workout totals and detail tables for a session, active rowing, piece, or selected stroke group.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="scale-factor-discussion" class="category-card">
+    <h2>Scale Factor discussion</h2>
+    <p>
+      Scale Factor is not a separate metric. It is the multiplier used to convert measured oar bend into force. Because the system is treated as linear, this one number accounts for oar stiffness, sensor spacing, and sensor placement relative to the pin.
+    </p>
+    <p>
+      Changing Scale Factor changes the magnitude of effort-related values such as Force, Work, Power, and pSplit. It does not change the force-curve shape or metrics that do not depend on force magnitude, such as Ratio, Catch Miss, Finish Miss, midWork, maxBper, Stroke Length, GPS distance, GPS split, or Stroke Rate.
+    </p>
+    <p>
+      The goal of calibration is to make effort-based values comparable across different oars and sensor mounts. A more accurate Scale Factor helps a rower compare total effort, work per stroke, power, and power split from session to session or between setups.
+    </p>
+  </section>
+
+  <footer>
+    © 2026 RitmoForceCurve
+  </footer>
+</div>
+</body>
+</html>

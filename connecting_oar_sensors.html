@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connecting Oar Sensors</title>
+<style>
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #1a1a1a;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 920px;
+    margin: 52px auto;
+    padding: 0 24px 70px;
+  }
+  h1 {
+    font-size: 2.35rem;
+    line-height: 1.12;
+    margin: 0 0 12px;
+    letter-spacing: -0.4px;
+  }
+  h2 {
+    font-size: 1.45rem;
+    margin-top: 34px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-size: 1.08rem;
+    margin: 22px 0 8px;
+  }
+  p {
+    font-size: 1.05rem;
+    margin: 0 0 16px;
+  }
+  ul, ol {
+    font-size: 1.02rem;
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+  li { margin-bottom: 8px; }
+  .lead {
+    font-size: 1.16rem;
+    color: #333;
+    margin-bottom: 24px;
+  }
+  .card {
+    background: white;
+    border: 1px solid #dfe5ee;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 18px 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .placeholder {
+    border-left: 4px solid #9aa9b7;
+    background: #eef3f7;
+    padding: 12px 14px;
+    border-radius: 8px;
+    color: #3e4b56;
+    font-style: italic;
+  }
+  .button-link {
+    display: inline-block;
+    margin: 4px 8px 14px 0;
+    padding: 10px 14px;
+    border: 1px solid #b7c6d6;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #0b5cad;
+    text-decoration: none;
+    font-weight: 650;
+  }
+  .button-link:hover { text-decoration: underline; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+    margin: 14px 0 22px;
+  }
+  th, td {
+    border: 1px solid #dfe5ee;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: #eef3f7; }
+  footer {
+    margin-top: 46px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+</style>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="container">
+
+<h1>Connecting Oar Sensors</h1>
+<p class="lead">
+  Use this page for the app-side process of finding and connecting the Bluetooth oar sensors before launching.
+</p>
+<div class="card">
+  <h2>Basic connection flow</h2>
+  <ol>
+    <li>Turn on both oar sensors before placing the oars in the oarlocks or pushing off from the dock.</li>
+    <li>Open the app and go to <b>Main Menu → Connect Oar Sensors</b>.</li>
+    <li>Tap <b>Turn on scanning</b> to search for nearby devices.</li>
+    <li>If pairing for the first time, disable <b>Scan only for saved devices</b>.</li>
+    <li>Select both sensors when they appear. They may appear by MAC address.</li>
+    <li>Tap <b>DONE</b>.</li>
+    <li>After the sensors are connected, go to <b>Oar Sensor Setup</b> to confirm side, orientation, and alignment.</li>
+  </ol>
+</div>
+<div class="card">
+  <h2>After connecting</h2>
+  <p>
+    Choose port or starboard, then check that both sensors are reasonably aligned before launch. The app can auto-calibrate while rowing, but the sensors should start close enough that the readings are stable.
+  </p>
+</div>
+<p class="placeholder">
+  Placeholder: add current app screenshots for scanning, saved-device mode, selected sensors, and the connected-sensor confirmation screen.
+</p>
+
+<footer>© 2026 RitmoForceCurve</footer>
+</div>
+</body>
+</html>

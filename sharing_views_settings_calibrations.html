@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharing Views, Settings & Calibrations</title>
+<style>
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #1a1a1a;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 960px;
+    margin: 52px auto;
+    padding: 0 24px 70px;
+  }
+  h1 {
+    font-size: 2.35rem;
+    line-height: 1.12;
+    margin: 0 0 12px;
+    letter-spacing: -0.4px;
+  }
+  h2 {
+    font-size: 1.45rem;
+    margin-top: 34px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-size: 1.08rem;
+    margin: 20px 0 8px;
+  }
+  p {
+    font-size: 1.05rem;
+    margin: 0 0 16px;
+  }
+  ul, ol {
+    font-size: 1.02rem;
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+  li { margin-bottom: 8px; }
+  .lead {
+    font-size: 1.16rem;
+    color: #333;
+    margin-bottom: 24px;
+  }
+  .card {
+    background: white;
+    border: 1px solid #dfe5ee;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 18px 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .note {
+    border-left: 4px solid #386573;
+    background: #eef6f8;
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin: 16px 0;
+  }
+  .button-link {
+    display: inline-block;
+    margin: 4px 8px 14px 0;
+    padding: 10px 14px;
+    border: 1px solid #b7c6d6;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #0b5cad;
+    text-decoration: none;
+    font-weight: 650;
+  }
+  .button-link:hover { text-decoration: underline; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+    margin: 14px 0 22px;
+  }
+  th, td {
+    border: 1px solid #dfe5ee;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: #eef3f7; }
+  footer {
+    margin-top: 46px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+</style>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="container">
+
+<h1>Sharing Views, Settings &amp; Calibrations</h1>
+<p class="lead">
+  RitmoForceCurve includes separate sharing tools for live workout views, workout settings, and oar calibrations. The sharing method depends on what you are trying to move to another phone, rower, or boat.
+</p>
+
+<div class="card">
+  <h2>Where to start in the app</h2>
+  <table>
+    <tr><th>What you want to share</th><th>Where in the app</th><th>Best method</th></tr>
+    <tr>
+      <td>Custom live metric views</td>
+      <td><b>Home → Share / Import Views / Settings</b></td>
+      <td>Generate share text, then use Share or Copy to Clipboard.</td>
+    </tr>
+    <tr>
+      <td>Workout settings</td>
+      <td><b>Home → Share / Import Views / Settings</b></td>
+      <td>Include workout settings in the generated share text.</td>
+    </tr>
+    <tr>
+      <td>Oar calibrations</td>
+      <td><b>Sensor Mount / Oar Calibration → Calib - manage</b></td>
+      <td>Export/import CSV, create label PDF, or scan a QR label.</td>
+    </tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Share custom views and workout settings</h2>
+  <p>
+    From the Home screen, tap <b>Share / Import Views / Settings</b>. The app then asks whether you want to share or import.
+  </p>
+  <ol>
+    <li>Choose <b>Share Views / Settings</b>.</li>
+    <li>Select which saved custom views to include.</li>
+    <li>Choose whether to include current workout settings.</li>
+    <li>Optional: enter a short prefix. The prefix is added to imported view names on the receiving phone, which can help identify a coach/team/rower source.</li>
+    <li>Tap <b>Generate Share Text</b>.</li>
+    <li>Use <b>Share</b> or <b>Copy to Clipboard</b> to send the generated text.</li>
+  </ol>
+  <div class="note">
+    This method is text-based. It is intended for custom view layouts and workout settings, not for oar calibration records.
+  </div>
+</div>
+
+<div class="card">
+  <h2>Import custom views and workout settings</h2>
+  <ol>
+    <li>From the Home screen, tap <b>Share / Import Views / Settings</b>.</li>
+    <li>Choose <b>Import Views / Settings</b>.</li>
+    <li>Paste the shared text into the import box.</li>
+    <li>Tap <b>Read Import Text</b>.</li>
+    <li>Choose whether it is OK to import views, import settings, and make imported views active.</li>
+    <li>Complete the import after reviewing the preview.</li>
+  </ol>
+  <p>
+    Imported view names can include the sender’s prefix. This helps avoid confusion when your own views and someone else’s shared views are both present.
+  </p>
+</div>
+
+<div class="card">
+  <h2>Share oar calibrations</h2>
+  <p>
+    Oar calibrations are handled separately from live view/settings sharing because calibrations contain oar geometry, sensor locations, calibration values, and Scale Factor information.
+  </p>
+  <ol>
+    <li>Open <b>Sensor Mount / Oar Calibration</b>.</li>
+    <li>Go to <b>Calib - manage</b>.</li>
+    <li>Use <b>Export CSV</b> to share calibration records as a file, or <b>Import CSV</b> to bring them onto another phone.</li>
+    <li>Use <b>Create Label PDF</b> to print labels for selected calibrations.</li>
+    <li>Use <b>Scan Label</b> to read a QR label and add or update a saved calibration.</li>
+  </ol>
+  <p>
+    Label PDFs are useful when a calibration belongs to a specific oar. The printed label can stay with the oar, and another phone can later scan the QR code to recover the calibration.
+  </p>
+  <a class="button-link" href="oar_calibration.html#calib-manage">Open calibration sharing instructions</a>
+</div>
+
+<div class="card">
+  <h2>What is included</h2>
+  <table>
+    <tr><th>Shared item</th><th>Typical contents</th></tr>
+    <tr>
+      <td>Custom views</td>
+      <td>Saved view names, templates, slot choices, and selected metrics.</td>
+    </tr>
+    <tr>
+      <td>Workout settings</td>
+      <td>Oar setup values, Auto Piece Timer settings, rounding settings, boat class, and speed cutoff.</td>
+    </tr>
+    <tr>
+      <td>Calibration CSV / QR label</td>
+      <td>Calibration name, rig, side, S1/S2, load/support points when present, inboard, outboard, length, Cperm, Scale Factor, and shaft-profile information.</td>
+    </tr>
+  </table>
+</div>
+
+<footer>© 2026 RitmoForceCurve</footer>
+</div>
+</body>
+</html>

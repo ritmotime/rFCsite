@@ -1,0 +1,518 @@
+:root {
+  --rfc-bg: #1f2021;
+  --rfc-bg-soft: #272829;
+  --rfc-bg-lift: #303132;
+  --rfc-surface: #333435;
+  --rfc-surface-strong: #3c3928;
+  --rfc-surface-muted: #2a2b2c;
+  --rfc-border: #50514f;
+  --rfc-border-strong: #777158;
+  --rfc-text: #fff1b8;
+  --rfc-muted: #e3d38d;
+  --rfc-heading: #fff7cc;
+  --rfc-accent: #d8b64a;
+  --rfc-accent-strong: #f0cf62;
+  --rfc-link: #ffe38b;
+  --rfc-link-hover: #fff5c7;
+  --rfc-shadow: 0 14px 34px rgba(0, 0, 0, 0.38);
+  --rfc-shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.28);
+  --rfc-radius: 16px;
+  --rfc-radius-small: 10px;
+  --rfc-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+html {
+  background: var(--rfc-bg) !important;
+  color: var(--rfc-text) !important;
+}
+
+body {
+  margin: 0;
+  font-family: var(--rfc-font) !important;
+  background:
+    radial-gradient(circle at top left, rgba(216, 182, 74, 0.16), transparent 30rem),
+    linear-gradient(180deg, #2a2b2c 0%, var(--rfc-bg) 100%) !important;
+  color: var(--rfc-text) !important;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Dark theme text reset, including old exported HTML with inline colors. */
+body *:not(img):not(svg):not(path):not(video):not(iframe) {
+  color: var(--rfc-text) !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+/* Main framed pages */
+.container {
+  max-width: 980px !important;
+  margin: 34px auto !important;
+  padding: 32px 34px 52px !important;
+  background: rgba(51, 52, 53, 0.94) !important;
+  border: 1px solid var(--rfc-border) !important;
+  border-radius: var(--rfc-radius) !important;
+  box-shadow: var(--rfc-shadow) !important;
+}
+
+@media (max-width: 720px) {
+  .container {
+    margin: 14px !important;
+    padding: 22px 18px 36px !important;
+    border-radius: 14px !important;
+  }
+}
+
+h1, h2, h3, h4, .fc-title {
+  font-family: var(--rfc-font) !important;
+  color: var(--rfc-heading) !important;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem) !important;
+  line-height: 1.08 !important;
+  margin-top: 0 !important;
+}
+
+h2 {
+  color: var(--rfc-heading) !important;
+  border-bottom: 1px solid var(--rfc-border);
+  padding-bottom: 0.35rem;
+}
+
+h3 {
+  color: var(--rfc-heading) !important;
+}
+
+p, li, td, th, span, div {
+  font-family: var(--rfc-font) !important;
+}
+
+p, li, td {
+  color: var(--rfc-text) !important;
+}
+
+.lead {
+  color: var(--rfc-muted) !important;
+  font-size: 1.15rem !important;
+}
+
+.highlight, b, strong {
+  color: var(--rfc-heading) !important;
+}
+
+a {
+  color: var(--rfc-link) !important;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--rfc-link-hover) !important;
+}
+
+.card, .note, .placeholder {
+  background: var(--rfc-bg-lift) !important;
+  border: 1px solid var(--rfc-border) !important;
+  border-radius: var(--rfc-radius-small) !important;
+  box-shadow: var(--rfc-shadow-soft) !important;
+}
+
+.card {
+  padding: 20px 22px !important;
+  margin: 20px 0 !important;
+}
+
+.note, .placeholder {
+  border-left: 5px solid var(--rfc-accent-strong) !important;
+  color: var(--rfc-muted) !important;
+  padding: 14px 16px !important;
+}
+
+.button-link,
+.app-button,
+a.button-link,
+a.app-button,
+.fc-tab-button,
+.fc-sub-button,
+button,
+input[type="button"],
+input[type="submit"] {
+  font-family: var(--rfc-font) !important;
+  border-radius: 999px !important;
+  border: 1px solid var(--rfc-border-strong) !important;
+  background: linear-gradient(180deg, #40413f 0%, #292a2b 100%) !important;
+  color: var(--rfc-heading) !important;
+  font-weight: 750 !important;
+  text-decoration: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.28) !important;
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.button-link,
+.app-button,
+a.button-link,
+a.app-button {
+  display: inline-block !important;
+  padding: 10px 16px !important;
+  margin: 5px 8px 12px 0 !important;
+}
+
+.button-link:hover,
+.app-button:hover,
+.fc-tab-button:hover,
+.fc-sub-button:hover,
+button:hover {
+  background: linear-gradient(180deg, #514e39 0%, #373425 100%) !important;
+  color: var(--rfc-link-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.34) !important;
+}
+
+table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  width: 100%;
+  background: var(--rfc-surface) !important;
+  border: 1px solid var(--rfc-border) !important;
+  border-radius: var(--rfc-radius-small) !important;
+  overflow: hidden;
+  box-shadow: var(--rfc-shadow-soft) !important;
+}
+
+th, td {
+  border: 0 !important;
+  border-bottom: 1px solid var(--rfc-border) !important;
+  padding: 11px 13px !important;
+  vertical-align: top;
+}
+
+tr:last-child td {
+  border-bottom: 0 !important;
+}
+
+th {
+  background: var(--rfc-surface-strong) !important;
+  color: var(--rfc-heading) !important;
+  font-weight: 800 !important;
+}
+
+tr:nth-child(even) td {
+  background: rgba(255, 241, 184, 0.035) !important;
+}
+
+footer {
+  color: var(--rfc-muted) !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Main tab shell */
+#fc-tabset {
+  font-family: var(--rfc-font) !important;
+  margin: 0 auto !important;
+  padding: 22px !important;
+  max-width: 1320px;
+}
+
+.fc-title {
+  font-size: clamp(2rem, 4vw, 2.8rem) !important;
+  font-weight: 850 !important;
+  margin: 6px 0 18px !important;
+}
+
+.fc-top-buttons,
+.fc-sub-buttons {
+  background: rgba(38, 39, 40, 0.92) !important;
+  border: 1px solid var(--rfc-border) !important;
+  border-radius: var(--rfc-radius) !important;
+  padding: 10px !important;
+  box-shadow: var(--rfc-shadow-soft) !important;
+}
+
+.fc-tab-button,
+.fc-sub-button {
+  cursor: pointer;
+  font-size: 0.92rem !important;
+  padding: 9px 14px !important;
+}
+
+.fc-tab-button.active,
+.fc-sub-button.active {
+  background: linear-gradient(180deg, #6a6037 0%, #4d4424 100%) !important;
+  border-color: var(--rfc-accent-strong) !important;
+  color: var(--rfc-heading) !important;
+}
+
+.fc-iframe-wrapper {
+  border: 1px solid var(--rfc-border) !important;
+  border-radius: var(--rfc-radius) !important;
+  overflow: hidden;
+  background: var(--rfc-bg-soft) !important;
+  box-shadow: var(--rfc-shadow) !important;
+}
+
+.fc-iframe-wrapper iframe {
+  background: var(--rfc-bg-soft) !important;
+}
+
+/* Older Cocoa-generated instruction page cleanup */
+p[class^="p"],
+li[class^="li"],
+span[class^="s"] {
+  font-family: var(--rfc-font) !important;
+  color: var(--rfc-text) !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+p[class^="p"] {
+  margin-bottom: 0.85rem !important;
+}
+
+/* Emphasis blocks */
+.callout,
+.tip,
+.warning,
+.info-box {
+  background: var(--rfc-surface-strong) !important;
+  border: 1px solid #6e6236 !important;
+  border-left: 5px solid var(--rfc-accent-strong) !important;
+  border-radius: var(--rfc-radius-small) !important;
+  padding: 14px 16px !important;
+  margin: 16px 0 !important;
+}
+
+code, pre {
+  background: #171819 !important;
+  color: var(--rfc-heading) !important;
+  border: 1px solid var(--rfc-border) !important;
+  border-radius: 8px;
+}
+
+hr {
+  border: 0 !important;
+  border-top: 1px solid var(--rfc-border) !important;
+}
+
+/* --- Final dark contrast patch: prevent light panels under light-yellow text --- */
+html,
+body,
+body[style] {
+  background-color: var(--rfc-bg) !important;
+  color: var(--rfc-text) !important;
+}
+
+/* Override old page-specific white/light backgrounds, including inline styles. */
+body [style*="background: white" i],
+body [style*="background:white" i],
+body [style*="background-color: white" i],
+body [style*="background-color:white" i],
+body [style*="background: #fff" i],
+body [style*="background:#fff" i],
+body [style*="background-color: #fff" i],
+body [style*="background-color:#fff" i],
+body [style*="background: #ffffff" i],
+body [style*="background:#ffffff" i],
+body [style*="background-color: #ffffff" i],
+body [style*="background-color:#ffffff" i] {
+  background: var(--rfc-surface) !important;
+  background-color: var(--rfc-surface) !important;
+}
+
+/* Common content panels that previously used white or pale blue/yellow backgrounds. */
+main,
+section,
+article,
+nav,
+header,
+footer,
+.container,
+.container-fluid,
+.card,
+.category-card,
+.example,
+.formula,
+.warning,
+.intro,
+.top-example,
+.table-wrap,
+.form-group,
+.crosstalk-input,
+.crosstalk-input-select,
+.html-widget,
+.html-fill-item,
+.plotly,
+.well,
+.panel,
+.panel-body,
+.tab-content,
+.tab-pane,
+blockquote {
+  background-color: var(--rfc-surface) !important;
+  color: var(--rfc-text) !important;
+  border-color: var(--rfc-border) !important;
+}
+
+/* Make notes/callouts readable without using white or pale backgrounds. */
+.note,
+.placeholder,
+.warning,
+.example,
+.formula,
+.intro,
+.top-example,
+.callout,
+.tip,
+.info-box {
+  background: var(--rfc-bg-lift) !important;
+  color: var(--rfc-text) !important;
+  border-color: var(--rfc-border-strong) !important;
+}
+
+/* Tables and exported workout report widgets. */
+table,
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th,
+.table,
+.table-striped,
+.table-condensed,
+.table-hover,
+.dataTable,
+.dataTables_wrapper {
+  background-color: var(--rfc-surface) !important;
+  color: var(--rfc-text) !important;
+  border-color: var(--rfc-border) !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd),
+.table-striped > tbody > tr:nth-of-type(odd) > td,
+tr:nth-child(odd) td {
+  background-color: var(--rfc-surface-muted) !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(even),
+.table-striped > tbody > tr:nth-of-type(even) > td,
+tr:nth-child(even) td {
+  background-color: var(--rfc-bg-lift) !important;
+}
+
+/* Keep form controls readable if any appear in generated reports. */
+input,
+select,
+textarea,
+button {
+  background-color: #2a2b2c !important;
+  color: var(--rfc-text) !important;
+  border-color: var(--rfc-border-strong) !important;
+}
+
+option {
+  background-color: #2a2b2c !important;
+  color: var(--rfc-text) !important;
+}
+
+/* Force old dark/blue text rules onto the dark theme. */
+body [style*="color: black" i],
+body [style*="color:black" i],
+body [style*="color: #000" i],
+body [style*="color:#000" i],
+body [style*="color: rgb(0" i],
+body [style*="color: #333" i],
+body [style*="color:#333" i],
+body [style*="color: #444" i],
+body [style*="color:#444" i],
+body [style*="color: #666" i],
+body [style*="color:#666" i] {
+  color: var(--rfc-text) !important;
+}
+
+/* Captions and secondary text should stay legible, just slightly muted. */
+.small,
+caption,
+figcaption,
+.control-label,
+.fc-help-note,
+.fc-video-desc {
+  color: var(--rfc-muted) !important;
+}
+
+/* --- Button/link contrast patch: page-specific button classes that were still white --- */
+a.primary-link,
+a.example-link,
+.primary-link,
+.example-link,
+.anchor-links a,
+a.calib-tab,
+.calib-tab,
+a.app-tab-button,
+.app-tab-button,
+a.back-link,
+.back-link,
+a.video-link,
+.video-link,
+a.button-link,
+.button-link,
+a.app-button,
+.app-button,
+.fc-tab-button,
+.fc-sub-button,
+button,
+input[type="button"],
+input[type="submit"] {
+  background: linear-gradient(180deg, #4a4b49 0%, #2b2c2d 100%) !important;
+  background-color: #2b2c2d !important;
+  color: var(--rfc-heading) !important;
+  border: 1px solid var(--rfc-border-strong) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.32) !important;
+  text-decoration: none !important;
+  font-weight: 750 !important;
+}
+
+a.primary-link:hover,
+a.example-link:hover,
+.anchor-links a:hover,
+a.calib-tab:hover,
+a.app-tab-button:hover,
+a.back-link:hover,
+a.video-link:hover,
+a.button-link:hover,
+a.app-button:hover,
+.fc-tab-button:hover,
+.fc-sub-button:hover,
+button:hover {
+  background: linear-gradient(180deg, #5a5438 0%, #393520 100%) !important;
+  background-color: #393520 !important;
+  color: var(--rfc-link-hover) !important;
+  text-decoration: none !important;
+}
+
+/* Make any button-like link containers dark too. */
+.anchor-links,
+.calib-tabs,
+.fc-top-buttons,
+.fc-sub-buttons,
+.top-example {
+  background-color: transparent !important;
+}
+
+/* Extra safety for links styled as pills/buttons but without one of the known classes. */
+a[style*="background" i],
+a[style*="border" i] {
+  background: linear-gradient(180deg, #4a4b49 0%, #2b2c2d 100%) !important;
+  background-color: #2b2c2d !important;
+  color: var(--rfc-heading) !important;
+  border-color: var(--rfc-border-strong) !important;
+}

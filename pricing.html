@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing - RitmoForceCurve</title>
+<link rel="stylesheet" href="site.css">
+<style>
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .price-card {
+    background: var(--rfc-bg-lift);
+    border: 1px solid var(--rfc-border);
+    border-radius: var(--rfc-radius);
+    padding: 22px;
+    box-shadow: var(--rfc-shadow-soft);
+  }
+  .price-card h2 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--rfc-border);
+    padding-bottom: 0.35rem;
+  }
+  .price-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rfc-border);
+  }
+  .price-line:last-child { border-bottom: 0; }
+  .price-name { font-weight: 700; }
+  .price-value { font-weight: 850; color: var(--rfc-heading) !important; white-space: nowrap; }
+  .sale-price { font-size: 1.4rem; color: var(--rfc-accent-strong) !important; }
+  .regular-price { text-decoration: line-through; color: var(--rfc-muted) !important; }
+  .coming-soon {
+    margin-top: 28px;
+    background: var(--rfc-surface-strong);
+    border: 1px solid var(--rfc-border-strong);
+    border-left: 5px solid var(--rfc-accent-strong);
+    border-radius: var(--rfc-radius-small);
+    padding: 18px 20px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Pricing</h1>
+  <p class="lead">Current pricing for the RitmoForceCurve oar kit, iOS app, and Cloud Analysis.</p>
+
+  <div class="pricing-grid">
+    <section class="price-card">
+      <h2>Oar Kit</h2>
+      <div class="price-line">
+        <span class="price-name">Regular price</span>
+        <span class="price-value regular-price">$279</span>
+      </div>
+      <div class="price-line">
+        <span class="price-name">Sale price</span>
+        <span class="price-value sale-price">$229</span>
+      </div>
+    </section>
+
+    <section class="price-card">
+      <h2>iOS App Subscription</h2>
+      <div class="price-line">
+        <span class="price-name">Essentials Annual</span>
+        <span class="price-value">$65 / year</span>
+      </div>
+      <div class="price-line">
+        <span class="price-name">Gold Lifetime</span>
+        <span class="price-value">$300</span>
+      </div>
+    </section>
+
+    <section class="price-card">
+      <h2>Cloud Analysis</h2>
+      <div class="price-line">
+        <span class="price-name">Individual Annual</span>
+        <span class="price-value">$45 / year</span>
+      </div>
+      <div class="price-line">
+        <span class="price-name">Individual Lifetime</span>
+        <span class="price-value">$200</span>
+      </div>
+    </section>
+  </div>
+
+  <section class="coming-soon">
+    <h2>Coming Soon</h2>
+    <ul>
+      <li>Coach's overlay cloud processing</li>
+      <li>Coach's live metrics viewer</li>
+    </ul>
+  </section>
+</div>
+</body>
+</html>

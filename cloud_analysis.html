@@ -15,7 +15,7 @@
     }
 
     .container {
-        max-width: 840px;
+        max-width: 880px;
         margin: 70px auto;
         padding: 0 24px;
     }
@@ -36,10 +36,24 @@
         font-size: 1.08rem;
     }
 
+    ul {
+        padding-left: 1.35rem;
+    }
+
     .intro {
         text-align: center;
         font-size: 1.16rem;
         margin-bottom: 28px;
+    }
+
+    .top-example {
+        text-align: center;
+        margin: 0 auto 28px auto;
+    }
+
+    .top-example p {
+        margin: 0 0 10px 0;
+        color: #444;
     }
 
     .card {
@@ -51,10 +65,11 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
 
+    .primary-link,
     .example-link {
         display: inline-block;
         margin-top: 8px;
-        padding: 0.55rem 0.9rem;
+        padding: 0.6rem 0.95rem;
         border: 1px solid #ccc;
         border-radius: 6px;
         background: #f5f5f5;
@@ -63,39 +78,61 @@
         font-weight: 600;
     }
 
+    .primary-link {
+        background: #eef7ff;
+        border-color: #b8d7f3;
+    }
+
+    .primary-link:hover,
     .example-link:hover {
         text-decoration: underline;
     }
 </style>
+<link rel="stylesheet" href="site.css">
 </head>
 
 <body>
 <div class="container">
     <h1>Cloud Analysis</h1>
 
-    <p class="intro">
-        Cloud Analysis turns workout motion data from the mobile app into an interactive, shareable HTML report.
-    </p>
-
-    <div class="card">
-        <h2>Getting started</h2>
+    <div class="top-example">
         <p>
-            Record a workout in the RitmoForceCurve mobile app, then open Cloud Analysis to upload the workout data and queue the analysis.
-            When the analysis is finished, the report can be opened in a browser and shared as an HTML file.
-        </p>
-        <p>
-            The report groups and averages strokes by rate, power, stroke length, and handle speed so you can review how the workout changed across pieces and intensity levels.
-        </p>
-    </div>
-
-    <div class="card">
-        <h2>Example workout report</h2>
-        <p>
-            Use this sample report as a reference for the type of interactive output Cloud Analysis creates.
+            First, see a sample of the interactive workout report Cloud Analysis creates.
         </p>
         <a class="example-link" href="example_workout.html" target="_blank" rel="noopener noreferrer">
             Open example workout report
         </a>
+    </div>
+
+    <p class="intro">
+        Cloud Analysis turns RitmoForceCurve workout data into an interactive, shareable HTML workout report.
+    </p>
+
+    <div class="card">
+        <h2>Start Cloud Analysis</h2>
+        <p>
+            Use the Cloud Analysis web app to upload a recorded workout, queue the analysis, and download or open the finished report.
+        </p>
+        <a class="primary-link" href="https://autoanalysis.ritmoforcecurve.com/" target="_blank" rel="noopener noreferrer">
+            Open Cloud Analysis
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>How it works</h2>
+        <ul>
+            <li>Record the workout with the RitmoForceCurve mobile app.</li>
+            <li>Upload the workout data package to Cloud Analysis.</li>
+            <li>Choose or confirm the workout settings, then queue the analysis.</li>
+            <li>The server processes the raw sensor and workout data and builds an interactive HTML report.</li>
+            <li>The report can be opened in a browser, downloaded, or shared.</li>
+        </ul>
+        <p>
+            The report groups and averages strokes so you can compare changes in rate, power, stroke length, handle/oar speed, and force-curve behavior across pieces and intensity levels.
+        </p>
+        <p>
+            The Cloud Analysis dashboard also lets you review completed analyses, re-run an analysis while the raw data is still retained, download results, or delete older jobs.
+        </p>
     </div>
 </div>
 </body>

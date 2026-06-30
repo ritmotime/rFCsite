@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creating Custom Views</title>
+<style>
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #1a1a1a;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 920px;
+    margin: 52px auto;
+    padding: 0 24px 70px;
+  }
+  h1 {
+    font-size: 2.35rem;
+    line-height: 1.12;
+    margin: 0 0 12px;
+    letter-spacing: -0.4px;
+  }
+  h2 {
+    font-size: 1.45rem;
+    margin-top: 34px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-size: 1.08rem;
+    margin: 22px 0 8px;
+  }
+  p {
+    font-size: 1.05rem;
+    margin: 0 0 16px;
+  }
+  ul, ol {
+    font-size: 1.02rem;
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+  li { margin-bottom: 8px; }
+  .lead {
+    font-size: 1.16rem;
+    color: #333;
+    margin-bottom: 24px;
+  }
+  .card {
+    background: white;
+    border: 1px solid #dfe5ee;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 18px 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .placeholder {
+    border-left: 4px solid #9aa9b7;
+    background: #eef3f7;
+    padding: 12px 14px;
+    border-radius: 8px;
+    color: #3e4b56;
+    font-style: italic;
+  }
+  .button-link {
+    display: inline-block;
+    margin: 4px 8px 14px 0;
+    padding: 10px 14px;
+    border: 1px solid #b7c6d6;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #0b5cad;
+    text-decoration: none;
+    font-weight: 650;
+  }
+  .button-link:hover { text-decoration: underline; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+    margin: 14px 0 22px;
+  }
+  th, td {
+    border: 1px solid #dfe5ee;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: #eef3f7; }
+  footer {
+    margin-top: 46px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+</style>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="container">
+
+<h1>Creating Custom Views</h1>
+<p class="lead">
+  Custom views let you create live workout screens using the metrics and layout that are most useful for the rower or coach.
+</p>
+<div class="card">
+  <h2>Basic custom-view flow</h2>
+  <ol>
+    <li>Choose a view template.</li>
+    <li>Name the new view.</li>
+    <li>If using the Grid template, choose the grid layout size.</li>
+    <li>Tap a slot in the preview to change the metric shown there.</li>
+    <li>Select a metric from the available GPS, oar, and time categories.</li>
+    <li>Save the view, then activate it if you want it available during workouts.</li>
+  </ol>
+</div>
+<div class="card">
+  <h2>Current templates</h2>
+  <ul>
+    <li><b>LMPlot</b> — a live-metric layout with larger top fields and supporting metrics below.</li>
+    <li><b>BPlot</b> — another live-metric layout with header, middle, and bottom metric positions.</li>
+    <li><b>Grid</b> — a configurable grid of live metrics.</li>
+  </ul>
+</div>
+<div class="card">
+  <h2>Editing existing views</h2>
+  <p>
+    Existing custom views can be renamed, adjusted by tapping metric slots in the preview, and deleted when no longer needed.
+  </p>
+</div>
+<p class="placeholder">
+  Placeholder: add screenshots for choosing a template, naming a view, tapping a metric slot, selecting a metric category, and activating the finished custom view.
+</p>
+
+<footer>© 2026 RitmoForceCurve</footer>
+</div>
+</body>
+</html>

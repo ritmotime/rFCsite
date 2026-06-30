@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mnt Ang check</title>
+<style>
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #1a1a1a;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 1040px;
+    margin: 36px auto 52px;
+    padding: 0 24px 70px;
+  }
+  h1 {
+    font-size: 2.35rem;
+    line-height: 1.12;
+    margin: 0 0 12px;
+    letter-spacing: -0.4px;
+  }
+  h2 {
+    font-size: 1.45rem;
+    margin-top: 34px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-size: 1.08rem;
+    margin: 20px 0 8px;
+  }
+  p {
+    font-size: 1.05rem;
+    margin: 0 0 16px;
+  }
+  ul, ol {
+    font-size: 1.02rem;
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+  li { margin-bottom: 8px; }
+  .lead {
+    font-size: 1.16rem;
+    color: #333;
+    margin-bottom: 24px;
+  }
+  .calib-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 20px;
+    padding: 8px;
+    background: #e9eef5;
+    border: 1px solid #d3dce8;
+    border-radius: 14px;
+  }
+  .calib-tab {
+    flex: 1 1 190px;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 12px;
+    border: 1px solid #c3cfdd;
+    border-radius: 10px;
+    background: #fff;
+    color: #0b5cad;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .calib-tab.active {
+    background: #1769aa;
+    border-color: #1769aa;
+    color: #fff;
+  }
+  .calib-tab:hover { text-decoration: underline; }
+  .card {
+    background: white;
+    border: 1px solid #dfe5ee;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 18px 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .note {
+    border-left: 4px solid #386573;
+    background: #eef6f8;
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin: 16px 0;
+  }
+  .warning {
+    border-left: 4px solid #d98b24;
+    background: #fff7ea;
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin: 16px 0;
+  }
+  .button-link, .app-tab-button {
+    display: inline-block;
+    margin: 4px 8px 10px 0;
+    padding: 10px 14px;
+    border: 1px solid #b7c6d6;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #0b5cad;
+    text-decoration: none;
+    font-weight: 650;
+  }
+  .app-tab-button {
+    color: #fff;
+    background: #1769aa;
+    border-color: #1769aa;
+    min-width: 150px;
+    text-align: center;
+  }
+  .button-link:hover, .app-tab-button:hover { text-decoration: underline; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+    margin: 14px 0 22px;
+  }
+  th, td {
+    border: 1px solid #dfe5ee;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: #eef3f7; }
+  code {
+    background: #eef3f7;
+    padding: 1px 4px;
+    border-radius: 4px;
+  }
+  figure {
+    margin: 18px 0;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #dfe5ee;
+    border-radius: 12px;
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  figcaption {
+    font-size: 0.95rem;
+    color: #4d5964;
+    margin-top: 10px;
+  }
+  .back-link {
+    margin-top: 28px;
+  }
+  footer {
+    margin-top: 34px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+</style>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="container">
+<h1>Mnt Ang check</h1>
+<nav class="calib-tabs" aria-label="Sensor Mount / Oar Calibration app tabs">
+<a class="calib-tab active" href="oar_calibration_mnt_angle_check.html">Mnt Ang check</a>
+<a class="calib-tab" href="oar_calibration_select_edit.html">Calib - sel/edit</a>
+<a class="calib-tab" href="oar_calibration_manage.html">Calib - manage</a>
+<a class="calib-tab" href="oar_calibration_create.html">Calib - create</a>
+</nav>
+
+<p class="lead">
+  Use this tab after the sensors are mounted and connected. It displays the sensor gravity angle so you can adjust the sensors before rowing.
+</p>
+
+<div class="card">
+  <h2>What this tab does</h2>
+  <p>
+    <b>Mnt Ang check</b> is a sensor-mounting check. It is separate from oar calibration and does not calculate or save Scale Factor.
+  </p>
+  <ol>
+    <li>Connect both oar sensors.</li>
+    <li>Open <b>Sensor Mount / Oar Calibration</b>.</li>
+    <li>Choose <b>Mnt Ang check</b>.</li>
+    <li>Select <b>Port</b> or <b>Starboard</b> so the displayed angle is oriented correctly for the side you are checking.</li>
+    <li>Adjust the mounted sensors while watching the displayed angle values.</li>
+    <li>Use <b>Store Mac addresses of connected sensors</b> when you want the app to remember the connected sensors and their stored mount angles.</li>
+  </ol>
+</div>
+
+<div class="warning">
+  The Port/Starboard selector on this tab is only for this mount-angle display. It changes the display orientation from about 180 toward zero. It does not save the active calibration, does not change workout settings, and does not set Port/Starboard for rowing.
+</div>
+
+<div class="card">
+  <h2>When to use it</h2>
+  <ul>
+    <li>After attaching sensors to an oar for the first time.</li>
+    <li>After moving sensors or replacing straps/pads.</li>
+    <li>Any time the sensors may have rotated on the shaft.</li>
+  </ul>
+</div>
+
+<p class="back-link"><a class="button-link" href="oar_calibration.html">Back to Sensor Mount / Oar Calibration overview</a></p>
+
+<footer>© 2026 RitmoForceCurve</footer>
+</div>
+</body>
+</html>

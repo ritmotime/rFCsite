@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sensor Mount / Oar Calibration</title>
+<style>
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #1a1a1a;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 1040px;
+    margin: 36px auto 52px;
+    padding: 0 24px 70px;
+  }
+  h1 {
+    font-size: 2.35rem;
+    line-height: 1.12;
+    margin: 0 0 12px;
+    letter-spacing: -0.4px;
+  }
+  h2 {
+    font-size: 1.45rem;
+    margin-top: 34px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-size: 1.08rem;
+    margin: 20px 0 8px;
+  }
+  p {
+    font-size: 1.05rem;
+    margin: 0 0 16px;
+  }
+  ul, ol {
+    font-size: 1.02rem;
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+  li { margin-bottom: 8px; }
+  .lead {
+    font-size: 1.16rem;
+    color: #333;
+    margin-bottom: 24px;
+  }
+  .calib-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 20px;
+    padding: 8px;
+    background: #e9eef5;
+    border: 1px solid #d3dce8;
+    border-radius: 14px;
+  }
+  .calib-tab {
+    flex: 1 1 190px;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 12px;
+    border: 1px solid #c3cfdd;
+    border-radius: 10px;
+    background: #fff;
+    color: #0b5cad;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .calib-tab.active {
+    background: #1769aa;
+    border-color: #1769aa;
+    color: #fff;
+  }
+  .calib-tab:hover { text-decoration: underline; }
+  .card {
+    background: white;
+    border: 1px solid #dfe5ee;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 18px 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .note {
+    border-left: 4px solid #386573;
+    background: #eef6f8;
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin: 16px 0;
+  }
+  .warning {
+    border-left: 4px solid #d98b24;
+    background: #fff7ea;
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin: 16px 0;
+  }
+  .button-link, .app-tab-button {
+    display: inline-block;
+    margin: 4px 8px 10px 0;
+    padding: 10px 14px;
+    border: 1px solid #b7c6d6;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #0b5cad;
+    text-decoration: none;
+    font-weight: 650;
+  }
+  .app-tab-button {
+    color: #fff;
+    background: #1769aa;
+    border-color: #1769aa;
+    min-width: 150px;
+    text-align: center;
+  }
+  .button-link:hover, .app-tab-button:hover { text-decoration: underline; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+    margin: 14px 0 22px;
+  }
+  th, td {
+    border: 1px solid #dfe5ee;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: #eef3f7; }
+  code {
+    background: #eef3f7;
+    padding: 1px 4px;
+    border-radius: 4px;
+  }
+  figure {
+    margin: 18px 0;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #dfe5ee;
+    border-radius: 12px;
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  figcaption {
+    font-size: 0.95rem;
+    color: #4d5964;
+    margin-top: 10px;
+  }
+  .back-link {
+    margin-top: 28px;
+  }
+  footer {
+    margin-top: 34px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+</style>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="container">
+<h1>Sensor Mount / Oar Calibration</h1>
+<nav class="calib-tabs" aria-label="Sensor Mount / Oar Calibration app tabs">
+<a class="calib-tab" href="oar_calibration_mnt_angle_check.html">Mnt Ang check</a>
+<a class="calib-tab" href="oar_calibration_select_edit.html">Calib - sel/edit</a>
+<a class="calib-tab" href="oar_calibration_manage.html">Calib - manage</a>
+<a class="calib-tab" href="oar_calibration_create.html">Calib - create</a>
+</nav>
+
+<p class="lead">
+  The app button is <b>Sensor Mount / Oar Calibration</b>. It includes a simple sensor mount-angle check plus the tools used to choose, edit, manage, share, and create oar calibrations.
+</p>
+
+<div class="note">
+  <b>Why calibration exists:</b> all of the calibration tools are there to get an accurate <b>Scale Factor</b>. Scale Factor lets the app turn measured oar bend into realistic force, work, power, and power split values so rowers can compare their total effort between workouts, oars, and setups.
+</div>
+
+<div class="warning">
+  <b>What calibration does not change:</b> Scale Factor does not change force-curve shape, stroke length, ratio, catch miss, finish miss, max rotation speed, or any metric that does not use Scale Factor. A different Scale Factor changes the magnitude of force/work/power-style values, not the timing or shape of the stroke.
+</div>
+
+<div class="card">
+  <h2>In-app tabs</h2>
+  <p>
+    The Sensor Mount / Oar Calibration screen has four in-app tabs. The first tab is only a mounting-angle check. The other three are used to select, edit, manage, share, or create oar calibrations.
+  </p>
+  <table>
+    <tr><th>App tab</th><th>Use it for</th></tr>
+    <tr>
+      <td><a class="app-tab-button" href="oar_calibration_mnt_angle_check.html">Mnt Ang check</a></td>
+      <td>Check whether the two sensors are mounted at a reasonable angle. This is separate from Scale Factor calibration.</td>
+    </tr>
+    <tr>
+      <td><a class="app-tab-button" href="oar_calibration_select_edit.html">Calib - sel/edit</a></td>
+      <td>Select the active calibration, edit dimensions or calibration values, scan an oar label, and save changes.</td>
+    </tr>
+    <tr>
+      <td><a class="app-tab-button" href="oar_calibration_manage.html">Calib - manage</a></td>
+      <td>Import, export, delete, select, label, and share saved calibrations.</td>
+    </tr>
+    <tr>
+      <td><a class="app-tab-button" href="oar_calibration_create.html">Calib - create</a></td>
+      <td>Create a calibration from a known-weight bend test. Many rowers may never need this tab.</td>
+    </tr>
+  </table>
+</div>
+
+<footer>© 2026 RitmoForceCurve</footer>
+</div>
+</body>
+</html>
