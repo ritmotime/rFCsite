@@ -1575,7 +1575,6 @@
 <style id="rfc-live-page-styles"></style>
 <style id="rfc-flat-site-shell">
 
-  /* No iframes / no nested page scroll. The active page content is inserted directly in this document. */
   html, body {
     min-height: 100%;
     overflow-x: clip;
@@ -1970,8 +1969,6 @@
     }
 
     function refreshPanelFromFile(page, panel) {
-      // On the live website, pull in the current child HTML directly into this document.
-      // If the page is opened from a local file and fetch is blocked, the embedded fallback stays visible.
       if (!page || !page.file || !panel || panel.getAttribute('data-fresh-loaded') === page.file) return;
       if (!window.fetch || !window.DOMParser) return;
       fetch(page.file, { cache: 'no-cache' })
@@ -1998,7 +1995,6 @@
           panel.setAttribute('data-fresh-loaded', page.file);
         })
         .catch(function() {
-          // Keep the embedded fallback content.
         });
     }
 
@@ -2180,7 +2176,6 @@ body {
 <button class="fc-tab-button" data-category="pricing" type="button">Pricing</button>
 </div>
 <div aria-label="Subsections" class="fc-sub-buttons fc-sub-buttons-current" data-empty="true" id="fc-current-sub-buttons"></div>
-<p class="fc-helper-note">Use the section buttons above. Swipe the button rows sideways to see more choices; the page itself uses one normal vertical scroll.</p>
 </nav>
 <main class="fc-page-area" id="fc-page-area">
 <section class="rfc-page-panel" data-category="welcome" data-page="welcome" data-source="welcome.html" hidden="" id="page-welcome">
@@ -2567,7 +2562,7 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
 <li><strong>Check the product type.</strong> On the Available Devices screen, use the <strong>Select Product…</strong> bar if the displayed model is wrong. In these screenshots, <strong>WT9011DCL-BT50</strong> is selected.</li>
 <li><strong>Return from Select Product.</strong> After choosing the product, use the back arrow to return to Available Devices.</li>
 <li><strong>Use multiple-sensor mode.</strong> Tap <strong>Multip</strong> if you are recording two sensors.</li>
-<li><strong>Connect your sensors.</strong> Tap the switch beside each of your sensor names. If other WitMotion sensors are nearby, compare the visible names/addresses to the last 4 characters you wrote down at home.</li>
+<li><strong>Connect your sensors.</strong> Tap the switch beside each of your sensor names. If other WitMotion sensors are nearby, compare the visible names/addresses to the last 3–4 characters/digits you wrote down at home.</li>
 <li><strong>Return to Main.</strong> Use the back arrow and confirm live Acc/Gyr/Angle numbers are changing. If both sensor cards are shown, swipe between them and check both before recording.</li>
 </ol>
 </section>
@@ -2578,7 +2573,7 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
 </figure>
 <figure>
 <img alt="WitMotion Available Devices screen with product selector, Multip mode, and sensor switches off" decoding="async" loading="lazy" src="witmotionpics/IMG_3285.PNG"/>
-<figcaption><strong>2. Available Devices.</strong> Check the product selector, choose <strong>Multip</strong>, then use the switches to connect your sensors. In a busy area, use the name/address endings you noted at home.</figcaption>
+<figcaption><strong>2. Available Devices.</strong> Check the product selector, choose <strong>Multip</strong>, then use the switches to connect your sensors. In a busy area, use the last 3–4 characters/digits you noted at home.</figcaption>
 </figure>
 <figure>
 <img alt="WitMotion Select Product screen with WT9011DCL-BT50 highlighted" decoding="async" loading="lazy" src="witmotionpics/IMG_3287.PNG"/>
@@ -2634,7 +2629,7 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
 <li><strong>No sensors appear:</strong> make sure the sensors are on and close to the phone, then tap refresh. Android may also require Bluetooth and location permission for BLE scanning.</li>
 <li><strong>Only one sensor connects:</strong> switch to <strong>Multip</strong>, then turn on both sensor switches again.</li>
 <li><strong>Values are not changing:</strong> return to the connection screen and reconnect the sensor before recording.</li>
-<li><strong>Several nearby sensors appear:</strong> use the sensor name/address endings you wrote down at home so you only connect to your own sensors.</li>
+<li><strong>Several nearby sensors appear:</strong> use the last 3–4 characters/digits of your sensor addresses that you wrote down at home so you only connect to your own sensors.</li>
 <li><strong>Finding the recording:</strong> tap the folder icon in the app and use the date/time-named recording folder. Then share the <code>.txt</code> file directly from the app.</li>
 </ul>
 </section>
@@ -2650,9 +2645,8 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
 </p>
 <div class="tip-box">
 <strong>Important before a busy dock or regatta:</strong>
-  you do <strong>not</strong> need to remember which Bluetooth name is the shaft sensor and which is the sleeve sensor.
-  But if other sensors may be nearby, connect to your own pair at home first and write down the sensor name/address endings.
-  The last 4–6 letters or digits is usually enough to recognize your sensors on the dock.
+  in the iOS RitmoForceCurve app, you do <strong>not</strong> need to remember which Bluetooth name is the shaft sensor or sleeve sensor, and you usually do <strong>not</strong> need to write down sensor names or MAC/address endings.
+  The safest approach is to connect your two sensors once at home or away from other sensors, turn <strong>Autoconnect</strong> on, and then let the app reconnect to that saved pair at the dock.
 </div>
 <div class="quick-note">
 <strong>What Autoconnect does:</strong> once your two sensors have been selected, turn <strong>Autoconnect</strong> on before pressing <strong>DONE</strong>.
@@ -2705,7 +2699,7 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
 <ol>
 <li>Turn on <strong>Turn on scanning for surrounding devices</strong>.</li>
 <li>Wait for the two <strong>WT901BLE67</strong> sensors to appear.</li>
-<li>Use the name/address endings you wrote down at home to identify your own sensors if other sensors are nearby.</li>
+<li>If you already set up Autoconnect at home, the app should connect only to the saved pair. If you are setting up for the first time at a busy dock, move away from other sensors if possible, or connect where only your two sensors are nearby.</li>
 <li>Turn on the switch for each of your two sensors.</li>
 <li>Both sensors should show <strong>Connected</strong>.</li>
 </ol>
@@ -2780,7 +2774,7 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
 <h2>Troubleshooting</h2>
 <div class="mini-checklist">
 <div><strong>Only one sensor appears:</strong><br/>Turn scanning off and back on, move the phone closer, or power-cycle the missing sensor.</div>
-<div><strong>Wrong sensors are nearby:</strong><br/>Turn Autoconnect off, use the address endings you wrote down, and connect only your two sensors.</div>
+<div><strong>Wrong sensors are nearby:</strong><br/>Turn Autoconnect off, move away from other sensors if possible, connect only your two sensors, then turn Autoconnect back on before DONE.</div>
 <div><strong>It keeps searching:</strong><br/>Open <strong>Connect Oar Sensors</strong>, turn scanning and Autoconnect off, then reconnect both sensors and turn Autoconnect back on before DONE.</div>
 <div><strong>Another phone/app was connected:</strong><br/>Close the other app or disconnect the sensors there, then scan again.</div>
 </div>
