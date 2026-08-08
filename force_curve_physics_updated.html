@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Force Curve Physics</title>
+<style>
+  :root {
+    --bg: #f7f9fc;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #555;
+    --border: #e1e5ea;
+    --soft: #eef3f7;
+    --accent: #386573;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+  .container {
+    max-width: 960px;
+    margin: 54px auto 70px auto;
+    padding: 0 22px;
+  }
+  h1 {
+    font-size: 2.45rem;
+    letter-spacing: -0.5px;
+    text-align: center;
+    margin: 0 0 12px 0;
+  }
+  .intro {
+    max-width: 780px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+    font-size: 1.12rem;
+    color: #333;
+  }
+  h2 {
+    font-size: 1.55rem;
+    margin: 34px 0 12px 0;
+  }
+  h3 {
+    font-size: 1.18rem;
+    margin: 24px 0 8px 0;
+  }
+  p, li {
+    font-size: 1.03rem;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin: 24px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .note {
+    background: var(--soft);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 18px 0;
+    color: #27353a;
+  }
+  .formula {
+    background: #fbfcfe;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin: 14px 0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    overflow-x: auto;
+  }
+  .example {
+    background: #fff8e8;
+    border-left: 4px solid #d69922;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 18px 0;
+  }
+  .anchor-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 18px 0 28px 0;
+  }
+  .anchor-links a {
+    color: #0066cc;
+    text-decoration: none;
+    border: 1px solid #cfd8e2;
+    background: #fff;
+    border-radius: 999px;
+    padding: 0.42rem 0.75rem;
+    font-weight: 600;
+  }
+  .anchor-links a:hover { text-decoration: underline; }
+  footer {
+    margin-top: 42px;
+    color: #666;
+    font-size: 0.92rem;
+    text-align: center;
+  }
+</style>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="container">
+  <h1>Force Curve Physics</h1>
+  <p class="intro">
+    A practical explanation of force, work, and power as they relate to oar bend, force curves, drive work, and rowing power.
+  </p>
+
+  <div class="anchor-links">
+    <a href="#force">Force</a>
+    <a href="#work">Work</a>
+    <a href="#power">Power</a>
+    <a href="#force-curve">Force curve</a>
+    <a href="#scale-factor">Scale Factor</a>
+  </div>
+
+  <section id="force" class="card">
+    <h2>Force: how hard the rower pulls on the handle</h2>
+    <p>
+      In everyday rowing language, when someone says “she has a powerful stroke,” they often mean that she seems to put a lot into each individual stroke. That impression may come from high force, a long loaded drive, or both. In physics terms, they are often describing a stroke with a lot of <strong>work</strong>, or energy transferred in one stroke, rather than power itself.
+    </p>
+    <p>
+      Force by itself is not the same thing as work or power. During a normal rowing stroke, a very high early force peak can feel impressive, but the rower still needs to carry useful force through distance. If the stroke is short, or if force rises sharply and then decays quickly, the force curve may be forceful without producing as much drive work as a curve that applies useful force through more of the stroke arc.
+    </p>
+    <p>
+      The missing ingredient is distance. In rowing terms, the rower needs to pull on the handle while the oar rotates through the drive angle. Force creates rowing work only when it is applied through movement.
+    </p>
+  </section>
+
+  <section id="catch-example" class="card">
+    <h2>Example: force with no rowing work and no power</h2>
+    <p>
+      Imagine a rower sitting at the catch at the start of a race. The boat is held firmly by the starting equipment at the bow. Now also imagine pilings in the water right at the buried blade so that, if the rower applies force, the blade and oar cannot rotate around the pin. The oar may bend like a spring, but it does not sweep through the water.
+    </p>
+    <div class="note">
+      In this held position, the rower can apply force and bend the oar, but there is essentially no rowing work being done through the stroke arc because the oar is not rotating around the pin. A small amount of elastic energy may be stored in the bending oar, but the normal drive work of moving the oar through an angle has not yet happened.
+    </div>
+    <p>
+      Now remove the piling so the oar is allowed to move. As the rower keeps force on the handle and the oar rotates through the drive, work can be done. This is the key distinction: <strong>applying force through distance, or applying moment through oar angle, creates drive work.</strong>
+    </p>
+  </section>
+
+  <section id="work" class="card">
+    <h2>Work: force applied through distance</h2>
+    <p>
+      Linear work is force multiplied by distance in the direction of motion. In simple form:
+    </p>
+    <div class="formula">Work = Force × Distance</div>
+    <p>
+      Around the oarlock, the motion is better described as angular motion. The rower applies a force at the handle/blade system that creates a moment, or torque, about the pin. As the oar rotates through the drive angle, angular work is done:
+    </p>
+    <div class="formula">Angular Work = ∫ Moment × dθ</div>
+    <p>
+      In words: add up the oar moment over each tiny bit of stroke angle. If the force is high but the oar does not rotate, there is no drive work through the pin. If the oar rotates through the drive while loaded, the rower is doing work.
+    </p>
+    <p>
+      This is why the area under a force curve matters. A tall force peak can look impressive, but total drive work depends on both the magnitude of the force and how it is distributed through the drive length or drive angle.
+    </p>
+  </section>
+
+  <section id="power" class="card">
+    <h2>Power: work done over time</h2>
+    <p>
+      In everyday rowing language, people often use the word <em>powerful</em> to describe a rower who seems to put a great deal into each stroke. For example, someone might say, “She has a powerful stroke.” What they often really mean is that each stroke contains a lot of <strong>work</strong>, or a lot of energy transferred in one stroke.
+    </p>
+    <p>
+      Physics uses the word <strong>power</strong> differently. Power is not the amount of work in one stroke. Power is how much work is done over time:
+    </p>
+    <div class="formula">Power = Work / Time</div>
+    <p>
+      This is why stroke rate matters so much. A rower can do slightly less work on each stroke and still produce more power overall by taking more strokes each minute. The individual strokes may be less forceful and contain less energy, but the work is being repeated much more often.
+    </p>
+    <div class="example">
+      <h3>A useful way to think about it</h3>
+      <p>
+        Imagine one rower doing 600 joules of work per stroke at 20 strokes per minute. Another rower does only 500 joules per stroke, but rows at 30 strokes per minute.
+      </p>
+      <div class="formula">600 J/stroke × 20 strokes/min ÷ 60 sec/min = 200 W</div>
+      <div class="formula">500 J/stroke × 30 strokes/min ÷ 60 sec/min = 250 W</div>
+      <p>
+        The first rower does more work in every individual stroke and may look or feel more “powerful” in the everyday sense. But the second rower produces more actual power because more total work is being done each second.
+      </p>
+    </div>
+    <div class="note">
+      <strong>Work per stroke tells you how much energy is in each stroke. Power tells you how quickly the rower is producing that work.</strong> Stroke rate is therefore a major part of rowing power, not just how hard or how big each individual stroke feels.
+    </div>
+    <p>
+      This does not mean that a higher stroke rate automatically creates more power. If work per stroke falls too much as the rate rises, power can stay the same or even decrease. But when a rower can maintain a large amount of work per stroke while taking more strokes per minute, power rises dramatically.
+    </p>
+    <p>
+      There is also instantaneous power during the drive, which describes how quickly work is being done at each moment of the stroke. The app’s rowing power is most useful as an effort-based summary of how much work is being done over time.
+    </p>
+  </section>
+
+  <section id="force-curve" class="card">
+    <h2>How this relates to the force curve</h2>
+    <p>
+      The force curve is a picture of how the rower loads the oar through the drive. RitmoForceCurve uses two sensors on the oar to measure the difference in rotation between sensor locations. That difference is related to oar bend. With calibration, measured bend can be scaled into force or moment magnitude.
+    </p>
+    <p>
+      A force curve helps answer questions such as: how quickly does the rower connect at the catch, where does maximum load occur, how long is force maintained, and how cleanly does the rower release at the finish? Work is related to the area under the force or moment curve through the drive angle.
+    </p>
+    <div class="note">
+      The ideal force curve shape is debatable and depends on the athlete, boat, rate, and goal of the workout. In a crew boat, however, rowers pulling together with force curves that are closer in timing and shape is mechanically more efficient and usually feels much better. That shared connection is part of the joy of rowing: swing, rhythm, and the feeling that the boat is moving as one system.
+    </div>
+  </section>
+
+  <section id="scale-factor" class="card">
+    <h2>Where Scale Factor fits</h2>
+    <p>
+      Scale Factor converts measured oar bend into force magnitude. A better Scale Factor makes effort-based values such as Force, Work, Power, and pSplit more comparable across oars, sensor locations, and sessions.
+    </p>
+    <p>
+      Scale Factor changes the magnitude of force-derived metrics. It does not change the shape of the force curve, the timing of the catch or finish, stroke length, ratio, or GPS-derived values.
+    </p>
+  </section>
+
+  <footer>© 2026 RitmoForceCurve</footer>
+</div>
+</body>
+</html>
