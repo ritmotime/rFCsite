@@ -1890,8 +1890,8 @@
 
 </style>
 <script>
-  window.RFC_NAV = [{"id": "welcome", "title": "Welcome", "pages": [{"id": "welcome", "title": "Welcome", "file": "welcome.html"}]}, {"id": "oar-kit", "title": "Oar Kit", "pages": [{"id": "oar-kit", "title": "Oar Kit", "file": "instructions.html"}, {"id": "oar-kit-videos", "title": "Oar Kit Videos", "file": "oar_kit_videos.html"}]}, {"id": "mobile-app", "title": "Mobile App", "pages": [{"id": "mobile-overview", "title": "Overview", "file": "mobile_app.html"}, {"id": "android-recording", "title": "Android Recording", "file": "android_recording.html"}, {"id": "connect-oar-sensors", "title": "Connecting Oar Sensors", "file": "connecting_oar_sensors.html"}, {"id": "workout-auto-timer", "title": "Workout & Auto Timer Settings", "file": "workout_auto_timer_settings.html"}, {"id": "oar-calibration", "title": "Sensor Mount / Oar Calibration", "file": "oar_calibration.html"}, {"id": "sharing-views-settings", "title": "Sharing Views, Settings & Calibrations", "file": "sharing_views_settings_calibrations.html"}, {"id": "custom-views", "title": "Creating Custom Views", "file": "creating_custom_views.html"}]}, {"id": "data-metrics", "title": "Data & Metrics Guide", "pages": [{"id": "data-metrics-guide", "title": "Metrics Guide", "file": "data_metrics.html"}, {"id": "force-curve-physics", "title": "Force Curve Physics", "file": "force_curve_physics.html"}]}, {"id": "cloud-analysis", "title": "Cloud Analysis", "pages": [{"id": "cloud-analysis", "title": "Cloud Analysis", "file": "cloud_analysis.html"}]}, {"id": "pricing", "title": "Pricing", "pages": [{"id": "pricing", "title": "Pricing", "file": "pricing.html"}]}];
-  window.RFC_FILE_TO_PAGE = {"welcome.html": "welcome", "instructions.html": "oar-kit", "oar_kit_videos.html": "oar-kit-videos", "mobile_app.html": "mobile-overview", "android_recording.html": "android-recording", "connecting_oar_sensors.html": "connect-oar-sensors", "workout_auto_timer_settings.html": "workout-auto-timer", "oar_calibration.html": "oar-calibration", "sharing_views_settings_calibrations.html": "sharing-views-settings", "creating_custom_views.html": "custom-views", "data_metrics.html": "data-metrics-guide", "force_curve_physics.html": "force-curve-physics", "cloud_analysis.html": "cloud-analysis", "pricing.html": "pricing"};
+  window.RFC_NAV = [{"id": "welcome", "title": "Welcome", "pages": [{"id": "welcome", "title": "Welcome", "file": "welcome.html"}]}, {"id": "oar-kit", "title": "Oar Kit", "pages": [{"id": "oar-kit", "title": "Oar Kit", "file": "instructions.html"}, {"id": "oar-kit-videos", "title": "Oar Kit Videos", "file": "oar_kit_videos.html"}, {"id": "connect-oar-sensors", "title": "Sensor alignment", "file": "oar-sensor-alignment-guide.html"}]}, {"id": "mobile-app", "title": "Mobile App", "pages": [{"id": "mobile-overview", "title": "Overview", "file": "mobile_app.html"}, {"id": "android-recording", "title": "Android Recording", "file": "android_recording.html"}, {"id": "workout-auto-timer", "title": "Workout & Auto Timer Settings", "file": "workout_auto_timer_settings.html"}, {"id": "oar-calibration", "title": "Sensor Mount / Oar Calibration", "file": "oar_calibration.html"}, {"id": "sharing-views-settings", "title": "Sharing Views, Settings & Calibrations", "file": "sharing_views_settings_calibrations.html"}, {"id": "custom-views", "title": "Creating Custom Views", "file": "creating_custom_views.html"}]}, {"id": "data-metrics", "title": "Data & Metrics Guide", "pages": [{"id": "data-metrics-guide", "title": "Metrics Guide", "file": "data_metrics.html"}, {"id": "force-curve-physics", "title": "Force Curve Physics", "file": "force_curve_physics.html"}]}, {"id": "cloud-analysis", "title": "Cloud Analysis", "pages": [{"id": "cloud-analysis", "title": "Cloud Analysis", "file": "cloud_analysis.html"}]}, {"id": "pricing", "title": "Pricing", "pages": [{"id": "pricing", "title": "Pricing", "file": "pricing.html"}]}];
+  window.RFC_FILE_TO_PAGE = {"welcome.html": "welcome", "instructions.html": "oar-kit", "oar_kit_videos.html": "oar-kit-videos", "mobile_app.html": "mobile-overview", "android_recording.html": "android-recording", "oar-sensor-alignment-guide.html": "connect-oar-sensors", "workout_auto_timer_settings.html": "workout-auto-timer", "oar_calibration.html": "oar-calibration", "sharing_views_settings_calibrations.html": "sharing-views-settings", "creating_custom_views.html": "custom-views", "data_metrics.html": "data-metrics-guide", "force_curve_physics.html": "force-curve-physics", "cloud_analysis.html": "cloud-analysis", "pricing.html": "pricing"};
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -2028,7 +2028,13 @@
           btn.className = 'fc-sub-button' + (page.id === pageId ? ' active' : '');
           btn.textContent = page.title;
           btn.setAttribute('data-page', page.id);
-          btn.addEventListener('click', function() { setActivePage(page.id, { push: true, scroll: true }); });
+          btn.addEventListener('click', function() {
+            if (page.file === 'oar-sensor-alignment-guide.html') {
+              window.location.href = page.file;
+              return;
+            }
+            setActivePage(page.id, { push: true, scroll: true });
+          });
           subNav.appendChild(btn);
         });
       }
@@ -2636,7 +2642,7 @@ The RitmoForceCurveâ„¢ Sensor System measures real-time oar force, motion, a
 <footer>© 2026 RitmoForceCurve</footer>
 </main>
 </section>
-<section class="rfc-page-panel" data-category="mobile-app" data-page="connect-oar-sensors" data-source="connecting_oar_sensors.html" hidden="" id="page-connect-oar-sensors">
+<section class="rfc-page-panel" data-category="oar-kit" data-page="connect-oar-sensors" data-source="oar-sensor-alignment-guide.html" hidden="" id="page-connect-oar-sensors">
 <div class="container ios-connect-page">
 <h1>Connecting Oar Sensors</h1>
 <p class="lead">
