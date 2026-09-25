@@ -1,0 +1,52 @@
+{
+  "method": "Native-frame foreground masks and shared premultiplied RGB/alpha motion over the same registered observed bank plate",
+  "previous_failure": "Post-interpolation masking retained a second shirt/head silhouette and cut holes into navy cap at output135\u2013140",
+  "visual_review": {
+    "continuous_output_frames": [
+      100,
+      145
+    ],
+    "additional_output_frames": [
+      80,
+      90,
+      155,
+      165,
+      175,
+      185,
+      195,
+      205,
+      216,
+      226,
+      231
+    ],
+    "independent_review": "Passed every output100\u2013145 and recentered later samples155,175,195,216,226,231",
+    "checks": [
+      "No visible duplicate pale/red back or head contour in reviewed frames",
+      "Navy cap remains filled through former failure interval135\u2013140",
+      "Hair/cap/neck contours stay connected",
+      "Reed bank retains approved camera registration"
+    ],
+    "scope": "Selected slow intervals inspected at native detail; interpolated motion remains an estimate"
+  },
+  "preview_motion_fit": {
+    "frames": 57,
+    "median_tracked_person_points": 357.0,
+    "median_inlier_residual_pixels": 0.5534167753992881
+  },
+  "plate_registration": "Unchanged source-native observed plate; median residual0.414 analysis pixels",
+  "foreground_note": "Foreground is now re-interpolated from native RGB/alpha; no claim that these pixels match the rejected prior interpolation",
+  "final_encoding_checks": {
+    "full_decode": "passed",
+    "frame_count": 232,
+    "fps": 60,
+    "duration_seconds": 3.866667,
+    "resolution": [
+      2880,
+      1440
+    ],
+    "bytes": 29184779,
+    "lower_water_preencode_max_rgb_change": 0,
+    "lower_water_scope": "All232 frames at y>=900 compared to existing clean motion-compensated film; exact pixels preserved before H264 encode",
+    "encoded_cap_check": "Frames135,140,145 visually checked after final H264 encode; cap intact and single back contour"
+  }
+}

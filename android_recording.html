@@ -1,363 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Android Recording</title>
-<link rel="stylesheet" href="site.css">
-<style>
-  :root {
-    --rfc-bg: #1f2021;
-    --rfc-bg-soft: #272829;
-    --rfc-bg-lift: #303132;
-    --rfc-surface: #333435;
-    --rfc-surface-muted: #2a2b2c;
-    --rfc-border: #50514f;
-    --rfc-border-strong: #777158;
-    --rfc-text: #fff1b8;
-    --rfc-muted: #e3d38d;
-    --rfc-heading: #fff7cc;
-    --rfc-accent: #d8b64a;
-    --rfc-accent-strong: #f0cf62;
-    --rfc-link: #ffe38b;
-    --rfc-link-hover: #fff5c7;
-    --rfc-radius: 16px;
-    --rfc-radius-small: 10px;
-    --rfc-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
 
-  body.android-recording-body {
-    margin: 0 !important;
-    font-family: var(--rfc-font) !important;
-    background:
-      radial-gradient(circle at top left, rgba(216, 182, 74, 0.12), transparent 28rem),
-      linear-gradient(180deg, #2a2b2c 0%, var(--rfc-bg) 100%) !important;
-    color: var(--rfc-text) !important;
-    line-height: 1.62;
-  }
-
-  .android-recording-page {
-    max-width: 1080px !important;
-    margin: 34px auto !important;
-    padding: 32px 34px 56px !important;
-    background: rgba(51, 52, 53, 0.94) !important;
-    border: 1px solid var(--rfc-border) !important;
-    border-radius: var(--rfc-radius) !important;
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.38) !important;
-  }
-
-  .android-recording-page *:not(img) {
-    box-sizing: border-box;
-    color: var(--rfc-text) !important;
-  }
-
-  .android-recording-page h1,
-  .android-recording-page h2,
-  .android-recording-page h3,
-  .android-recording-page strong {
-    color: var(--rfc-heading) !important;
-  }
-
-  .android-recording-page h1 {
-    font-size: clamp(2rem, 4vw, 2.8rem) !important;
-    line-height: 1.08 !important;
-    margin: 0 0 12px !important;
-    letter-spacing: -0.025em;
-  }
-
-  .android-recording-page h2 {
-    font-size: clamp(1.35rem, 2.5vw, 1.7rem) !important;
-    margin: 30px 0 12px !important;
-    padding-bottom: 0.35rem;
-    border-bottom: 1px solid var(--rfc-border) !important;
-  }
-
-  .android-recording-page h3 {
-    margin: 0 0 8px !important;
-    font-size: 1.08rem !important;
-  }
-
-  .android-recording-page p,
-  .android-recording-page li {
-    font-size: 1.05rem !important;
-  }
-
-  .android-recording-page .lead {
-    color: var(--rfc-muted) !important;
-    font-size: 1.15rem !important;
-    margin: 0 0 22px !important;
-  }
-
-  .android-recording-page .rfc-button,
-  .android-recording-page a.rfc-button {
-    display: inline-block !important;
-    margin: 5px 8px 12px 0 !important;
-    padding: 10px 16px !important;
-    border-radius: 999px !important;
-    border: 1px solid var(--rfc-border-strong) !important;
-    background: linear-gradient(180deg, #4a4b49 0%, #2b2c2d 100%) !important;
-    color: var(--rfc-heading) !important;
-    text-decoration: none !important;
-    font-weight: 750 !important;
-  }
-
-  .android-recording-page .rfc-button:hover,
-  .android-recording-page a.rfc-button:hover {
-    background: linear-gradient(180deg, #5a5438 0%, #393520 100%) !important;
-    color: var(--rfc-link-hover) !important;
-    text-decoration: none !important;
-  }
-
-  .android-recording-page .rfc-card,
-  .android-recording-page .rfc-note,
-  .android-recording-page .rfc-warning,
-  .android-recording-page .rfc-gallery figure,
-  .android-recording-page .rfc-mini-card {
-    background: var(--rfc-bg-lift) !important;
-    border: 1px solid var(--rfc-border) !important;
-    border-radius: var(--rfc-radius-small) !important;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28) !important;
-  }
-
-  .android-recording-page .rfc-card {
-    padding: 20px 22px !important;
-    margin: 20px 0 !important;
-  }
-
-  .android-recording-page .rfc-note,
-  .android-recording-page .rfc-warning {
-    border-left: 5px solid var(--rfc-accent-strong) !important;
-    padding: 14px 16px !important;
-    margin: 16px 0 !important;
-  }
-
-  .android-recording-page .rfc-quick-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 12px;
-    padding-left: 0;
-    list-style: none;
-  }
-
-  .android-recording-page .rfc-quick-list li,
-  .android-recording-page .rfc-mini-card {
-    padding: 12px 14px !important;
-    background: var(--rfc-surface-muted) !important;
-    border-color: var(--rfc-border) !important;
-  }
-
-  .android-recording-page .rfc-steps {
-    counter-reset: step;
-    list-style: none;
-    padding-left: 0 !important;
-    margin: 12px 0 0 !important;
-  }
-
-  .android-recording-page .rfc-steps > li {
-    counter-increment: step;
-    position: relative;
-    padding: 0 0 18px 48px !important;
-    margin: 0 !important;
-  }
-
-  .android-recording-page .rfc-steps > li::before {
-    content: counter(step);
-    position: absolute;
-    left: 0;
-    top: 2px;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: #4d4424 !important;
-    border: 1px solid var(--rfc-accent-strong);
-    color: var(--rfc-heading) !important;
-    display: grid;
-    place-items: center;
-    font-weight: 850;
-  }
-
-  .android-recording-page .rfc-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 18px;
-    margin: 16px 0 26px;
-  }
-
-  .android-recording-page .rfc-gallery figure {
-    margin: 0 !important;
-    overflow: hidden;
-  }
-
-  .android-recording-page .rfc-gallery img {
-    display: block;
-    width: 100%;
-    height: auto;
-    background: #000;
-  }
-
-  .android-recording-page .rfc-gallery figcaption {
-    padding: 12px 14px !important;
-    background: #202122 !important;
-    color: var(--rfc-muted) !important;
-    font-size: 0.96rem !important;
-    line-height: 1.38;
-  }
-
-  .android-recording-page code {
-    background: #171819 !important;
-    color: var(--rfc-heading) !important;
-    border: 1px solid var(--rfc-border) !important;
-    border-radius: 8px;
-    padding: 1px 5px;
-  }
-
-  .android-recording-page .rfc-transition-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 12px;
-    margin: 16px 0;
-  }
-
-  .android-recording-page footer {
-    margin-top: 42px !important;
-    color: var(--rfc-muted) !important;
-    font-size: 0.92rem !important;
-  }
-
-  @media (max-width: 720px) {
-    .android-recording-page {
-      margin: 14px !important;
-      padding: 22px 18px 38px !important;
-      border-radius: 14px !important;
-    }
-    .android-recording-page .rfc-gallery {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
-</head>
-<body class="android-recording-body">
-<main class="android-recording-page">
-  <h1>Android Recording with the WitMotion App</h1>
-  <p class="lead">
-    RitmoForceCurve currently has an iOS app. Android users can still record data from the WitMotion oar sensors using the WitMotion app. After recording, upload the saved WitMotion text file or zipped recording folder for Cloud Analysis.
-  </p>
-
-  <p>
-    <a class="rfc-button" href="cloud_analysis.html">Learn about Cloud Analysis</a>
-    <a class="rfc-button" href="https://autoanalysis.ritmoforcecurve.com/" target="_blank" rel="noopener noreferrer">Open Cloud Analysis</a>
-    <a class="rfc-button" href="https://play.google.com/store/apps/details?id=com.wit.wit_app&amp;hl=en_US" target="_blank" rel="noopener noreferrer">Download WitMotion on Google Play</a>
-  </p>
-
-  <section class="rfc-card">
-    <h2>Before you start</h2>
-    <ul class="rfc-quick-list">
-      <li>Turn on phone Bluetooth and approve any Bluetooth/location permissions Android requests.</li>
-      <li>Charge and turn on both WitMotion sensors before opening the connection screen.</li>
-      <li>Connect sensors inside the WitMotion app, not from the phone’s normal Bluetooth settings.</li>
-      <li>Before using the sensors at a busy dock, connect them at home once and note the visible sensor names/addresses. The last 4 characters are usually enough to tell which sensors are yours.</li>
-    </ul>
-    <p class="rfc-warning">
+<html data-rfc-accent="teal" lang="en"><head><script src="site-theme.js?v=20260925f"></script><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#242a32" name="theme-color"/><title>Align &amp; record · ritmoForceCurve™</title><link href="site.css?v=20260925f" rel="stylesheet"/><link href="kit-guide.css?v=20260925f" rel="stylesheet"/></head><body><nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a></nav><main class="container alignment-guide">
+<p class="eyebrow">Oar Kit · iOS &amp; Android</p><h1>Align once. Record your row.</h1><p class="lead">The sensors learn their relationship to the oar from a short set of movements. Keep them mounted in their rowing positions throughout, then record your workout separately.</p>
+<div class="guide-links"><a class="button-link primary" href="#ios">iOS app</a><a class="button-link" href="#android">Android / WitMotion</a><a class="button-link" href="#alignment-recording">The four movements</a></div>
+<div class="guide-layout"><section class="rfc-card platform-card"><h2>iOS · guided in the app</h2><p>Select your oar, open <strong>Oar Settings → Align Sensors</strong>, and follow the capture prompts. The saved alignment belongs to that oar and sensor setup.</p><a href="#ios">iOS steps →</a></section><section class="rfc-card platform-card"><h2>Android · one short recording</h2><p>Connect both sensors in the WitMotion app and record all four motion blocks in one TXT file. Upload it with the separate rowing TXT to Cloud Analysis.</p><a href="#android">Android connection and export steps →</a></section></div>
+<section id="alignment-recording"><h2>Four distinct motion blocks</h2><p>Use an open space with room to move the oar and keep the blade clear of the water. Keep the same sensor pair, positions and strap tension for alignment and rowing.</p>
+<ol class="motion-blocks"><li><h3>Bias · rest still for 10 seconds</h3><p>Rest the oar on stable supports so both sensors are motionless. This gives a reference for their resting offsets.</p></li><li><h3>Feather and square · 5–6 times</h3><p>Keep the shaft pointing in one direction. Rotate between feathered and square without sweeping or lifting the shaft.</p></li><li><h3>Feathered sweeps · 5–6 times</h3><p>Keep the blade feathered and the shaft approximately horizontal. Sweep back and forth through at least 90°, without rolling the shaft.</p></li><li><h3>Square sweeps · 5–6 times</h3><p>Keep the blade square and the shaft approximately horizontal. Make the same back-and-forth sweeps through at least 90°, without feathering.</p></li></ol>
+<p class="rfc-note">Pause for a few quiet seconds between blocks, and do only one type of motion at a time. On iOS, follow the app’s recording prompts. On Android, keep the recording running from the initial still period through all four blocks.</p>
+<details><summary>What the alignment does</summary><p>The app or Cloud Analysis identifies the different movements, compares how both sensors respond to the same oar motion, and places their readings in a common reference. The still period helps measure resting gyro offsets. This reduces the effect of small differences in mounting angle on the calculated bend and motion.</p><p>Alignment and <a href="oar_calibration.html">oar stiffness calibration</a> serve different purposes: alignment establishes orientation; stiffness calibration supplies the scale used for moment, work and power.</p></details>
+<details><summary>When to repeat it</summary><p>Repeat alignment after moving, rotating or removing either sensor, changing the sensor pair, or switching to a different oar setup. Confirm Port/Starboard and Scull/Sweep before recording. Review any setup-change warning instead of assuming a saved alignment still applies.</p></details></section>
+<section class="rfc-card" id="ios"><p class="eyebrow">iOS · RitmoForceCurve</p><h2>Save the alignment with your oar</h2><ol class="rfc-steps"><li><strong>Select the correct oar.</strong> Open <strong>Connect Oar Sensors</strong>, choose your saved oar or set up a new one, and confirm that both sensors are connected.</li><li><strong>Check the setup.</strong> In <strong>Oar Settings</strong>, confirm the oar name, Port/Starboard and Scull/Sweep.</li><li><strong>Record each movement.</strong> Open <strong>Align Sensors</strong> and choose a movement from the <strong>Movement</strong> selector. Tap <strong>Start</strong>, perform the movement, then tap <strong>Done — save recording</strong>. Record <strong>Bias</strong>, <strong>Feather and square</strong>, <strong>Feathered level sweep</strong> and <strong>Square level sweep</strong>. Keep both sensors secure throughout.</li><li><strong>Calculate and save.</strong> Under <strong>Calculate alignment</strong>, tap <strong>Calculate and save alignment</strong>. If replacing an existing alignment, the button may say <strong>Recalculate saved movements</strong> or <strong>Calculate a new alignment revision</strong>. Review <strong>Alignment details</strong> and the saved status in <strong>Active Oar Details</strong>. Redo any movement that needs repeating, then calculate again.</li><li><strong>Start your workout.</strong> Return to the rowing screen and start the session with the intended oar selected.</li></ol><details><summary>Optional iOS checks</summary><p><strong>Square swoop</strong> is an optional extra recording: keep the blade square and clear of the water while sweeping and raising/lowering it in a smooth oval, 5–6 times without feathering.</p><p>After saving, <strong>Record simulated rowing</strong> lets you make normal strokes in the air, including feathering and squaring, to check the result. This check does not change the saved alignment.</p><p><strong>Use alignment</strong> and <strong>Subtract saved gyro bias</strong> are on by default under <strong>Diagnostics</strong>. Leave them on for normal use.</p></details><p>The app records workout data with the selected alignment already applied. Cloud Analysis uses that recorded setup and does not apply mounting alignment a second time.</p><p>For an interactive report, open <strong>Cloud Analysis</strong>, sign in, select the recorded workout and review its analysis settings before uploading.</p><a href="connecting_oar_sensors.html">More help connecting the iOS app →</a></section>
+<section id="android"><p class="eyebrow">Android · WitMotion</p><h2>Record, export, and upload</h2><p>Use WitMotion for recording now; the RitmoForceCurve Android app is coming soon. Your first upload uses the short alignment TXT plus the separate rowing TXT. Leave the sensors in place between the two recordings.</p><div class="guide-links"><a class="button-link" href="https://play.google.com/store/apps/details?id=com.wit.wit_app&amp;hl=en_US" rel="noopener noreferrer" target="_blank">WitMotion on Google Play</a><a class="button-link" href="https://autoanalysis.ritmoforcecurve.com/" rel="noopener noreferrer" target="_blank">Open Cloud Analysis</a></div><details class="recording-reference"><summary>Android connection, recording and export screens</summary> <section class="rfc-card">
+<h2>Before you start</h2>
+<ul class="rfc-quick-list">
+<li>Turn on phone Bluetooth and approve any Bluetooth/location permissions Android requests.</li>
+<li>Charge and turn on both WitMotion sensors before opening the connection screen.</li>
+<li>Connect sensors inside the WitMotion app, not from the phone’s normal Bluetooth settings.</li>
+<li>Before using the sensors at a busy dock, connect them at home once and note the visible sensor names/addresses. The last 4 characters are usually enough to tell which sensors are yours.</li>
+</ul>
+<p class="rfc-warning">
       You do not need to memorize which sensor is “shaft” or “sleeve” while pairing in the WitMotion app. The main reason to note the sensor IDs is to avoid accidentally connecting to someone else’s WitMotion sensors when several are nearby.
     </p>
-  </section>
-
-  <section class="rfc-card">
-    <h2>Screen-to-screen path</h2>
-    <div class="rfc-transition-grid">
-      <div class="rfc-mini-card"><strong>Main</strong><br>Tap the chain/link icon to open the connection screen.</div>
-      <div class="rfc-mini-card"><strong>Available Devices</strong><br>Confirm the product type, switch to <strong>Multip</strong>, then connect both of your sensors by name/address.</div>
-      <div class="rfc-mini-card"><strong>Select Product</strong><br>Only use this if the product bar is not already correct. Pick the WitMotion model, then go back.</div>
-      <div class="rfc-mini-card"><strong>Main again</strong><br>Verify live values, start recording, stop, then open the folder.</div>
-    </div>
-  </section>
-
-  <section class="rfc-card">
-    <h2>Connect / pair the sensors</h2>
-    <ol class="rfc-steps">
-      <li><strong>Start on the Main screen.</strong> This is the first screen users should see. Tap the chain/link icon near the top right to open the sensor connection screen.</li>
-      <li><strong>Check the product type.</strong> On the Available Devices screen, use the <strong>Select Product…</strong> bar if the displayed model is wrong. In these screenshots, <strong>WT9011DCL-BT50</strong> is selected.</li>
-      <li><strong>Return from Select Product.</strong> After choosing the product, use the back arrow to return to Available Devices.</li>
-      <li><strong>Use multiple-sensor mode.</strong> Tap <strong>Multip</strong> if you are recording two sensors.</li>
-      <li><strong>Connect your sensors.</strong> Tap the switch beside each of your sensor names. If other WitMotion sensors are nearby, compare the visible names/addresses to the last 3–4 characters/digits you wrote down at home.</li>
-      <li><strong>Return to Main.</strong> Use the back arrow and confirm live Acc/Gyr/Angle numbers are changing. If both sensor cards are shown, swipe between them and check both before recording.</li>
-    </ol>
-  </section>
-
-  <div class="rfc-gallery" aria-label="WitMotion sensor connection screenshots in correct order">
-    <figure>
-      <img src="witmotionpics/IMG_3284.PNG" alt="WitMotion Main landing screen before sensors are connected">
-      <figcaption><strong>1. Main landing view.</strong> Start here. Tap the chain/link icon to open the Available Devices screen. This is now the first screenshot in the sequence.</figcaption>
-    </figure>
-    <figure>
-      <img src="witmotionpics/IMG_3285.PNG" alt="WitMotion Available Devices screen with product selector, Multip mode, and sensor switches off">
-      <figcaption><strong>2. Available Devices.</strong> Check the product selector, choose <strong>Multip</strong>, then use the switches to connect your sensors. In a busy area, use the last 3–4 characters/digits you noted at home.</figcaption>
-    </figure>
-    <figure>
-      <img src="witmotionpics/IMG_3287.PNG" alt="WitMotion Select Product screen with WT9011DCL-BT50 highlighted">
-      <figcaption><strong>3. Select Product, if needed.</strong> Choose the correct product type, then use the back arrow to return to Available Devices.</figcaption>
-    </figure>
-    <figure>
-      <img src="witmotionpics/IMG_3286.PNG" alt="WitMotion Available Devices screen after both sensors are connected">
-      <figcaption><strong>4. Connected sensors.</strong> Both switches are on. Use the back arrow to return to Main and verify live data.</figcaption>
-    </figure>
-  </div>
-
-  <section class="rfc-card">
-    <h2>Start and stop recording</h2>
-    <ol class="rfc-steps">
-      <li><strong>Verify live data first.</strong> On Main, move each sensor slightly and confirm the values change.</li>
-      <li><strong>Start recording.</strong> Tap the red record circle. Start a few seconds before rowing so the file includes a clean beginning.</li>
-      <li><strong>Keep the app active while recording.</strong> The timer means recording is running. Avoid disconnecting Bluetooth or force-closing the app during the row.</li>
-      <li><strong>Stop recording.</strong> Tap the stop square. Then tap the folder icon to open saved recordings.</li>
-    </ol>
-  </section>
-
-  <div class="rfc-gallery" aria-label="WitMotion recording screenshots in correct order">
-    <figure>
-      <img src="witmotionpics/IMG_3289.PNG" alt="WitMotion Main screen showing live sensor values and the record button">
-      <figcaption><strong>5. Live data ready.</strong> Live values confirm the sensor is streaming. Tap the red circle to start recording.</figcaption>
-    </figure>
-    <figure>
-      <img src="witmotionpics/IMG_3288.PNG" alt="WitMotion Main screen while recording with timer and stop button">
-      <figcaption><strong>6. Recording is active.</strong> The timer shows the recording is running. Tap the square stop button when finished.</figcaption>
-    </figure>
-  </div>
-
-  <section class="rfc-card">
-    <h2>Find, export, and upload the recording</h2>
-    <ol class="rfc-steps">
-      <li><strong>Open saved recordings.</strong> Tap the folder icon on Main, then open the folder named with the date/time of the row. The date/time naming makes the correct recording fairly easy to identify.</li>
-      <li><strong>Use the <code>.txt</code> file.</strong> The text file contains the data table with time, DeviceName, Acc, Gyro, Angle, magnetic field, quaternion, temperature, version, and battery columns.</li>
-      <li><strong>Check that both sensors are present.</strong> In a two-sensor recording, the DeviceName column should include both of your sensor IDs somewhere in the file.</li>
-      <li><strong>Export/share the file from the app.</strong> Open the date-named recording folder, select the <code>.txt</code> file, and use the share icon to send it to yourself, save it to cloud storage, or move it to the computer used for upload.</li>
-      <li><strong>Upload to Cloud Analysis.</strong> Upload the <code>.txt</code> file. If the uploader asks for a zip file, zip the whole timestamped recording folder and upload that zip.</li>
-    </ol>
-  </section>
-
-  <div class="rfc-gallery" aria-label="WitMotion export screenshots in correct order">
-    <figure>
-      <img src="witmotionpics/IMG_3290.PNG" alt="WitMotion saved recording folder with text and wplay files">
-      <figcaption><strong>7. Saved folder.</strong> The date/time folder structure makes recordings easy to identify. Choose the <code>.txt</code> file; the <code>.wplay</code> files are not the main upload file.</figcaption>
-    </figure>
-    <figure>
-      <img src="witmotionpics/IMG_3292.PNG" alt="WitMotion text data file showing sensor columns and share icon">
-      <figcaption><strong>8. Opened text file.</strong> The file should show sensor column headings and rows of data. Use the share icon to export it.</figcaption>
-    </figure>
-  </div>
-
-  <section class="rfc-card">
-    <h2>Common problems</h2>
-    <ul>
-      <li><strong>No sensors appear:</strong> make sure the sensors are on and close to the phone, then tap refresh. Android may also require Bluetooth and location permission for BLE scanning.</li>
-      <li><strong>Only one sensor connects:</strong> switch to <strong>Multip</strong>, then turn on both sensor switches again.</li>
-      <li><strong>Values are not changing:</strong> return to the connection screen and reconnect the sensor before recording.</li>
-      <li><strong>Several nearby sensors appear:</strong> use the last 3–4 characters/digits of your sensor addresses that you wrote down at home so you only connect to your own sensors.</li>
-      <li><strong>Finding the recording:</strong> tap the folder icon in the app and use the date/time-named recording folder. Then share the <code>.txt</code> file directly from the app.</li>
-    </ul>
-  </section>
-
-  <footer>© 2026 RitmoForceCurve</footer>
-</main>
-</body>
-</html>
+</section>
+<section class="rfc-card">
+<h2>Screen-to-screen path</h2>
+<div class="rfc-transition-grid">
+<div class="rfc-mini-card"><strong>Main</strong><br/>Tap the chain/link icon to open the connection screen.</div>
+<div class="rfc-mini-card"><strong>Available Devices</strong><br/>Confirm the product type, switch to <strong>Multip</strong>, then connect both of your sensors by name/address.</div>
+<div class="rfc-mini-card"><strong>Select Product</strong><br/>Only use this if the product bar is not already correct. Pick the WitMotion model, then go back.</div>
+<div class="rfc-mini-card"><strong>Main again</strong><br/>Verify live values, start recording, stop, then open the folder.</div>
+</div>
+</section>
+<section class="rfc-card">
+<h2>Connect / pair the sensors</h2>
+<ol class="rfc-steps">
+<li><strong>Start on the Main screen.</strong> This is the first screen users should see. Tap the chain/link icon near the top right to open the sensor connection screen.</li>
+<li><strong>Check the product type.</strong> On the Available Devices screen, use the <strong>Select Product…</strong> bar if the displayed model is wrong. In these screenshots, <strong>WT9011DCL-BT50</strong> is selected.</li>
+<li><strong>Return from Select Product.</strong> After choosing the product, use the back arrow to return to Available Devices.</li>
+<li><strong>Use multiple-sensor mode.</strong> Tap <strong>Multip</strong> if you are recording two sensors.</li>
+<li><strong>Connect your sensors.</strong> Tap the switch beside each of your sensor names. If other WitMotion sensors are nearby, compare the visible names/addresses to the last 3–4 characters/digits you wrote down at home.</li>
+<li><strong>Return to Main.</strong> Use the back arrow and confirm live Acc/Gyr/Angle numbers are changing. If both sensor cards are shown, swipe between them and check both before recording.</li>
+</ol>
+</section>
+<div aria-label="WitMotion sensor connection screenshots in correct order" class="rfc-gallery">
+<figure>
+<img alt="WitMotion Main landing screen before sensors are connected" decoding="async" loading="lazy" src="witmotionpics/IMG_3284.PNG"/>
+<figcaption><strong>1. Main landing view.</strong> Start here. Tap the chain/link icon to open the Available Devices screen. </figcaption>
+</figure>
+<figure>
+<img alt="WitMotion Available Devices screen with product selector, Multip mode, and sensor switches off" decoding="async" loading="lazy" src="witmotionpics/IMG_3285.PNG"/>
+<figcaption><strong>2. Available Devices.</strong> Check the product selector, choose <strong>Multip</strong>, then use the switches to connect your sensors. In a busy area, use the last 3–4 characters/digits you noted at home.</figcaption>
+</figure>
+<figure>
+<img alt="WitMotion Select Product screen with WT9011DCL-BT50 highlighted" decoding="async" loading="lazy" src="witmotionpics/IMG_3287.PNG"/>
+<figcaption><strong>3. Select Product, if needed.</strong> Choose the correct product type, then use the back arrow to return to Available Devices.</figcaption>
+</figure>
+<figure>
+<img alt="WitMotion Available Devices screen after both sensors are connected" decoding="async" loading="lazy" src="witmotionpics/IMG_3286.PNG"/>
+<figcaption><strong>4. Connected sensors.</strong> Both switches are on. Use the back arrow to return to Main and verify live data.</figcaption>
+</figure>
+</div>
+<section class="rfc-card"><h2>Make the alignment recording first</h2><p>After both sensors are connected in <strong>Multip</strong> mode, start one continuous recording. Perform the <a href="#alignment-recording">four motion blocks above</a>, leave a few still seconds at the end, then stop and save. Name this file so you can recognize it as your alignment recording.</p><p>Start a separate recording for your rowing workout.</p></section><section class="rfc-card">
+<h2>Record your rowing workout separately</h2>
+<ol class="rfc-steps">
+<li><strong>Verify live data first.</strong> On Main, gently move the oar with both sensors secured and confirm the values change.</li>
+<li><strong>Start recording.</strong> Tap the red record circle. Start a few seconds before rowing so the file includes a clean beginning.</li>
+<li><strong>Keep the app active while recording.</strong> The timer means recording is running. Avoid disconnecting Bluetooth or force-closing the app during the row.</li>
+<li><strong>Stop recording.</strong> Tap the stop square. Then tap the folder icon to open saved recordings.</li>
+</ol>
+</section>
+<div aria-label="WitMotion recording screenshots in correct order" class="rfc-gallery">
+<figure>
+<img alt="WitMotion Main screen showing live sensor values and the record button" decoding="async" loading="lazy" src="witmotionpics/IMG_3289.PNG"/>
+<figcaption><strong>5. Live data ready.</strong> Live values confirm the sensor is streaming. Tap the red circle to start recording.</figcaption>
+</figure>
+<figure>
+<img alt="WitMotion Main screen while recording with timer and stop button" decoding="async" loading="lazy" src="witmotionpics/IMG_3288.PNG"/>
+<figcaption><strong>6. Recording is active.</strong> The timer shows the recording is running. Tap the square stop button when finished.</figcaption>
+</figure>
+</div>
+<section class="rfc-card">
+<h2>Find, export, and upload the recording</h2>
+<ol class="rfc-steps">
+<li><strong>Open saved recordings.</strong> Tap the folder icon on Main, then open the folder named with the date/time of the row. The date/time naming makes the correct recording fairly easy to identify.</li>
+<li><strong>Use the <code>.txt</code> file.</strong> The text file contains the data table with time, DeviceName, Acc, Gyro, Angle, magnetic field, quaternion, temperature, version, and battery columns.</li>
+<li><strong>Check that both sensors are present.</strong> In a two-sensor recording, the DeviceName column should include both of your sensor IDs somewhere in the file.</li>
+<li><strong>Export/share the file from the app.</strong> Open the date-named recording folder, select the <code>.txt</code> file, and use the share icon to send it to yourself, save it to cloud storage, or move it to the computer used for upload.</li>
+<li><span><strong>Upload both TXT files the first time.</strong> Include the short alignment recording and the larger rowing recording in the same upload. You can select the files together in the uploader, or put both in one ZIP. The original TXT files are fine; no manual column deletion or splitting is needed.</span></li></ol>
+</section>
+<div aria-label="WitMotion export screenshots in correct order" class="rfc-gallery">
+<figure>
+<img alt="WitMotion saved recording folder with text and wplay files" decoding="async" loading="lazy" src="witmotionpics/IMG_3290.PNG"/>
+<figcaption><strong>7. Saved folder.</strong> The date/time folder structure makes recordings easy to identify. Choose the <code>.txt</code> file; the <code>.wplay</code> files are not the main upload file.</figcaption>
+</figure>
+<figure>
+<img alt="WitMotion text data file showing sensor columns and share icon" decoding="async" loading="lazy" src="witmotionpics/IMG_3292.PNG"/>
+<figcaption><strong>8. Opened text file.</strong> The file should show sensor column headings and rows of data. Use the share icon to export it.</figcaption>
+</figure>
+</div>
+<section class="rfc-card">
+<h2>Common problems</h2>
+<ul>
+<li><strong>No sensors appear:</strong> make sure the sensors are on and close to the phone, then tap refresh. Android may also require Bluetooth and location permission for BLE scanning.</li>
+<li><strong>Only one sensor connects:</strong> switch to <strong>Multip</strong>, then turn on both sensor switches again.</li>
+<li><strong>Values are not changing:</strong> return to the connection screen and reconnect the sensor before recording.</li>
+<li><strong>Several nearby sensors appear:</strong> use the last 3–4 characters/digits of your sensor addresses that you wrote down at home so you only connect to your own sensors.</li>
+<li><strong>Finding the recording:</strong> tap the folder icon in the app and use the date/time-named recording folder. Then share the <code>.txt</code> file directly from the app.</li>
+</ul>
+</section>
+<section class="rfc-card"><h2>Your next upload</h2><p>Cloud Analysis saves your latest successfully validated Android alignment to your account. On later rows with the same unchanged sensor setup, upload just the rowing TXT and it can reuse that alignment. A newly supplied alignment takes priority.</p><p>If there is no usable alignment, analysis continues using the raw sensor axes and the report identifies that source. Review any side, boating or sensor-identity warning before comparing results. A plausible curve alone does not confirm correct alignment.</p><p>Large TXT files are reduced to the columns needed for analysis and split for upload automatically. Keep your original recordings as your own copy.</p><a class="button-link primary" href="https://autoanalysis.ritmoforcecurve.com/" rel="noopener noreferrer" target="_blank">Upload alignment + workout</a></section>
+</details></section>
+<section class="rfc-card"><h2>Ready for your next row</h2><p>With the same unchanged setup, iOS keeps the alignment saved with your oar. Cloud Analysis can reuse your latest successfully validated Android alignment for future TXT uploads. Upload a new alignment whenever the mounting changes.</p><p>If no usable alignment is available for an Android recording, the report identifies that it used raw sensor axes. Check the alignment source before comparing results.</p><div class="guide-links"><a class="button-link" href="instructions.html">Kit assembly &amp; mounting</a><a class="button-link" href="oar-sensor-alignment-guide.html">Sensor direction</a><a class="button-link" href="cloud_analysis.html">Cloud analysis guide</a></div></section>
+<footer class="site-footer"><span>© 2026 RitmoForceCurve</span><a href="index.html">All guides</a></footer></main></body></html>

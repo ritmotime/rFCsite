@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="540" viewBox="0 0 800 540" role="img" aria-labelledby="title desc"><title id="title">The curved saddle snaps flush into the curved housing back</title><desc id="desc">An exploded end section shows the saddle matching the curved back of the housing. A completed section shows the oar, the thin curved saddle and housing in continuous contact with no gap. Engage one saddle edge and snap the other edge in.</desc><defs><linearGradient id="housing" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#566670"/><stop offset="1" stop-color="#283640"/></linearGradient><linearGradient id="yellow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff575"/><stop offset="1" stop-color="#dbce38"/></linearGradient><pattern id="texture" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 6L6 0M-2 2L2-2M4 8L8 4" stroke="#b6c6cf" stroke-width="1.1"/></pattern><marker id="arr" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0 0L8 3.5L0 7Z" fill="#a8dbd4"/></marker><style>.edge{stroke:#b8cbd5;stroke-width:1.5;stroke-linejoin:round}.yellow{fill:url(#yellow);stroke:#fff697;stroke-width:1.5;stroke-linejoin:round}.lead{fill:none;stroke:#a8bbc7;stroke-width:1.3;stroke-linecap:round}.arrow{fill:none;stroke:#a8dbd4;stroke-width:2;marker-end:url(#arr)}.label{font:18px Arial,sans-serif;fill:#e7edf2}.small{font:15px Arial,sans-serif;fill:#c0cfda}.sub{font:14px Arial,sans-serif;fill:#afc3d0;letter-spacing:1.4px}.muted{stroke:#8398a8;stroke-width:1;fill:none;stroke-dasharray:5 5}</style></defs><rect width="800" height="540" rx="14" fill="#283540"/>
+<text x="28" y="34" class="sub">03 / CURVED SADDLE · MATCHING CURVES</text>
+<text x="187" y="78" class="label" text-anchor="middle">Engage one edge</text><text x="602" y="78" class="label" text-anchor="middle">Then press the other edge in</text>
+<path d="M399 70V454" stroke="#607784" stroke-width="1" opacity=".45"/>
+<!-- Exploded end view; housing curve and saddle curve have the same profile -->
+<path d="M81 148Q186 222 291 148L291 165Q186 239 81 165Z" class="yellow"/>
+<path d="M81 148V128H94V157M291 148V128H278V157" fill="none" stroke="#f3e55c" stroke-width="8" stroke-linejoin="round"/>
+<path d="M81 281Q186 355 291 281V406H81Z" fill="url(#housing)" class="edge"/>
+<path d="M104 343Q186 377 268 343V388H104Z" fill="#17242e" class="edge"/>
+<path d="M80 298H94V320M292 298H278V320" fill="none" stroke="#bfd1dc" stroke-width="2"/>
+<path d="M143 225V284" class="arrow"/><path d="M229 225V284" class="arrow"/>
+<text x="184" y="112" class="small" text-anchor="middle">Raised edge lips</text><path d="M139 119L87 136" class="lead"/>
+<text x="187" y="446" class="label" text-anchor="middle">Housing back is curved.</text><text x="187" y="470" class="small" text-anchor="middle">The saddle follows the same curve.</text>
+<!-- Assembled section: circular oar, saddle and housing share boundaries exactly -->
+<circle cx="599" cy="214" r="108" fill="#3f525f" class="edge"/>
+
+<!-- A circular lower arc replaces the quadratic against the shaft -->
+<path d="M506 269A108 108 0 0 0 692 269L708 287Q599 368 490 287Z" class="yellow"/>
+<path d="M490 287Q599 368 708 287V412H490Z" fill="url(#housing)" class="edge"/>
+<path d="M514 350Q599 383 684 350V394H514Z" fill="#17242e" class="edge"/>
+<path d="M491 284V307H504M707 284V307H694" fill="none" stroke="#f0e252" stroke-width="7" stroke-linejoin="round"/>
+<text x="599" y="209" class="label" text-anchor="middle">Oar shaft</text><text x="599" y="233" class="small" text-anchor="middle">Saddle against the oar</text>
+<path d="M749 301L703 308M749 301V373" class="lead"/><text x="739" y="397" class="small" text-anchor="middle">No gap</text>
+<text x="599" y="446" class="label" text-anchor="middle">Flush fit along the curve.</text><text x="599" y="470" class="small" text-anchor="middle">Both lips engaged; sensor secure.</text>
+<text x="28" y="520" class="sub">END SECTIONS · CLIPS OMITTED TO MAKE THE CURVED INTERFACE CLEAR</text></svg>

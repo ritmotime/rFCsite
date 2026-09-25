@@ -1,0 +1,41 @@
+/* Assembly and shared alignment guide only; colors come from the shared theme. */
+.kit-guide .guide-layout,.alignment-guide .guide-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:center}
+.kit-guide .guide-layout>* , .alignment-guide .guide-layout>*{min-width:0}
+.kit-guide .guide-diagram{margin:16px 0;border:1px solid var(--rfc-border);border-radius:16px;overflow:hidden;background:var(--rfc-bg-soft)}
+.kit-guide .guide-diagram img{display:block;width:100%;height:auto}
+.kit-guide .guide-diagram figcaption{padding:10px 16px;font-size:.85rem}
+.kit-guide .guide-step{border-top:1px solid var(--rfc-border);padding:20px 0}
+.kit-guide .guide-step h2{margin-top:0!important}
+.kit-guide .guide-number{display:inline-grid;place-items:center;min-width:29px;height:29px;border:1px solid var(--rfc-accent);color:var(--rfc-accent);border-radius:50%;font-size:.85rem;vertical-align:middle;margin-right:9px}
+.kit-guide .orientation-photo{max-width:510px;margin:0 auto;border:1px solid var(--rfc-border);border-radius:16px;overflow:hidden;background:var(--rfc-bg-soft)}
+.kit-guide .orientation-photo img{display:block;width:100%;height:auto}
+.kit-guide .orientation-photo figcaption{padding:12px 16px;font-size:.9rem}
+.kit-guide .blade-label{font-weight:800;color:var(--rfc-accent);display:block;margin-bottom:4px}
+.kit-guide .guide-links,.alignment-guide .guide-links{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.alignment-guide .platform-card{height:100%;margin:0!important}
+.alignment-guide .motion-blocks{list-style:none;padding:0;margin:22px 0;counter-reset:motion;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.alignment-guide .motion-blocks>li{counter-increment:motion;border:1px solid var(--rfc-border);border-radius:13px;padding:20px;background:var(--rfc-bg-soft)}
+.alignment-guide .motion-blocks>li:before{content:counter(motion);display:inline-grid;place-items:center;width:28px;height:28px;margin-bottom:12px;border:1px solid var(--rfc-accent);border-radius:50%;color:var(--rfc-accent);font-weight:750}
+.alignment-guide .motion-blocks h3{margin:0 0 9px!important}
+.alignment-guide .motion-blocks p{margin:0}
+.alignment-guide .recording-reference{margin:26px 0;border:1px solid var(--rfc-border);border-radius:16px;padding:18px}
+.alignment-guide .recording-reference>summary{margin:0;font-size:1.05rem}
+.alignment-guide .recording-reference[open]>summary{margin-bottom:18px}
+.alignment-guide .rfc-gallery img{max-height:610px;object-fit:contain;background:var(--rfc-bg-soft)}
+@media(max-width:700px){.kit-guide .guide-layout,.alignment-guide .guide-layout,.alignment-guide .motion-blocks{grid-template-columns:1fr}.kit-guide .guide-step{padding:18px 0}.kit-guide .guide-layout{gap:8px}.alignment-guide .recording-reference{padding:12px}.kit-guide .guide-links>a,.alignment-guide .guide-links>a{flex:1 1 180px;text-align:center}}
+/* Real kit reference photography with mechanical-detail illustrations. */
+.kit-guide .kit-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start;margin:22px 0 32px}
+.kit-guide .kit-product-photo{margin:0;border:1px solid var(--rfc-border);border-radius:14px;overflow:hidden;background:var(--rfc-bg-soft)}
+.kit-guide .kit-photo-stage{position:relative;background:#b9c6d0;aspect-ratio:1086/1448;padding:0;overflow:hidden}
+.kit-guide .kit-photo-stage img{width:100%;height:100%;object-fit:contain;display:block}
+.kit-guide .kit-photo-open{display:block;text-decoration:none!important}
+.kit-guide .kit-callout{position:absolute;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#202d39;color:#fff!important;border:1px solid #e3edf4;font-size:14px;font-weight:750;line-height:1;box-shadow:0 0 0 2px rgba(32,45,57,.25);transform:translate(-50%,-50%)}
+.kit-guide .kit-product-photo figcaption{display:flex;flex-direction:column;gap:4px;padding:15px 17px;font-size:.9rem;line-height:1.5}
+.kit-guide .kit-product-photo figcaption strong{font-size:1.06rem}
+.kit-guide .kit-part-key{list-style:none;padding:0 17px 17px;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 12px;font-size:.88rem}
+.kit-guide .kit-part-key li{display:flex;align-items:center;gap:8px}
+.kit-guide .kit-part-key b{font-size:.8rem;display:grid;place-items:center;min-width:22px;height:22px;border:1px solid var(--rfc-border);border-radius:3px}
+.kit-guide .kit-photo-note{padding:0 17px 18px;margin:0;font-size:.9rem;color:var(--rfc-muted)}
+.kit-guide .guide-diagram{border-radius:10px}
+.kit-guide .guide-diagram figcaption{font-size:.78rem;letter-spacing:.025em}
+@media(max-width:700px){.kit-guide .kit-photo-grid{grid-template-columns:1fr;gap:16px}.kit-guide .kit-photo-stage{max-height:none}.kit-guide .kit-callout{width:25px;height:25px;font-size:13px}.kit-guide .guide-layout .guide-diagram{margin-top:4px}.kit-guide .kit-product-photo figcaption{padding:12px 14px}.kit-guide .kit-part-key{padding:0 14px 15px}}

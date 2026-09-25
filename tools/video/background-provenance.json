@@ -1,0 +1,337 @@
+{
+  "reference_frame": 90,
+  "size_native": [
+    3840,
+    1000
+  ],
+  "clean_bank_use_native_y": [
+    0,
+    820
+  ],
+  "bank_water_blend_native_y": [
+    810,
+    860
+  ],
+  "caution": "Below the bank, the temporal median contains moving water/boat remnants and is not a valid replacement. Only use the reedbank region. Upper/side edge unobserved pixels may remain black.",
+  "method": "26 geometrically registered source frames, broad observed shirt-based person exclusion, masked RGB temporal median; similarity transforms from bidirectional bank feature tracks. No image generation.",
+  "frame_count": 26,
+  "sources": [
+    {
+      "frame": 0,
+      "person_bbox_analysis": null,
+      "person_mask_expansion_analysis": null
+    },
+    {
+      "frame": 8,
+      "person_bbox_analysis": [
+        1808,
+        212,
+        112,
+        296
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 16,
+      "person_bbox_analysis": [
+        1714,
+        208,
+        206,
+        292
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 24,
+      "person_bbox_analysis": [
+        1620,
+        204,
+        294,
+        290
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 32,
+      "person_bbox_analysis": [
+        1530,
+        210,
+        354,
+        278
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 40,
+      "person_bbox_analysis": [
+        1454,
+        216,
+        388,
+        292
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 48,
+      "person_bbox_analysis": [
+        1380,
+        216,
+        380,
+        262
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 56,
+      "person_bbox_analysis": [
+        1292,
+        214,
+        366,
+        273
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 64,
+      "person_bbox_analysis": [
+        1186,
+        204,
+        342,
+        286
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 72,
+      "person_bbox_analysis": [
+        1068,
+        204,
+        339,
+        284
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 80,
+      "person_bbox_analysis": [
+        934,
+        204,
+        338,
+        282
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 88,
+      "person_bbox_analysis": [
+        784,
+        200,
+        312,
+        288
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 90,
+      "person_bbox_analysis": [
+        742,
+        201,
+        306,
+        287
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 96,
+      "person_bbox_analysis": [
+        608,
+        212,
+        282,
+        286
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 104,
+      "person_bbox_analysis": [
+        414,
+        233,
+        232,
+        273
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 112,
+      "person_bbox_analysis": [
+        236,
+        240,
+        200,
+        270
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 120,
+      "person_bbox_analysis": [
+        39,
+        240,
+        215,
+        266
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 128,
+      "person_bbox_analysis": [
+        0,
+        246,
+        100,
+        200
+      ],
+      "person_mask_expansion_analysis": [
+        -75,
+        -105,
+        110,
+        140
+      ]
+    },
+    {
+      "frame": 136,
+      "person_bbox_analysis": null,
+      "person_mask_expansion_analysis": null
+    },
+    {
+      "frame": 144,
+      "person_bbox_analysis": null,
+      "person_mask_expansion_analysis": null
+    },
+    {
+      "frame": 152,
+      "person_bbox_analysis": null,
+      "person_mask_expansion_analysis": null
+    },
+    {
+      "frame": 160,
+      "person_bbox_analysis": null,
+      "person_mask_expansion_analysis": null
+    },
+    {
+      "frame": 168,
+      "person_bbox_analysis": null,
+      "person_mask_expansion_analysis": null
+    },
+    {
+      "frame": 176,
+      "person_bbox_analysis": null,
+      "person_mask_expansion_analysis": null
+    },
+    {
+      "frame": 184,
+      "person_bbox_analysis": null,
+      "person_mask_expansion_analysis": null
+    },
+    {
+      "frame": 190,
+      "person_bbox_analysis": null,
+      "person_mask_expansion_analysis": null
+    }
+  ],
+  "coverage_bank_y0_810": {
+    "min": 0,
+    "median": 23.0,
+    "percent_ge5": 99.85648148148148,
+    "percent_zero": 0.12197788065843622
+  },
+  "registration_summary": {
+    "median_residual": 0.41432519257068634,
+    "p95_residual": 1.283583015203476
+  },
+  "replacement_reference_y_analysis": {
+    "fully_replaced_until": 390,
+    "fade_ends": 408
+  },
+  "foreground_mask": "Native source frames only: background/color segmentation, connected navy cap protection and enclosed head-hole repair before interpolation. Premultiplied RGB and alpha share one feature-constrained dense motion field.",
+  "water_policy": "No replacement below safe bank region; moving water and boat are retained.",
+  "foreground_interpolation": "Robust body and head similarity motion at silhouette; dense optical flow inside foreground. Reeds never enter person motion estimation."
+}

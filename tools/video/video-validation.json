@@ -1,0 +1,50 @@
+{
+  "method": "Source-native foreground masks; premultiplied RGB/alpha shared motion; feature-constrained silhouette and dense interior; existing motion-compensated water",
+  "background_restoration": "Registered observed reed-bank plate with separately interpolated native foreground; water remains dynamic",
+  "overlay_sampling": "fractional source positions; redrawn vector/text overlays",
+  "output_frames": 232,
+  "output_fps": 60,
+  "duration_seconds": 3.8666666666666667,
+  "bytes": 29184779,
+  "source_range": [
+    36,
+    121
+  ],
+  "speed_ramp_changed": false,
+  "sensor_y_length": 56,
+  "middle_y_length": 87,
+  "presentation_data_sha256": "0215951ac49afba6e754ecff9754cfadf17186c8a2d22ddb8f25db55a3270dfb",
+  "display_metrics": {
+    "catchMiss": 2.161349916990001,
+    "strokeLength": 82.82566507286278,
+    "finishWash": 5.2,
+    "releaseTravel": 3.1904528216102364,
+    "totalSweepArc": 93.37746781146302
+  },
+  "inputs_sha256": {
+    "work_v7/plot_data.json": "1d5d6443b3f67ac1e801460faf6cf581afe1f3cb933aa94073b47cca1f0eb339",
+    "work_v5/video_alignment.json": "3b8fce5b4bd83214def5e83d6aebdc51956e5c661faecfece9a8c7e7ad1d8fcb",
+    "work_v4/sensor_tracking.json": "7eee14c4ac492f0abee83b7f7ab755b5a5bfa21ccd9616ab8f1b912c51996e3a",
+    "work_v4/boat_tracking.json": "0af76ed1de0266c9be892114e4a01b74477ee7d19f392946d1c9a8a513721b4a"
+  },
+  "full_decode": "passed with ffmpeg -xerror",
+  "metadata": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 2880,
+        "height": 1440,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "nb_frames": "232"
+      }
+    ],
+    "format": {
+      "duration": "3.866667",
+      "size": "29184779"
+    }
+  },
+  "lower_water_pixels_preencode_max_change": 0,
+  "lower_water_check": "All 232 lossless RGB film frames, y>=900; exact unchanged dynamic water vs existing clean motion-compensated footage",
+  "frozen_presentation_sha256": "0215951ac49afba6e754ecff9754cfadf17186c8a2d22ddb8f25db55a3270dfb"
+}

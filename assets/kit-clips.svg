@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="540" viewBox="0 0 800 540" role="img" aria-labelledby="title desc"><title id="title">Fit the two slotted clips to the curved-back housing</title><desc id="desc">Detailed exploded view of the empty vented housing and two yellow side clips. Each clip has a slotted face and a folded retaining flange that engages a housing edge. The curved back of the housing is visible at the top; the saddle is added later.</desc><defs><linearGradient id="housing" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#566670"/><stop offset="1" stop-color="#283640"/></linearGradient><linearGradient id="yellow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff575"/><stop offset="1" stop-color="#dbce38"/></linearGradient><pattern id="texture" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 6L6 0M-2 2L2-2M4 8L8 4" stroke="#b6c6cf" stroke-width="1.1"/></pattern><marker id="arr" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0 0L8 3.5L0 7Z" fill="#a8dbd4"/></marker><style>.edge{stroke:#b8cbd5;stroke-width:1.5;stroke-linejoin:round}.yellow{fill:url(#yellow);stroke:#fff697;stroke-width:1.5;stroke-linejoin:round}.lead{fill:none;stroke:#a8bbc7;stroke-width:1.3;stroke-linecap:round}.arrow{fill:none;stroke:#a8dbd4;stroke-width:2;marker-end:url(#arr)}.label{font:18px Arial,sans-serif;fill:#e7edf2}.small{font:15px Arial,sans-serif;fill:#c0cfda}.sub{font:14px Arial,sans-serif;fill:#afc3d0;letter-spacing:1.4px}.muted{stroke:#8398a8;stroke-width:1;fill:none;stroke-dasharray:5 5}</style></defs><rect width="800" height="540" rx="14" fill="#283540"/>
+<text x="28" y="34" class="sub">01 / TWO SIDE CLIPS · EXPLODED VIEW</text>
+<!-- Vented housing: front opening and curved rear edge -->
+<path d="M292 161L353 113Q428 145 505 113L550 155V338L489 390H292Z" fill="url(#housing)" class="edge"/>
+<path d="M292 161H489V390H292Z M316 183H465V365H316Z" fill="#42525e" fill-rule="evenodd" class="edge"/>
+<path d="M316 183L368 145Q420 166 477 147V311L465 365V183Z" fill="#17242e" class="edge"/>
+<path d="M332 203L370 169Q389 176 408 178V224L373 247H332Z M425 178Q449 175 479 161V207L440 238H425Z M332 276L367 253H405V300L370 324H332Z M426 251L479 225V292L440 323H426Z" fill="#2e3d47" stroke="#859ba9" stroke-width="1.2"/>
+<path d="M489 161L550 155V338L489 390Z" fill="#364651" class="edge"/>
+<path d="M503 189L535 181V237L503 262Z M503 284L535 262V323L503 350Z" fill="#17242e" stroke="#8aa0af" stroke-width="1.3"/>
+<path d="M301 171H480M301 379H480M496 171L542 164M496 380L542 342" class="lead"/>
+<path d="M353 113Q428 145 505 113M346 121Q426 152 512 121" fill="none" stroke="#d0dee6" stroke-width="2"/>
+<!-- Left clip, with visible L-section flange and radiused corners -->
+<path d="M114 174L144 156H194V352L164 371H114Z" class="yellow"/>
+<path d="M114 174H164V371H114Z" fill="#f0e151" stroke="#fff697" stroke-width="1.5"/>
+<path d="M164 174L194 156V169L177 181V344L164 357Z" fill="#b4a82a" stroke="#fff697" stroke-width="1.2"/>
+<path d="M114 354H164L194 336V352L164 371H114Z" class="yellow"/>
+<rect x="129" y="215" width="19" height="94" rx="7" fill="#283540" stroke="#9b9224" stroke-width="2"/>
+<!-- Opposite clip is mirrored so each flange faces the housing -->
+<path d="M628 147L657 130H711V325L682 344H628Z" class="yellow"/>
+<path d="M657 147H711V325L682 344H657Z" fill="#e4d441" stroke="#fff697" stroke-width="1.5"/>
+<path d="M628 147L657 130V145L641 156V315L628 330Z" fill="#b4a82a" stroke="#fff697" stroke-width="1.2"/>
+<path d="M628 327H682L711 310V325L682 344H628Z" class="yellow"/>
+<rect x="673" y="183" width="19" height="98" rx="7" fill="#283540" stroke="#9b9224" stroke-width="2"/>
+<path d="M206 259H274" class="arrow"/><path d="M615 250H567" class="arrow"/>
+<text x="350" y="78" class="label">Curved back of housing</text><path d="M432 87V128" class="lead"/>
+<text x="27" y="109" class="label">Retaining flange</text><path d="M140 118L179 164" class="lead"/>
+<text x="615" y="402" class="label">Strap slot</text><path d="M667 382L682 284" class="lead"/>
+<text x="44" y="421" class="label">Hook the flange over</text><text x="44" y="445" class="label">the matching housing edge.</text><path d="M172 401L173 354" class="lead"/>
+<text x="322" y="466" class="small">One clip on each side.</text><text x="322" y="489" class="small">Press fully home; keep both slots clear.</text>
+<text x="28" y="520" class="sub">SADDLE AND SENSOR OMITTED TO SHOW HOW THE CLIPS ENGAGE</text></svg>

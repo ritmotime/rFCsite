@@ -1,0 +1,48 @@
+{
+  "metrics": {
+    "catchMiss": 2.161349916990001,
+    "strokeLength": 82.82566507286278,
+    "finishWash": 5.2,
+    "releaseTravel": 3.1904528216102364,
+    "totalSweepArc": 93.37746781146302
+  },
+  "loaded_end_angle_deg": 84.98701498985278,
+  "actual_force_zero_deg": 86.5,
+  "threshold_bend_deg": 0.1,
+  "angle_balance_error_deg": 0.0,
+  "raw_and_recorded_fields_preserved": true,
+  "feather_and_other_paths_preserved": true,
+  "earlier_curve_through55deg_preserved": true,
+  "all_original_amplitudes_preserved_except_zero_roundoff": true,
+  "force_zero_time": 0.7821687710685035,
+  "loaded_end_time": 0.768330992376615,
+  "feather_time": 0.8235152217734196,
+  "change": {
+    "input_original_v7_sha256": "1d5d6443b3f67ac1e801460faf6cf581afe1f3cb933aa94073b47cca1f0eb339",
+    "tail": "Widened mainfall after55 degrees by a monotone horizontal warp; short lowpositive tail; no Gaussian blend, filtering or synthetic noise.",
+    "source_anchor_angles_deg": [
+      55.0,
+      70.0,
+      75.77520205718793,
+      83.18701498985278
+    ],
+    "display_anchor_angles_deg": [
+      55.0,
+      80.0,
+      84.98701498985278,
+      86.5
+    ],
+    "bend_threshold_deg": 0.1,
+    "loaded_endpoint_deg": 84.98701498985278,
+    "force_endpoint_deg": 86.5,
+    "feather_endpoint_deg": 90.18701498985278,
+    "wash_deg": 5.2,
+    "release_deg": 3.1904528216102364,
+    "loaded_end_time": 0.768330992376615,
+    "force_zero_time": 0.7821687710685035,
+    "feather_time": 0.8235152217734196,
+    "physical_raw_sensor_roll_unchanged": true,
+    "feather_plot": "Original v7 feather data and path retained exactly."
+  },
+  "bottom_interval_endpoint_matches_loaded_threshold": true
+}

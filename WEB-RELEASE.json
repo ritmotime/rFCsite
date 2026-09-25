@@ -1,0 +1,14 @@
+{
+  "release": "2026-09-25-public-v6",
+  "scope": "RitmoForceCurve public website only",
+  "palette": "canary / cool slate",
+  "default_accent": "teal",
+  "accents": [
+    "teal"
+  ],
+  "example_workout": "10 September 2026",
+  "video_source": "Oar Bend Edit Project revision 7; source-frame person-layer interpolation, registered reed background, shortened sensor-Y arrows, widened illustrative curve with short rounded tail",
+  "video_playback": "autoplay muted loop; full-screen control only",
+  "video_bytes": 29184779,
+  "video_background": "Registered clean reed-bank plate from original recording; person colour and alpha interpolated together before compositing"
+}

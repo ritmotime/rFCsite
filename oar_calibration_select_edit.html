@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html data-rfc-accent="teal" lang="en">
+<head><script src="site-theme.js?v=20260925f"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Calib - sel/edit</title>
 <style>
 
@@ -163,59 +164,51 @@
   }
 
 </style>
-<link rel="stylesheet" href="site.css">
-</head>
+<link href="site.css?v=20260925f" rel="stylesheet"/></head>
 <body>
-<div class="container">
-<h1>Calib - sel/edit</h1>
-<nav class="calib-tabs" aria-label="Sensor Mount / Oar Calibration app tabs">
-<a class="calib-tab" href="oar_calibration_mnt_angle_check.html">Mnt Ang check</a>
+<nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a></nav><div class="container">
+<p class="note"><strong>Earlier screen reference.</strong> These images/details are retained for reference. The current app uses <strong>Oar Settings → Align Sensors</strong> and <strong>Calibrate Oar Stiffness</strong>; the old mount-angle-check screen has been replaced. <a href="oar_calibration.html">Read the current setup guide</a>.</p><h1>Calib - sel/edit</h1>
+<nav aria-label="Sensor Mount / Oar Calibration app tabs" class="calib-tabs">
+<a class="calib-tab" href="android_recording.html">Motion alignment</a>
 <a class="calib-tab active" href="oar_calibration_select_edit.html">Calib - sel/edit</a>
 <a class="calib-tab" href="oar_calibration_manage.html">Calib - manage</a>
 <a class="calib-tab" href="oar_calibration_create.html">Calib - create</a>
 </nav>
-
 <p class="lead">
-  This is the main calibration page most rowers will use. It lets you choose the active oar calibration and edit the geometry used to calculate Scale Factor.
+  This is the main calibration page most rowers will use. It lets you choose the active oar calibration and edit the geometry used to calculate Moment/Bend Factor.
 </p>
-
 <div class="card">
-  <h2>Typical use</h2>
-  <ol>
-    <li>Choose an existing saved calibration, scan a label, or start from the default setup.</li>
-    <li>Confirm the rig type, side, sensor locations, inboard, outboard, and shaft profile.</li>
-    <li>Use <b>Get sensor locations from picture</b> when you want the app to estimate the main oar measurement positions from a photo.</li>
-    <li>Review the displayed <b>Cperm</b>, <b>Keff</b>, and <b>SF deg²</b> values.</li>
-    <li>Use <b>Save Changes</b> when you want the edited values to become the active workout defaults.</li>
-  </ol>
+<h2>Typical use</h2>
+<ol>
+<li>Choose an existing saved calibration, scan a label, or start from the default setup.</li>
+<li>Confirm the rig type, side, sensor locations, inboard, outboard, and shaft profile.</li>
+<li>Use <b>Get sensor locations from picture</b> when you want the app to estimate the main oar measurement positions from a photo.</li>
+<li>Review the stiffness result and the Moment/Bend Factor for the entered geometry.</li>
+<li>Use <b>Save Changes</b> when you want the edited values to become the active workout defaults.</li>
+</ol>
 </div>
-
 <figure>
-  <img src="select_edit_5pos.png" alt="Oar measurement reference guide for selecting and editing calibration dimensions">
-  <figcaption>
+<img alt="Oar measurement reference guide for selecting and editing calibration dimensions" decoding="async" loading="lazy" src="select_edit_5pos.png"/>
+<figcaption>
     The Select/Edit photo workflow uses five reference points: <b>Blade Tip</b>, <b>S1 sensor</b>, <b>Button reference face</b>, <b>S2 sensor</b>, and <b>Handle End</b>. S1 and S2 are measured from the blade tip. Outboard is blade tip to the outboard-facing button reference face. Inboard is button reference face to handle end. Total length is blade tip to handle end.
   </figcaption>
 </figure>
-
 <div class="card">
-  <h2>What is saved</h2>
-  <p>
-    A saved calibration stores the name, rig type, side, S1/S2 sensor positions, inboard, outboard, total length, shaft-profile information, calibration value, and computed Scale Factor. This allows the app to calculate force, work, power, and power split with the correct magnitude for that oar setup.
+<h2>What is saved</h2>
+<p>
+    A saved calibration stores the name, rig type, side, S1/S2 sensor positions, inboard, outboard, total length, shaft-profile information, calibration value, and computed Moment/Bend Factor. This relates measured bend to moment about the pin and supports the calculation of drive work, power and PowerSplit for that oar setup.
   </p>
-  <div class="note">
+<div class="note">
     If this page shows an override note, the displayed workout settings differ from the active calibration reference. Saving or selecting the calibration updates the active workout defaults.
   </div>
 </div>
-
 <div class="card">
-  <h2>Photo measurement reminder</h2>
-  <p>
+<h2>Photo measurement reminder</h2>
+<p>
     The photo tool is a convenience for entering geometry. The important part is that all distances use the same reference: the blade tip for S1/S2 and the outboard-facing button reference face for the button/outboard reference.
   </p>
 </div>
-
-<p class="back-link"><a class="button-link" href="oar_calibration.html">Back to Sensor Mount / Oar Calibration overview</a></p>
-
+<p class="back-link"><a class="button-link" href="oar_calibration.html">Back to Oar Settings &amp; Calibration</a></p>
 <footer>© 2026 RitmoForceCurve</footer>
 </div>
 </body>

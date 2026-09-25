@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-labelledby="title desc">
+<title id="title">Parts for one sensor mount</title><desc id="desc">A sensor, an open housing, two slotted side clips, a flexible ring, a curved saddle and a hook-and-loop strap.</desc>
+<defs><style>.line{fill:none;stroke:#b8c6d2;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.dark{fill:#303a44;stroke:#b8c6d2;stroke-width:3}.yellow{fill:#f3ed50;stroke:#d5cf3c;stroke-width:3}text{font-family:Arial,sans-serif;fill:#e9eff4;font-size:20px;text-anchor:middle}.small{fill:#aebfcd;font-size:16px}</style></defs>
+<rect width="960" height="440" rx="20" fill="#242d35"/>
+<g transform="translate(155 98)"><rect class="dark" x="-52" y="-48" width="104" height="102" rx="24"/><path d="M-34 12Q-4-66 33 12" fill="none" stroke="#f3ed50" stroke-width="3"/><circle class="yellow" cy="26" r="9"/><text y="89">Sensor</text></g>
+<g transform="translate(475 98)"><path fill="#303a44" stroke="#b8c6d2" stroke-width="4" fill-rule="evenodd" d="M-69-59H69V66H-69Z M-44-36H44V43H-44Z"/><path class="line" d="M-60-49H60M-59 57H59"/><text y="89">Housing</text></g>
+<g transform="translate(790 98)"><g class="yellow"><path d="M-72-37H-12V38H-72Z"/><path d="M14-37H74V38H14Z"/></g><g stroke="#303a44" stroke-width="9" stroke-linecap="round"><path d="M-42-15V18"/><path d="M44-15V18"/></g><text y="89">Two slotted clips</text></g>
+<g transform="translate(155 306)"><ellipse class="yellow" rx="63" ry="41"/><ellipse fill="#242d35" rx="48" ry="28"/><text y="85">Flexible ring</text></g>
+<g transform="translate(475 306)"><path class="yellow" d="M-70-43Q0 2 70-43L70 20Q0 66-70 20Z"/><path d="M-70-43Q0 2 70-43" fill="none" stroke="#fff784" stroke-width="7"/><text y="85">Curved saddle</text></g>
+<g transform="translate(790 306)"><path d="M-87 20C-64-57 63-57 89 15" fill="none" stroke="#a9b8c5" stroke-width="26"/><path d="M-87 20C-64-57 63-57 89 15" fill="none" stroke="#394651" stroke-width="19" stroke-dasharray="2 4"/><text y="85">Hook-and-loop strap</text></g>
+</svg>

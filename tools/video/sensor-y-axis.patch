@@ -1,0 +1,11 @@
+--- work_v7/render_v7.py
++++ work_v7/render_v7.py
+@@ -135,7 +135,7 @@
+   p=point(M,p);vy=direct(M,v);vx=direct(M,vx);vz=direct(M,vz)
+   ax=arrow(d,p,vx,50*scale,CORAL,max(2,round(3*scale)),scale)
+   az=arrow(d,p,vz,61*scale,LILAC,max(2,round(3*scale)),scale)
+-  ay=arrow(d,p,vy,126*scale,color,max(3,round(5*scale)),scale)
++  ay=arrow(d,p,vy,56*scale,color,max(3,round(5*scale)),scale)
+   txt(d,ax+np.array([7,-10])*scale,'X',round(20*scale),CORAL,True,2)
+   txt(d,az+np.array([10,-14])*scale,'Z',round(20*scale),LILAC,True,2)
+   txt(d,ay+np.array([11,-9])*scale,'−Y',round(23*scale),color,True,2)

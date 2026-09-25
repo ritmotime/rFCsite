@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="540" viewBox="0 0 800 540" role="img" aria-labelledby="title desc"><title id="title">Thread from inside outward, then fold the strap back on itself</title><desc id="desc">The strap wraps around the oar and goes through each yellow clip slot from the oar-facing inside to the outside. Its tail folds back on the same side and fastens to the strap. The enlarged section shows the combined hook-and-loop faces meeting and the smooth backing outside.</desc><defs><linearGradient id="housing" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#566670"/><stop offset="1" stop-color="#283640"/></linearGradient><linearGradient id="yellow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff575"/><stop offset="1" stop-color="#dbce38"/></linearGradient><pattern id="texture" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 6L6 0M-2 2L2-2M4 8L8 4" stroke="#b6c6cf" stroke-width="1.1"/></pattern><marker id="arr" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto"><path d="M0 0L8 3.5L0 7Z" fill="#a8dbd4"/></marker><style>.edge{stroke:#b8cbd5;stroke-width:1.5;stroke-linejoin:round}.yellow{fill:url(#yellow);stroke:#fff697;stroke-width:1.5;stroke-linejoin:round}.lead{fill:none;stroke:#a8bbc7;stroke-width:1.3;stroke-linecap:round}.arrow{fill:none;stroke:#a8dbd4;stroke-width:2;marker-end:url(#arr)}.label{font:18px Arial,sans-serif;fill:#e7edf2}.small{font:15px Arial,sans-serif;fill:#c0cfda}.sub{font:14px Arial,sans-serif;fill:#afc3d0;letter-spacing:1.4px}.muted{stroke:#8398a8;stroke-width:1;fill:none;stroke-dasharray:5 5}</style></defs><rect width="800" height="540" rx="14" fill="#283540"/>
+<text x="28" y="34" class="sub">04 / WRAP · THREAD INSIDE → OUTSIDE · FOLD BACK</text>
+<path d="M395 69V481" stroke="#607784" stroke-width="1" opacity=".45"/>
+<!-- Complete mount end view -->
+<circle cx="198" cy="204" r="91" fill="#3f525f" class="edge"/>
+<path d="M119.5 250A91 91 0 0 0 276.5 250L301 269Q198 343 95 269Z" class="yellow"/>
+<path d="M95 269Q198 343 301 269V363H95Z" fill="url(#housing)" class="edge"/>
+<path d="M117 318Q198 349 279 318V346H117Z" fill="#17242e" class="edge"/>
+<!-- Clip sections, intentionally split to expose each slot -->
+<path d="M75 221V265M75 282V324H95M321 221V265M321 282V324H301" fill="none" stroke="#f0e24f" stroke-width="13" stroke-linejoin="round"/>
+<!-- Single strap wraps the oar. Ends leave the slots and return alongside it. -->
+<path d="M52 185V253Q52 275 75 275H90V212C90 142 119 96 198 95C277 96 306 142 306 212V275H321Q344 275 344 253V185" fill="none" stroke="#d0dce3" stroke-width="12" stroke-linecap="round"/>
+<path d="M52 185V253Q52 275 75 275H90V212C90 142 119 96 198 95C277 96 306 142 306 212V275H321Q344 275 344 253V185" fill="none" stroke="#617583" stroke-width="8"/>
+<path d="M54 223V204" class="arrow"/><path d="M342 223V204" class="arrow"/>
+<text x="198" y="197" class="label" text-anchor="middle">Oar shaft</text><text x="198" y="221" class="small" text-anchor="middle">Smooth backing inward</text>
+<text x="198" y="396" class="label" text-anchor="middle">Wrap around the shaft.</text><text x="198" y="421" class="small" text-anchor="middle">Each end folds back on its own side.</text>
+<text x="198" y="459" class="small" text-anchor="middle">Yellow: clip and curved saddle</text>
+<!-- Enlarged slot; ribbons drawn in section with fastening face visible -->
+<text x="594" y="84" class="label" text-anchor="middle">Clip slot · enlarged section</text>
+<text x="474" y="155" class="small" text-anchor="middle">INSIDE</text><text x="685" y="155" class="small" text-anchor="middle">OUTSIDE</text>
+<text x="474" y="178" class="small" text-anchor="middle">Oar side</text><text x="685" y="178" class="small" text-anchor="middle">Fold back here</text>
+<path d="M552 198H576V266H552Z M552 294H576V367H552Z" class="yellow"/>
+<!-- Smooth outer surfaces and the two rough faces meeting in overlap -->
+<path d="M439 280H717Q739 280 739 261Q739 241 717 241H607" fill="none" stroke="#d2dde4" stroke-width="15" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M439 280H717Q739 280 739 261Q739 241 717 241H607" fill="none" stroke="#536978" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M439 270H711M607 251H711" fill="none" stroke="#b4cbd6" stroke-width="4" stroke-dasharray="2 3"/>
+<path d="M612 261H709" fill="none" stroke="#93c4ba" stroke-width="12" opacity=".4"/>
+<path d="M473 320H534" class="arrow"/><path d="M698 213H638" class="arrow"/>
+<text x="451" y="345" class="small">Thread</text><text x="451" y="367" class="small">outward.</text>
+<path d="M665 331V266" class="lead"/><text x="595" y="353" class="small">Press the two textured</text><text x="595" y="375" class="small">faces together.</text>
+<text x="421" y="424" class="label">One fastening face; one smooth back.</text><text x="421" y="451" class="small">Hooks and loops share the same face.</text><text x="421" y="474" class="small">Fold the tail back without twisting it.</text>
+<text x="28" y="520" class="sub">ENLARGED SLOT SHOWS THE STRAP SEPARATED SLIGHTLY TO REVEAL BOTH FACES</text></svg>
