@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
 <html data-rfc-accent="teal" lang="en">
-<head><script src="site-theme.js?v=20260925f"></script>
+<head><script src="site-theme.js?v=2026-10-06-public-v8"></script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Workout &amp; Auto Timer Settings</title>
+<title>Workout and Auto Piece Timer settings · ritmoForceCurve™</title>
 <style>
   body {
     margin: 0;
@@ -95,111 +95,13 @@
     color: #666;
   }
 </style>
-<link href="site.css?v=20260925f" rel="stylesheet"/></head>
-<body>
-<nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a></nav><div class="container">
-<h1>Workout &amp; Auto Timer Settings</h1>
-<p class="lead">
-  These settings control how the app interprets rowing data, detects pieces, summarizes workout history, and adjusts oar-derived power values.
-</p>
-<div class="card">
-<h2>Auto Piece Timer</h2>
-<p>
-    The Auto Piece Timer, or APT, is an algorithm that automatically determines when the rower is doing a piece versus taking rest strokes. This lets a separate piece timer start and stop without the rower pressing start, ready, or stop during the workout.
-  </p>
-<p>
-    In the current app, the trigger can be based on <b>Rate</b>, <b>Power</b>, <b>Both</b>, or <b>Either</b>. The older description based only on stroke-rate threshold still applies when APT Trigger is set to Rate, but the new app also supports power-based piece detection.
-  </p>
-<p>
-    The algorithm confirms the start of a piece after repeated qualifying strokes. It ends the piece retroactively when strokes no longer meet the trigger criteria or when the inactivity time exceeds the Auto Piece Time Cutoff, so the inactive time is not counted as part of the piece.
-  </p>
-</div>
-<div class="card">
-<h2>APT Settings</h2>
-<table>
-<thead>
-<tr><th>Setting</th><th>What it does</th></tr>
-</thead>
-<tbody>
-<tr>
-<td><b>APT Trigger</b></td>
-<td>Chooses how the app decides that a piece has started. Options are Rate, Power, Both, and Either.</td>
-</tr>
-<tr>
-<td><b>Rate Threshold</b></td>
-<td>The stroke-rate threshold used when APT Trigger includes rate: Rate, Both, or Either.</td>
-</tr>
-<tr>
-<td><b>Power Threshold</b></td>
-<td>The power threshold used when APT Trigger includes power: Power, Both, or Either.</td>
-</tr>
-<tr>
-<td><b>Min Distance</b></td>
-<td>Removes very short detected pieces from the piece list and workout summary. This is useful for excluding short warmups, drill segments, or accidental starts.</td>
-</tr>
-<tr>
-<td><b>Auto Piece Time Cutoff</b></td>
-<td>The amount of inactivity time used to determine that a piece has ended. The logic works retroactively so the inactive time is not counted as part of the piece. The current algorithm also ends a piece after repeated non-qualifying strokes.</td>
-</tr>
-<tr>
-<td><b>Piece Rounding</b></td>
-<td>Choose whether pieces are summarized by distance or time.</td>
-</tr>
-<tr>
-<td><b>Distance Rounding</b></td>
-<td>When Piece Rounding is set to Distance, choose the distance increment used to round piece summaries.</td>
-</tr>
-<tr>
-<td><b>Time Rounding</b></td>
-<td>When Piece Rounding is set to Time, choose the time increment used to round piece summaries.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="card">
-<h2>Workout Settings</h2>
-<table>
-<thead>
-<tr><th>Setting</th><th>What it does</th></tr>
-</thead>
-<tbody>
-<tr>
-<td><b>Boat Class</b></td>
-<td>Sets the boat class used in workout metadata and titles. Current options include 1x, 2x, 2-, 4x, 4-, 4+, and 8+.</td>
-</tr>
-<tr>
-<td><b>Speed Cutoff</b></td>
-<td>Removes data assumed to be inactive so average speed, stroke rate, and heart rate better represent time actually rowing.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="card">
-<h2>Oar Setup settings on this screen</h2>
-<table>
-<thead>
-<tr><th>Setting</th><th>What it does</th></tr>
-</thead>
-<tbody>
-<tr>
-<td><b>Side</b></td>
-<td>Selects Port or Starboard so the app interprets the oar motion in the correct direction.</td>
-</tr>
-<tr>
-<td><b>Oar Type</b></td>
-<td>Selects Scull or Sweep. This is connected to the chosen boat class.</td>
-</tr>
-<tr>
-<td><b>Moment/Bend Factor</b></td>
-<td>Converts measured bend in degrees into moment about the pin. It affects moment, drive work, power and PowerSplit while preserving curve timing.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="placeholder">
-  The active oar supplies Side, Oar Type and the Moment/Bend Factor. Review their source in Oar Settings before recording.
-</p>
-<footer>© 2026 RitmoForceCurve</footer>
-</div>
-</body>
+<link href="site.css?v=2026-10-06-public-v8" rel="stylesheet"/></head>
+<body><nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a></nav><main class="container">
+<h1>Workout &amp; Auto Piece Timer settings</h1><p class="lead">Choose the live piece-detection settings before you row. The workout keeps the settings used for that session.</p>
+<section class="card"><h2>Auto Piece Timer</h2><p>The Auto Piece Timer (APT) identifies continuous work intervals. In <strong>Workout Settings</strong>, choose the trigger and thresholds for your session.</p><table><thead><tr><th scope="col">Control</th><th scope="col">Meaning</th></tr></thead><tbody><tr><td>APT Trigger</td><td><strong>Rate</strong> uses the stroke-rate threshold; <strong>Power</strong> uses power; <strong>Both</strong> requires both; <strong>Either</strong> accepts either.</td></tr><tr><td>Rate / Power Threshold</td><td>The effort required to qualify. Power-based detection depends on the active oar calibration.</td></tr><tr><td>Min Distance</td><td>Filters very short pieces from the summary.</td></tr><tr><td>Auto Piece Time Cutoff</td><td>How long inactivity may continue before the piece ends. Repeated non-qualifying strokes can also end it.</td></tr><tr><td>Piece Rounding</td><td>Choose distance or time and its rounding increment.</td></tr></tbody></table><p>Detection needs confirming strokes. A piece’s final endpoint may move back to its last qualifying portion once rowing falls below the trigger or stops.</p></section>
+<section class="card"><h2>Other settings worth checking</h2><ul><li><strong>Boat Class</strong> identifies the boat in the workout.</li><li><strong>Speed Cutoff</strong> filters inactive periods in applicable summaries.</li><li><strong>Groups</strong> collect similar strokes from anywhere in the session; pieces remain continuous intervals. Adjust group count, rate separation and metric weights when needed.</li><li><strong>Smooth Stroke Metrics</strong> smooths supported metrics while responding to changes in effort.</li><li><strong>Include Twist</strong> and <strong>Include Oar Depth</strong> enable those optional calculations before recording.</li><li><strong>Curve display</strong> chooses when the stroke curve is shown; recording and completed metrics continue in every mode.</li></ul><p>GPS pace describes movement over the ground. PowerSplit is a power-derived pace equivalent; wind, current and boat conditions can make the two differ.</p></section>
+<section class="card"><h2>Oar settings and water reference</h2><p>Side, type and <strong>Moment/Bend Factor</strong> come from the selected oar. Check the source and any override in <strong>Oar Settings</strong>. The recording captures the applied scale and saved dimensions.</p><p>The current <a href="ios_alignment.html">alignment series</a> includes an optional 12-second squared float. Its saved reference travels with the oar and workout. Where a manual <strong>waterline below pin (cm)</strong> is entered, measure vertically from pin to water surface with the boat level; positive means below the pin. Manual entry takes priority until cleared. Check the reference again after rigging or boat loading changes.</p><p>Changing settings for future workouts does not alter a session already recording.</p></section>
+<section class="card"><h2>Energy estimates</h2><p>Work-based calories use measured work and the selected efficiency assumption. Use <strong>Two equivalent oars</strong> only when one measured oar represents half of your work; follow the separately labeled two-oar summaries when recording both.</p><p>Heart-rate calories require recorded heart rate, body mass and VO₂max. They are a separate estimate and are not added to work-based calories. Missing inputs remain unavailable.</p></section>
+<section class="card"><h2>Review or re-run later</h2><p>Upload the whole workout from <strong>Cloud Analysis</strong>. Review its recorded settings or choose intended analysis overrides. To automate the upload, enable <strong>Upload after each workout</strong>; pending uploads retry while the app is open and when you return.</p><p>Use <strong>Change Settings and Re-run</strong> to rerun detection, grouping or processing while raw files remain available. The finished HTML report’s temporary calibration adjustment updates effort-derived values but keeps its generated pieces and groups fixed.</p><p><a href="cloud_analysis.html">Shared Cloud Analysis guide →</a> · <a href="report_guide.html">Report controls →</a></p></section>
+<p><a class="button-link" href="mobile_app.html">iOS guide</a><a class="button-link" href="ios_alignment.html">iOS sensor alignment</a><a class="button-link" href="oar_calibration.html">Oar settings &amp; calibration</a></p><footer>© 2026 RitmoForceCurve</footer></main></body>
 </html>

@@ -1,14 +1,42 @@
 {
-  "release": "2026-09-25-public-v6",
+  "release": "2026-10-06-public-v8",
   "scope": "RitmoForceCurve public website only",
-  "palette": "canary / cool slate",
-  "default_accent": "teal",
+  "palette": "graphite / slate / canary yellow",
+  "default_accent": "subtle teal",
   "accents": [
     "teal"
   ],
-  "example_workout": "10 September 2026",
-  "video_source": "Oar Bend Edit Project revision 7; source-frame person-layer interpolation, registered reed background, shortened sensor-Y arrows, widened illustrative curve with short rounded tail",
+  "example_workout": "29 September 2026; report generated 5 October 2026, gravity-parity v54",
+  "video_source": "Existing corrected sweep edit: slow section 45\u201356\u00b0, head-on at 53\u00b0; preserved byte-for-byte",
   "video_playback": "autoplay muted loop; full-screen control only",
-  "video_bytes": 29184779,
-  "video_background": "Registered clean reed-bank plate from original recording; person colour and alpha interpolated together before compositing"
+  "video_bytes": 29126249,
+  "video_background": "Registered clean reed-bank plate from original recording; person colour and alpha interpolated together before compositing",
+  "example_source": "ritmo-report-gravity-parity-2026-10-05-v54.html",
+  "example_sha256": "b99b84c884ad44afcea2b6f397c31431840df0dad0c3e1776e227db165328bd0",
+  "updated_sections": [
+    "iOS alignment & recording",
+    "Android oar recording",
+    "Android phone motion & GPS",
+    "Active oar and managed collections",
+    "Recorded sensors and oar metadata",
+    "Current metrics and report controls",
+    "Shared post-upload settings",
+    "Platform navigation"
+  ],
+  "availability": "iOS beta; Android recording via WitMotion plus optional Sensor Logger; native Android, team plans and coach tools coming soon; heading and dual-oar controls depend on beta build",
+  "instruction_paths": {
+    "ios": "ios_alignment.html",
+    "android": "android_recording.html",
+    "android_phone": "android_phone_recording.html",
+    "shared_after_upload": "cloud_analysis.html"
+  },
+  "source_review_date": "2026-10-06",
+  "source_packages": [
+    "RitmoForceCurve-iOS-v54-complete-source-repair.zip",
+    "ritmo-server-gravity-parity-2026-10-05-v54.zip",
+    "Ritmo-v55-sensor-recording-updated-files.zip"
+  ],
+  "alignment_instructions": "Subsequent 6 October delivered six-step iOS series: four core + optional square swoop + optional squared float",
+  "example_note": "Existing v54 report retained unchanged; generated before the new sensor-recording and metadata additions",
+  "complete_replacement": true
 }

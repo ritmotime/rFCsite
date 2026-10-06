@@ -134,3 +134,17 @@ p[class^="p"],li[class^="li"],span[class^="s"],body [style*="color:"] { font-fam
 .card,.category-card,.rfc-card { box-shadow:0 10px 24px rgba(15,24,36,.08)!important; }
 
 .wordmark .trademark { font-size:.48em; vertical-align:super; line-height:0; margin-left:.12em; letter-spacing:0; color:var(--rfc-heading); }
+
+/* Keep older reference pages readable within the current palette. */
+.calib-tabs { background:var(--rfc-bg-soft)!important; border-color:var(--rfc-border)!important; }
+.calib-tab.active { background:var(--rfc-accent)!important; border-color:var(--rfc-accent)!important; color:var(--rfc-bg)!important; }
+.container>figure,.container figure:not([class]) { background:var(--rfc-bg-soft)!important; border-color:var(--rfc-border)!important; }
+.price-card { min-width:0; }
+.price-line { flex-wrap:wrap; }
+.price-name { min-width:0; }
+.price-value { margin-left:auto; }
+.container { overflow-wrap:break-word; }
+@media(max-width:380px) {
+ .price-card { padding:18px 14px!important; }
+ .fc-top-buttons { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}

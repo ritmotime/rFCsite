@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
 <html data-rfc-accent="teal" lang="en">
-<head><script src="site-theme.js?v=20260925f"></script>
+<head><script src="site-theme.js?v=2026-10-06-public-v8"></script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Mobile App</title>
+<title>iOS app guide · ritmoForceCurve™</title>
 <style>
   body {
     margin: 0;
@@ -95,35 +95,18 @@
     color: #666;
   }
 </style>
-<link href="site.css?v=20260925f" rel="stylesheet"/></head>
-<body>
-<nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a></nav><div class="container">
-<h1>Mobile App</h1>
-<p class="lead">The RitmoForceCurve iOS app connects to your oar sensors, guides alignment, displays live rowing data, and saves your workouts for review and cloud analysis.</p>
-<div class="card">
-<h2>Android app coming soon.</h2>
-<p>Android users can record both WitMotion sensors with the WitMotion app and upload their recordings for cloud analysis while the RitmoForceCurve Android app is on its way.</p>
-<p>
-<a class="button-link" href="android_recording.html#alignment-recording">Align sensors · iOS &amp; Android</a>
-<a class="button-link" href="android_recording.html">Android recording instructions</a>
-<a class="button-link" href="https://play.google.com/store/apps/details?id=com.wit.wit_app&amp;hl=en_US" rel="noopener noreferrer" target="_blank">Download WitMotion on Google Play</a>
-</p>
-</div>
-<div class="card">
-<h2>What this section covers</h2>
-<ul>
-<li><b>Connecting Oar Sensors</b> — how to pair and select the Bluetooth oar sensors.</li>
-<li><b>Android Recording</b> — how to record WitMotion sensor data for cloud analysis while the RitmoForceCurve Android app is on its way.</li>
-<li><b>Workout &amp; Auto Timer Settings</b> — how the workout settings and Auto Piece Timer affect workout summaries and detected pieces.</li>
-<li><b>Oar Settings</b> — guided alignment motions, oar stiffness calibration and saved oar settings.</li>
-<li><b>Sharing Views, Settings &amp; Calibrations</b> — how to pass custom views, workout settings, and oar calibrations to another rower or device.</li>
-<li><b>Creating Custom Views</b> — how to create live data screens with the metrics you want to see.</li>
-</ul>
-</div>
-<p class="placeholder">
-  Both platforms use the same simple alignment motions after the sensors are mounted. The iOS app guides and saves the alignment; Android uses one short alignment recording and a separate rowing recording. <a href="android_recording.html#alignment-recording">Follow the combined alignment guide.</a>
-</p>
-<footer>© 2026 RitmoForceCurve</footer>
-</div>
-</body>
+<link href="site.css?v=2026-10-06-public-v8" rel="stylesheet"/></head>
+<body><nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a></nav><main class="container">
+<p class="eyebrow">iOS · RECORDING AND LIVE FEEDBACK</p><h1>Row with the iOS beta.</h1>
+<p class="lead">Connect your saved oar, record the whole workout, and review the same session on your phone or in Cloud Analysis.</p>
+<p><a class="button-link" href="https://testflight.apple.com/join/FfFwrC1B" rel="noopener noreferrer" target="_blank">Get the iOS beta in TestFlight ↗</a><a class="button-link" href="connecting_oar_sensors.html">Connect your sensors</a></p>
+<p class="note">These instructions describe the current iOS beta workflow. Update your installed beta for the latest recording and alignment steps. <a href="android_recording.html">Recording on Android? Use the separate Android guide.</a></p>
+<section class="card"><h2>1. Choose and connect the oar</h2><p>In <strong>Oar Sensors</strong>, use <strong>Scan oar label</strong> if the oar has a QR label. Otherwise select your saved oar or choose <strong>Setup new oar</strong>. Confirm the name, side, type and sensor pair, then connect both sensors. Enable <strong>Autoreconnect</strong> if you want the pair to reconnect next time.</p><p><strong>Manage oars</strong> organizes a separate collection of saved oars and calibration components. Importing or editing that collection does not automatically change your active workout oar.</p></section>
+<section class="card"><h2>2. Align and check the scale</h2><p>Open <strong>Oar Settings → Sensor Alignment</strong>. Complete the four core movements; the same series also offers optional <strong>Square swoop</strong> and <strong>Squared float</strong>. Save the alignment. Repeat it after moving or replacing a sensor.</p><p>Check the active <strong>Moment/Bend Factor (MBF, N·m/°)</strong>. Use a measured stiffness calibration, a suitable existing Cperm with the current dimensions, or an explicitly chosen manual MBF estimate. Bend shape and timing come from the aligned sensors; calibrated moment, work and power need the correct scale.</p><p>Enter the oar dimensions and sensor positions even when using a manual factor. The recording retains those values for analysis.</p><p><a href="ios_alignment.html">Simple six-step iOS alignment →</a> · <a href="oar_calibration.html">Stiffness, dimensions and overrides →</a></p></section>
+<section class="card"><h2>3. Mount the phone and start the workout</h2><p>Secure the iPhone to the boat so it moves with the hull. Keep it fixed throughout the session. Allow the required Bluetooth, motion and location permissions; phone motion and GPS provide the boat-motion and speed inputs.</p><p>Review <strong>Workout Settings</strong> and the <strong>Auto Piece Timer</strong>, choose a live view, then tap <strong>Start Session</strong>. Record through the work and recovery intervals. Stop the session when the whole workout is finished.</p><p><a href="workout_auto_timer_settings.html">Workout settings →</a> · <a href="creating_custom_views.html">Live views and curves →</a></p></section>
+<section class="card" id="upload"><h2>4. Upload the whole workout</h2><ol><li>Open <strong>Home → Cloud Analysis</strong> and sign in.</li><li>Choose the saved workout and review its recorded oar and analysis settings.</li><li>Tap <strong>Upload and Run Analysis</strong>. The app packages the available oar, phone, watch and GPS recordings with the saved setup.</li><li>Open the completed report, download it, or choose <strong>Change Settings and Re-run</strong>.</li></ol><p>For automatic upload, enable <strong>Upload after each workout</strong>. Upload begins after <strong>Stop Session</strong> or <strong>End Workout</strong> finishes saving. Pending uploads retry while the app is open and when you return.</p><p>After upload, iOS and Android use the same <a href="cloud_analysis.html">Cloud Analysis</a> and <a href="report_guide.html">report workflow</a>. Re-running can reuse the existing server files while they remain available.</p></section>
+<section class="card" id="recorded-data"><h2>What the workout keeps</h2><p>New recordings retain full-rate oar acceleration (AX/AY/AZ, including gravity) alongside the aligned gyro data, plus fresh magnetic packets when magnetic recording is enabled. Each oar’s dimensions, sensor positions, stiffness calibration, manual inputs and applied factor are captured with the workout, including when a manual factor is used.</p><p>The server shows the captured values under <strong>Recorded oar settings</strong>, separately from editable analysis settings. Changing the active oar later does not rewrite an earlier workout. Older recordings cannot gain acceleration or magnetic samples that were never saved.</p></section>
+<section class="card" id="two-oars"><h2>Two oars on one phone</h2><p>In <strong>Two-oar setup</strong>, enable <strong>Track two oars</strong> and assign two saved oars, with two sensors each. Tap <strong>Connect both oars</strong>. Each oar uses its own alignment, calibration and reference.</p><p>Choose either oar, <strong>Both</strong> or <strong>Average</strong> in the rowing view. For sculling, the individual readings describe each physical oar and rower work/power add both. For two sweep rowers, <strong>My oar</strong> and <strong>Teammate’s oar</strong> may be on the same or opposite sides; summaries show mean work/power per rower, with the measured total labeled separately. Heart rate belongs to My oar only.</p><p>Average curves use matched strokes; unmatched strokes remain available individually. A usable shared sync event can refine timing. Otherwise, timing uses sensor arrival and assumes equal Bluetooth delay.</p></section>
+<section class="card" id="magnetic-angles"><h2>Magnetic angle testing</h2><p>Under experimental settings, open <strong>Magnetometer &amp; catch angles</strong>. <strong>Record magnetometer &amp; angle references</strong> is enabled by default at 2 requested polls/second, adjustable from 1–10. Check the fresh-packet diagnostics: a requested polling rate is not a guaranteed sensor sample rate.</p><p>Advanced metrics include <strong>Magnetic catch angle</strong>, <strong>Magnetic finish angle</strong>, <strong>Magnetic reference sweep arc</strong> and <strong>Perpendicular position in drive</strong>. Perpendicular is 0°; catch is normally negative and finish positive on either side. Estimates settle after the stroke and recovery, and missing references show a dash.</p><p>These are experimental iOS estimates requiring alignment and a supported boat-heading reference. Saving and uploading the magnetic data preserves it for later analysis; the latest server recording update does not introduce a new magnetic catch-angle calculation.</p></section>
+<p><a class="button-link" href="mobile_app.html">iOS guide</a><a class="button-link" href="ios_alignment.html">iOS sensor alignment</a><a class="button-link" href="oar_calibration.html">Oar settings &amp; calibration</a></p><footer>© 2026 RitmoForceCurve</footer></main></body>
 </html>

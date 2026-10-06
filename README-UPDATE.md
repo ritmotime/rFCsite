@@ -1,3 +1,3 @@
-# RitmoForceCurve public website
+# ritmoForceCurve complete website
 
-See `WEBSITE-UPDATE.md` for installation, this release's changes, and later editing instructions. The archive contains the full public website and the updated example report. No app or analysis-server update is required.
+This is the full 6 October 2026 v8 website, including all earlier v7 changes. No previous ZIP is needed. See `WEBSITE-UPDATE.md` for installation, the separate iOS/Android guide structure, reviewed changes and later editing instructions.

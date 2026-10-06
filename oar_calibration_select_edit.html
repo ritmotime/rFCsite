@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
 <html data-rfc-accent="teal" lang="en">
-<head><script src="site-theme.js?v=20260925f"></script>
+<head><script src="site-theme.js?v=2026-10-06-public-v8"></script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Calib - sel/edit</title>
+<title>Oar dimensions and sensor positions · ritmoForceCurve™</title>
 <style>
 
   body {
@@ -164,52 +164,12 @@
   }
 
 </style>
-<link href="site.css?v=20260925f" rel="stylesheet"/></head>
-<body>
-<nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a></nav><div class="container">
-<p class="note"><strong>Earlier screen reference.</strong> These images/details are retained for reference. The current app uses <strong>Oar Settings → Align Sensors</strong> and <strong>Calibrate Oar Stiffness</strong>; the old mount-angle-check screen has been replaced. <a href="oar_calibration.html">Read the current setup guide</a>.</p><h1>Calib - sel/edit</h1>
-<nav aria-label="Sensor Mount / Oar Calibration app tabs" class="calib-tabs">
-<a class="calib-tab" href="android_recording.html">Motion alignment</a>
-<a class="calib-tab active" href="oar_calibration_select_edit.html">Calib - sel/edit</a>
-<a class="calib-tab" href="oar_calibration_manage.html">Calib - manage</a>
-<a class="calib-tab" href="oar_calibration_create.html">Calib - create</a>
-</nav>
-<p class="lead">
-  This is the main calibration page most rowers will use. It lets you choose the active oar calibration and edit the geometry used to calculate Moment/Bend Factor.
-</p>
-<div class="card">
-<h2>Typical use</h2>
-<ol>
-<li>Choose an existing saved calibration, scan a label, or start from the default setup.</li>
-<li>Confirm the rig type, side, sensor locations, inboard, outboard, and shaft profile.</li>
-<li>Use <b>Get sensor locations from picture</b> when you want the app to estimate the main oar measurement positions from a photo.</li>
-<li>Review the stiffness result and the Moment/Bend Factor for the entered geometry.</li>
-<li>Use <b>Save Changes</b> when you want the edited values to become the active workout defaults.</li>
-</ol>
-</div>
-<figure>
-<img alt="Oar measurement reference guide for selecting and editing calibration dimensions" decoding="async" loading="lazy" src="select_edit_5pos.png"/>
-<figcaption>
-    The Select/Edit photo workflow uses five reference points: <b>Blade Tip</b>, <b>S1 sensor</b>, <b>Button reference face</b>, <b>S2 sensor</b>, and <b>Handle End</b>. S1 and S2 are measured from the blade tip. Outboard is blade tip to the outboard-facing button reference face. Inboard is button reference face to handle end. Total length is blade tip to handle end.
-  </figcaption>
-</figure>
-<div class="card">
-<h2>What is saved</h2>
-<p>
-    A saved calibration stores the name, rig type, side, S1/S2 sensor positions, inboard, outboard, total length, shaft-profile information, calibration value, and computed Moment/Bend Factor. This relates measured bend to moment about the pin and supports the calculation of drive work, power and PowerSplit for that oar setup.
-  </p>
-<div class="note">
-    If this page shows an override note, the displayed workout settings differ from the active calibration reference. Saving or selecting the calibration updates the active workout defaults.
-  </div>
-</div>
-<div class="card">
-<h2>Photo measurement reminder</h2>
-<p>
-    The photo tool is a convenience for entering geometry. The important part is that all distances use the same reference: the blade tip for S1/S2 and the outboard-facing button reference face for the button/outboard reference.
-  </p>
-</div>
-<p class="back-link"><a class="button-link" href="oar_calibration.html">Back to Oar Settings &amp; Calibration</a></p>
-<footer>© 2026 RitmoForceCurve</footer>
-</div>
-</body>
+<link href="site.css?v=2026-10-06-public-v8" rel="stylesheet"/></head>
+<body><nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a></nav><main class="container">
+<h1>Oar dimensions and sensor positions</h1><p class="lead">Record the geometry of the physical oar, even when you enter Moment/Bend Factor manually.</p>
+<section class="card"><h2>Edit the correct record</h2><p>For the next workout, use <strong>Oar Settings → Active Oar details → Edit details</strong>. Choose the side, Sculling/Sweep type and model; check the stiffness source, dimensions and sensor positions. Editing a copy in <strong>Manage oars</strong> changes that managed record separately.</p><ol><li>Choose the displayed length unit and enter overall length, inboard and outboard.</li><li>Measure S1 and S2 from the blade tip toward the handle.</li><li>Check the shaft profile and any taper/diameter positions.</li><li>Select measured Cperm or enter a suitable manual Cperm; alternatively choose a direct MBF override.</li><li>Review the <strong>Moment/Bend Factor</strong> preview and source, then save.</li></ol><p>If your editor offers a photo measurement tool, verify its estimates against physical measurements before saving.</p></section>
+<figure class="card"><img alt="Oar measurement reference showing blade tip, S1, button reference face, S2 and handle end" decoding="async" loading="lazy" src="select_edit_5pos.png"/><figcaption>Measurement reference diagram. Earlier editor labels may differ from the current beta.</figcaption></figure>
+<section class="card"><h2>Keep the references consistent</h2><table><thead><tr><th scope="col">Dimension</th><th scope="col">Measure</th></tr></thead><tbody><tr><td>S1 and S2</td><td>Blade tip to each sensor position.</td></tr><tr><td>Outboard</td><td>Blade tip to the outboard-facing button reference face.</td></tr><tr><td>Inboard</td><td>The same button reference face to the handle end.</td></tr><tr><td>Overall length</td><td>Blade tip to handle end; inboard + outboard.</td></tr><tr><td>Taper stations</td><td>Distance from blade tip and shaft diameter at that position.</td></tr></tbody></table><p>Use the units displayed by the editor. Stored/uploaded dimensions use meters. Sensor identities and physical positions are separate information: a Bluetooth name does not establish S1 or S2.</p></section>
+<section class="card"><h2>Dimensions still matter with an override</h2><p>A direct MBF override bypasses Cperm and dimensions when calculating the factor. Inboard still converts moment into perpendicular handle-tip force. Geometry is also needed for supported oar/boat-motion calculations.</p><p>New recordings freeze the saved dimensions, sensor positions, calibration, manual inputs and applied values. They are sent with the workout and shown under <strong>Recorded oar settings</strong> during upload and re-analysis. Missing dimensions remain unknown.</p><p>Changing length, inboard/outboard or sensor positions on the same shaft usually means updating dimensions and recalculating MBF from its Cperm. Moving or rotating a mount also requires <a href="ios_alignment.html">sensor alignment</a>.</p></section>
+<p><a class="button-link" href="mobile_app.html">iOS guide</a><a class="button-link" href="ios_alignment.html">iOS sensor alignment</a><a class="button-link" href="oar_calibration.html">Oar settings &amp; calibration</a></p><footer>© 2026 RitmoForceCurve</footer></main></body>
 </html>

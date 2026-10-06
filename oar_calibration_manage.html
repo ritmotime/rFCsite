@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
 <html data-rfc-accent="teal" lang="en">
-<head><script src="site-theme.js?v=20260925f"></script>
+<head><script src="site-theme.js?v=2026-10-06-public-v8"></script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Calib - manage</title>
+<title>Manage oars and collections · ritmoForceCurve™</title>
 <style>
 
   body {
@@ -164,44 +164,12 @@
   }
 
 </style>
-<link href="site.css?v=20260925f" rel="stylesheet"/></head>
-<body>
-<nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a></nav><div class="container">
-<p class="note"><strong>Earlier screen reference.</strong> These images/details are retained for reference. The current app uses <strong>Oar Settings → Align Sensors</strong> and <strong>Calibrate Oar Stiffness</strong>; the old mount-angle-check screen has been replaced. <a href="oar_calibration.html">Read the current setup guide</a>.</p><h1>Calib - manage</h1>
-<nav aria-label="Sensor Mount / Oar Calibration app tabs" class="calib-tabs">
-<a class="calib-tab" href="android_recording.html">Motion alignment</a>
-<a class="calib-tab" href="oar_calibration_select_edit.html">Calib - sel/edit</a>
-<a class="calib-tab active" href="oar_calibration_manage.html">Calib - manage</a>
-<a class="calib-tab" href="oar_calibration_create.html">Calib - create</a>
-</nav>
-<p class="lead">
-  Use this tab to organize, share, print labels for, import, export, select, and delete saved calibrations.
-</p>
-<div class="card">
-<h2>Common actions</h2>
-<ul>
-<li><b>Import CSV</b> loads calibration records from a CSV file.</li>
-<li><b>Export CSV</b> creates a shareable CSV of saved calibrations.</li>
-<li><b>Create Label PDF</b> creates printable oar labels for selected calibrations.</li>
-<li><b>Scan Label</b> reads a QR label and adds or updates a saved calibration.</li>
-<li>Saved calibrations can be filtered, deleted, or marked as the active calibration.</li>
-</ul>
-</div>
-<div class="card">
-<h2>Printing labels</h2>
-<p>
-    Label PDFs are useful when the same oar might be used with different phones, rowers, or boats. The labels include a QR code and short text such as calibration name, stiffness details, S1, S2, inboard, and outboard. After printing, place the label on or near the oar so the calibration can be restored by scanning it later.
-  </p>
-</div>
-<div class="card">
-<h2>Sharing calibrations</h2>
-<p>
-    Use CSV export/import when you want to move several calibrations at once or share a calibration set with a coach or team. Use printed labels and QR scanning when you want a physical, oar-specific way to recover the setup.
-  </p>
-<a class="button-link" href="sharing_views_settings_calibrations.html">Open Sharing Views, Settings &amp; Calibrations</a>
-</div>
-<p class="back-link"><a class="button-link" href="oar_calibration.html">Back to Oar Settings &amp; Calibration</a></p>
-<footer>© 2026 RitmoForceCurve</footer>
-</div>
-</body>
+<link href="site.css?v=2026-10-06-public-v8" rel="stylesheet"/></head>
+<body><nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a></nav><main class="container">
+<h1>Manage oars and collections</h1><p class="lead">Organize oars, stiffness calibrations and alignments, and share a collection with your crew.</p>
+<section class="card"><h2>A separate collection of saved setups</h2><p><strong>Manage oars</strong> keeps named oars and collections. Measurements and edits made here stay in this collection; they do not change the active oar or <strong>Workout Settings</strong>. Choose and verify the active recording oar in <strong>Connect Oar Sensors</strong>.</p><ol><li>Use <strong>New oar</strong> or <strong>Copy from saved oars or calibrations</strong>.</li><li>Check name, side, type, model and intended sensor pair.</li><li>Choose or attach the saved alignment and stiffness calibration.</li><li>Enter current dimensions and review the <strong>Moment/Bend Factor preview</strong> and its source.</li><li>Create a <strong>New collection</strong> to group oars for a boat, crew or club.</li></ol></section>
+<section class="card"><h2>Measure and maintain an oar</h2><p>An oar’s detail screen offers alignment and <strong>Perform stiffness calibration</strong>. New measurements are saved to that managed oar. Use <strong>Edit details</strong> to select or attach other saved components.</p><p>Current dimensions may differ from the dimensions at the original calibration. Cperm from the same shaft can be reused to calculate a new MBF. The original component records keep their source and measurement history.</p><p>A manual MBF override takes priority; a manual Cperm override still needs dimensions. Review any sensor mismatch or missing-component message before using a setup.</p><p><a href="ios_alignment.html">iOS alignment steps →</a> · <a href="oar_calibration_create.html">Known-weight calibration →</a></p></section>
+<section class="card"><h2>Share or import a collection</h2><ol><li>Open a collection and choose <strong>Share collection</strong>, or use <strong>Share all managed oars</strong>.</li><li>Send the resulting JSON file using Mail, Messages or AirDrop.</li><li>On the receiving phone, save it to Files.</li><li>In <strong>Manage oars</strong>, choose <strong>Import managed oars</strong>, select the file, review it and tap <strong>Import copies</strong>.</li></ol><p>Existing oars are kept. Imported oars remain in Manage oars and are not selected for a workout automatically.</p><p>Calibration CSV and printable QR labels belong to the corresponding saved-calibration/label tools where present in your build; they are distinct from the managed-collection JSON file. Scan an oar label from the connection workflow and verify the physical setup it describes.</p></section>
+<section class="card"><h2>Before using a shared setup</h2><p>Check the exact shaft, sensor pair, positions, side, inboard/outboard, selected calibration and active override. A shared record cannot verify the current mounting. Repeat alignment after moving or replacing a sensor.</p><p><a href="sharing_views_settings_calibrations.html">Share views, settings and workout results →</a></p></section>
+<p><a class="button-link" href="mobile_app.html">iOS guide</a><a class="button-link" href="ios_alignment.html">iOS sensor alignment</a><a class="button-link" href="oar_calibration.html">Oar settings &amp; calibration</a></p><footer>© 2026 RitmoForceCurve</footer></main></body>
 </html>

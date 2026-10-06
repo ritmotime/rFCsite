@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 
 <html data-rfc-accent="teal" lang="en">
-<head><script src="site-theme.js?v=20260925f"></script>
+<head><script src="site-theme.js?v=2026-10-06-public-v8"></script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Connecting Oar Sensors</title>
+<title>Connecting Oar Sensors · ritmoForceCurve™</title>
 <style>
 
 /* Page-specific styles for Connecting Oar Sensors.  These are scoped so they work inside the main site. */
 .ios-connect-page {
-  --ios-blue: #1597f5;
+  --ios-blue: #e8c550;
   --ios-green: #41d36b;
   --ios-red: #ff4b55;
   max-width: 1040px;
@@ -64,8 +64,8 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--rfc-heading, #fff7cc) !important;
-  background: rgba(21, 151, 245, 0.22) !important;
-  border: 1px solid rgba(21, 151, 245, 0.55) !important;
+  background: rgba(232, 197, 80, 0.14) !important;
+  border: 1px solid rgba(232, 197, 80, 0.40) !important;
   border-radius: 999px;
   padding: 4px 10px;
   margin-bottom: 8px;
@@ -176,153 +176,12 @@
 }
 
 </style>
-<link href="site.css?v=20260925f" rel="stylesheet"/></head>
+<link href="site.css?v=2026-10-06-public-v8" rel="stylesheet"/></head>
 <body>
-<nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a></nav><div class="container ios-connect-page">
-<h1>Connecting Oar Sensors</h1>
-<p class="lead">
-  Use this page to connect the RitmoForceCurve iOS app to the two Bluetooth oar sensors before a row.
-  The safest routine is: power the sensors, connect them deliberately, turn on Autoconnect, then leave the Bluetooth menu.
-</p>
-<div class="tip-box">
-<strong>Important before a busy dock or regatta:</strong>
-  in the iOS RitmoForceCurve app, you do <strong>not</strong> need to remember which Bluetooth name is the shaft sensor or sleeve sensor, and you usually do <strong>not</strong> need to write down sensor names or MAC/address endings.
-  The easiest way to avoid connecting to someone else’s sensors is to connect your two sensors at home, or away from other rowers, then turn <strong>Autoconnect</strong> on before pressing <strong>DONE</strong>.
-  After that, the app will look for that saved pair the next time those sensors are powered on.
-</div>
-<div class="quick-note">
-<strong>What Autoconnect does:</strong> once your two sensors have been selected, turn <strong>Autoconnect</strong> on before pressing <strong>DONE</strong>.
-  Autoconnect is used both to connect only to sensors that were paired/saved earlier and to automatically reconnect the next time the app is opened with those sensors powered on.
-  Writing down the last 3–4 address characters/digits is mainly useful for Android users using the WitMotion app, not for normal iOS RitmoForceCurve Autoconnect use.
-</div>
-<section class="step-card">
-<div class="step-layout">
-<div>
-<span class="step-eyebrow">Step 1</span>
-<h2>Start from the Home screen</h2>
-<ol>
-<li>Turn on both oar sensors before opening the Bluetooth connection screen.</li>
-<li>Open RitmoForceCurve.</li>
-<li>If the status says <span class="status-pill status-red">Sensors Not Connected</span>, tap <strong>Connect Oar Sensors</strong>.</li>
-<li>If the status says <span class="status-pill status-red">Searching for Previous Sensors</span> for more than a few seconds, also tap <strong>Connect Oar Sensors</strong> and do a clean connection.</li>
-</ol>
-<p class="small-muted">Do not start a rowing session until the Home screen says Sensors Connected.</p>
-</div>
-<figure class="phone-shot">
-<img alt="RitmoForceCurve Home screen showing Sensors Not Connected and the Connect Oar Sensors button" decoding="async" loading="lazy" src="ios_connection_pics/01_home_not_connected.png"/>
-<figcaption>Home screen before the oar sensors are connected.</figcaption>
-</figure>
-</div>
-</section>
-<section class="step-card">
-<div class="step-layout">
-<div>
-<span class="step-eyebrow">Step 2</span>
-<h2>Use a clean start when pairing or when things seem confused</h2>
-<ol>
-<li>In the Bluetooth menu, start with <strong>Turn on scanning for surrounding devices</strong> turned <strong>off</strong>.</li>
-<li>Start with <strong>Autoconnect</strong> turned <strong>off</strong>.</li>
-<li>If any individual sensor switch is already on and you are not sure it is yours, turn it off before continuing.</li>
-</ol>
-<p>
-        This prevents the app from grabbing an old saved pair or a nearby sensor before you have confirmed the two sensors you want.
-      </p>
-</div>
-<figure class="phone-shot">
-<img alt="Bluetooth connection menu with scanning off and Autoconnect off" decoding="async" loading="lazy" src="ios_connection_pics/02_clean_start_scanning_off.png"/>
-<figcaption>Clean start: scanning off, Autoconnect off.</figcaption>
-</figure>
-</div>
-</section>
-<section class="step-card">
-<div class="step-layout">
-<div>
-<span class="step-eyebrow">Step 3</span>
-<h2>Turn scanning on and connect your two sensors</h2>
-<ol>
-<li>Turn on <strong>Turn on scanning for surrounding devices</strong>.</li>
-<li>Wait for the two <strong>WT901BLE67</strong> sensors to appear.</li>
-<li>If possible, do this first setup at home or away from other sensors, so only your own two sensors are visible.</li>
-<li>Turn on the switch for each of your two sensors.</li>
-<li>Both sensors should show <strong>Connected</strong>.</li>
-</ol>
-<p>
-        The app just needs the correct two sensors. You do not have to decide which one is shaft or sleeve from the Bluetooth name.
-      </p>
-</div>
-<figure class="phone-shot">
-<img alt="Bluetooth menu with scanning on and two WT901BLE67 sensors connected" decoding="async" loading="lazy" src="ios_connection_pics/03_scanning_on_sensors_connected.png"/>
-<figcaption>Scanning on: select the two sensors that belong to your setup.</figcaption>
-</figure>
-</div>
-</section>
-<section class="step-card">
-<div class="step-layout">
-<div>
-<span class="step-eyebrow">Step 4</span>
-<h2>Turn Autoconnect on before leaving the Bluetooth menu</h2>
-<ol>
-<li>After both sensors show <strong>Connected</strong>, turn <strong>Autoconnect</strong> on.</li>
-<li>Then tap <strong>DONE</strong>.</li>
-</ol>
-<p>
-        Turning Autoconnect on at this point tells the app to save this pair. Next time, with these sensors powered on, the app will search for the saved pair instead of asking you to pick from every nearby Bluetooth sensor.
-      </p>
-</div>
-<figure class="phone-shot">
-<img alt="Bluetooth menu with scanning on, Autoconnect on, and both sensors connected" decoding="async" loading="lazy" src="ios_connection_pics/04_autoconnect_on_before_done.png"/>
-<figcaption>Before tapping DONE, turn Autoconnect on.</figcaption>
-</figure>
-</div>
-</section>
-<section class="step-card">
-<div class="step-layout">
-<div>
-<span class="step-eyebrow">Next time</span>
-<h2>Normal launch after a saved pair exists</h2>
-<ol>
-<li>Turn on the two oar sensors first.</li>
-<li>Open RitmoForceCurve.</li>
-<li>The Home screen may say <span class="status-pill status-red">Searching for Previous Sensors</span> while the app looks for the saved pair.</li>
-<li>Wait a few seconds. If the sensors are on and nearby, the status should change to <span class="status-pill status-green">Sensors Connected</span>.</li>
-</ol>
-<p>
-        If it keeps searching, tap <strong>Connect Oar Sensors</strong> and repeat the clean-start process above.
-      </p>
-</div>
-<figure class="phone-shot">
-<img alt="Home screen showing Searching for Previous Sensors" decoding="async" loading="lazy" src="ios_connection_pics/05_searching_previous_sensors.png"/>
-<figcaption>With Autoconnect enabled, this is normal while the app reconnects to the saved pair.</figcaption>
-</figure>
-</div>
-</section>
-<section class="step-card">
-<div class="step-layout">
-<div>
-<span class="step-eyebrow">Ready</span>
-<h2>Confirm connection before rowing</h2>
-<ol>
-<li>Look for <span class="status-pill status-green">Sensors Connected</span> on the Home screen.</li>
-<li>Go to <strong>Oar Settings</strong> to check the active oar, side, alignment and stiffness calibration. Follow the <a href="android_recording.html#ios">current iOS alignment guide</a> if either sensor has moved.</li>
-<li>When everything looks correct, tap <strong>Start Session</strong>.</li>
-</ol>
-</div>
-<figure class="phone-shot">
-<img alt="RitmoForceCurve Home screen showing Sensors Connected" decoding="async" loading="lazy" src="ios_connection_pics/06_sensors_connected_home.png"/>
-<figcaption>Green Sensors Connected means the app is ready to use the oar sensors.</figcaption>
-</figure>
-</div>
-</section>
-<section class="warning-box">
-<h2>Troubleshooting</h2>
-<div class="mini-checklist">
-<div><strong>Only one sensor appears:</strong><br/>Turn scanning off and back on, move the phone closer, or power-cycle the missing sensor.</div>
-<div><strong>Wrong sensors are nearby:</strong><br/>Move away from other sensors if possible, turn Autoconnect off, connect only your two sensors, then turn Autoconnect back on before DONE.</div>
-<div><strong>It keeps searching:</strong><br/>Open <strong>Connect Oar Sensors</strong>, turn scanning and Autoconnect off, then reconnect both sensors and turn Autoconnect back on before DONE.</div>
-<div><strong>Another phone/app was connected:</strong><br/>Close the other app or disconnect the sensors there, then scan again.</div>
-</div>
-</section>
-<footer>© 2026 RitmoForceCurve</footer>
-</div>
+<nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a></nav><main class="container ios-connect-page"><h1>Connecting Oar Sensors</h1><p class="lead">Choose the oar you are using, connect its saved sensors, and confirm the oar name and connection status before starting your session.</p>
+<div class="quick-note"><strong>Current iOS beta:</strong> choose the active oar here using its saved record or <strong>Scan oar label</strong>. Use <strong>Setup new oar</strong> and <strong>Scan</strong> for a new pair. <strong>Manage oars</strong> is a separate collection; importing or editing it does not automatically change your active oar. The photos below show an earlier beta.</div>
+<div class="tip-box"><strong>Pair a new oar away from other sensors if possible.</strong> Save the correct sensors with a clearly named oar. Autoreconnect can then find those sensors on future rows, including at a busy dock.</div><section class="step-card"><div class="step-layout"><div><span class="step-eyebrow">Step 1</span><h2>Power the sensors and choose your oar</h2><ol><li>Turn on the sensors mounted on the oar.</li><li>Open RitmoForceCurve and tap <strong>Connect Oar Sensors</strong>.</li><li>Use <strong>Scan oar label</strong> if a label is attached, or choose the correct saved oar. Check its name, side and sensor connection status.</li><li>If this is a new oar, use <strong>Setup new oar</strong> to create its record.</li></ol><p class="small-muted">A saved oar keeps the setup tied to the correct sensor pair. Do not start while an expected sensor is still disconnected.</p></div><figure class="phone-shot"><img alt="Earlier beta Home screen before connection. Current builds keep the selected oar name with its status." decoding="async" loading="lazy" src="ios_connection_pics/01_home_not_connected.png"/><figcaption>Earlier beta Home screen before connection. Current builds keep the selected oar name with its status.</figcaption></figure></div></section><section class="step-card"><div class="step-layout"><div><span class="step-eyebrow">Step 2</span><h2>For a saved oar, use Autoreconnect</h2><ol><li>Select the saved oar you intend to use.</li><li>Enable <strong>Autoreconnect</strong> if you want the app to reconnect to that oar’s saved sensors.</li><li>Allow a few seconds for powered sensors nearby to connect.</li><li>If the app keeps searching, confirm the oar selection and check that another phone or app is not using the sensors.</li></ol><p>Older builds call this control <strong>Autoconnect</strong>. You do not need to choose a new sensor pair for every row.</p></div><figure class="phone-shot"><img alt="Earlier beta searching status. Newer builds identify the saved oar being searched for." decoding="async" loading="lazy" src="ios_connection_pics/05_searching_previous_sensors.png"/><figcaption>Earlier beta searching status. Newer builds identify the saved oar being searched for.</figcaption></figure></div></section><section class="step-card"><div class="step-layout"><div><span class="step-eyebrow">Step 3</span><h2>For a new setup, scan for your sensors</h2><ol><li>Use <strong>Setup new oar</strong> and give the oar a recognizable name.</li><li>Tap <strong>Scan</strong> to find nearby sensors.</li><li>Select the two sensors mounted on your oar and wait for both to connect.</li><li>Save the sensor selection with the oar as directed by the app.</li></ol><p>WitMotion names can look alike. If several pairs appear, move away from other sensors or identify your pair before selecting it. You do not need to infer shaft-versus-sleeve position from the Bluetooth name; follow the setup and alignment workflow.</p></div><figure class="phone-shot"><img alt="Earlier beta scan screen with two WT901BLE67 sensors connected. Current builds use Scan in the saved-oar workflow." decoding="async" loading="lazy" src="ios_connection_pics/03_scanning_on_sensors_connected.png"/><figcaption>Earlier beta scan screen with two WT901BLE67 sensors connected. Current builds use Scan in the saved-oar workflow.</figcaption></figure></div></section><section class="step-card"><div class="step-layout"><div><span class="step-eyebrow">Step 4</span><h2>Keep the pair associated with the oar</h2><ol><li>Confirm that both expected sensors are connected to the selected oar.</li><li>Enable <strong>Autoreconnect</strong> for convenient connection on future sessions.</li><li>Finish the setup and return to the Home screen.</li></ol><p>Switch the active oar in <strong>Connect Oar Sensors</strong>. Review its details and alignment in <strong>Oar Settings</strong>. Check the selected name before recording.</p></div><figure class="phone-shot"><img alt="Earlier beta Autoconnect control. The latest beta uses Autoreconnect with a saved oar." decoding="async" loading="lazy" src="ios_connection_pics/04_autoconnect_on_before_done.png"/><figcaption>Earlier beta Autoconnect control. The latest beta uses Autoreconnect with a saved oar.</figcaption></figure></div></section><section class="step-card"><div class="step-layout"><div><span class="step-eyebrow">If needed</span><h2>Resolve an incorrect selection</h2><ol><li>Stop and check which saved oar is selected.</li><li>If a sensor has been assigned incorrectly, disable automatic reconnection while correcting the selection.</li><li>Disconnect the incorrect sensor, then scan and select the correct one through the oar setup workflow.</li><li>Save the corrected setup and re-enable <strong>Autoreconnect</strong>.</li></ol><p>Do this away from other active sensors if possible. Closing another app or disconnecting another phone may be necessary before the sensor becomes available.</p></div><figure class="phone-shot"><img alt="Earlier beta manual connection controls. Use the current saved-oar setup to correct sensor assignments." decoding="async" loading="lazy" src="ios_connection_pics/02_clean_start_scanning_off.png"/><figcaption>Earlier beta manual connection controls. Use the current saved-oar setup to correct sensor assignments.</figcaption></figure></div></section><section class="step-card"><div class="step-layout"><div><span class="step-eyebrow">Ready</span><h2>Check the setup before rowing</h2><ol><li>Confirm the correct oar name and all expected sensor connections on the Home screen.</li><li>Open <strong>Oar Settings</strong> and review <strong>Active Oar Details</strong>: side, type, dimensions, sensor positions, alignment and active calibration factor.</li><li>If a sensor has moved, repeat <a href="ios_alignment.html">motion alignment</a>.</li><li>Secure the iPhone to the boat, check motion/location permissions, choose your live view and tap <strong>Start Session</strong>.</li></ol><p>The updated <a href="ios_alignment.html">alignment series</a> has four required movements and optional Square swoop and Squared float. The float reference is saved with the oar and uploaded with the workout. Confirm the active Moment/Bend Factor and dimensions before relying on calibrated loading.</p></div><figure class="phone-shot"><img alt="Earlier beta connected Home screen. Always check the active oar and setup as well as connection status." decoding="async" loading="lazy" src="ios_connection_pics/06_sensors_connected_home.png"/><figcaption>Earlier beta connected Home screen. Always check the active oar and setup as well as connection status.</figcaption></figure></div></section><section class="warning-box"><h2>Troubleshooting</h2><div class="mini-checklist"><div><strong>Only one sensor connects:</strong><br/>Check its power, move the phone closer, and scan again. Power-cycle the missing sensor if needed.</div><div><strong>Other sensors are nearby:</strong><br/>Confirm your saved oar and pair. Set up new sensors away from other active pairs where possible.</div><div><strong>The app keeps searching:</strong><br/>Check the selected oar, sensor power and Autoreconnect. Open the connection screen to inspect the saved pair.</div><div><strong>Another phone or app was connected:</strong><br/>Disconnect there or close that app, then scan again in RitmoForceCurve.</div></div></section>
+<section class="quick-note"><h2>Two-oar setups</h2><p>In <strong>Two-oar setup</strong>, enable <strong>Track two oars</strong>, assign a saved record to each oar and tap <strong>Connect both oars</strong>. Each oar needs two sensors: four in total. Sculling pairs and two sweep rowers are supported; the sweep oars can be on the same or opposite sides. Confirm all four connections before starting. <a href="mobile_app.html#two-oars">Two-oar display and totals →</a></p></section>
+<p><a class="button-link" href="oar_calibration.html">Oar settings &amp; calibration</a> <a class="button-link" href="ios_alignment.html">iOS sensor alignment</a> <a class="button-link" href="mobile_app.html#upload">Record and upload the workout</a></p><footer>© 2026 RitmoForceCurve</footer></main>
 </body>
 </html>
