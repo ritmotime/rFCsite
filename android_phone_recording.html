@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html data-rfc-accent="teal" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#242a32" name="theme-color"/>
+<title>Android · Phone motion &amp; GPS · ritmoForceCurve™</title>
+<meta content="Record Android boat motion and GPS with Sensor Logger, preserve separate sensor CSVs and review the timezone before upload." name="description"/>
+<script src="site-theme.js?v=2026-10-07-public-v10"></script>
+<link href="site.css?v=2026-10-07-public-v10" rel="stylesheet"/>
+<link href="kit-guide.css?v=2026-10-07-public-v10" rel="stylesheet"/>
+</head>
+<body>
+<nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a></nav>
+<main class="container alignment-guide">
+<p class="eyebrow">Android · optional phone recording</p>
+<h1>Phone motion &amp; GPS</h1>
+<p class="lead">Record the hull with Sensor Logger while WitMotion records the oar. Upload both recordings together to add boat-motion curves, GPS and the inputs for boat replay.</p>
+<div class="guide-links"><a class="button-link" href="android_recording.html">Oar recording guide</a><a class="button-link primary" href="#android-phone-sensors">Sensors to enable</a><a class="button-link" href="#android-phone-export">Export &amp; upload</a></div>
+<section class="rfc-card"><h2>1. Fix the phone to the boat</h2><p>Use <strong>Sensor Logger by Kelvin Choi</strong> on Android. Mount the phone rigidly to the hull or a structure that moves with it, and keep it there for the whole recording. Its mounting angle can be arbitrary, but it must not shift.</p><p>A pocket, sliding seat or loose phone also records the rower’s or phone’s movement. That cannot be interpreted as hull motion.</p></section>
+<section id="android-phone-sensors"><h2>2. Choose the phone sensors</h2><p>Enable these streams before recording. Keep their original names and units.</p>
+<div aria-label="Android Sensor Logger recording streams" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th>Sensor Logger stream</th><th>What it provides</th><th>Setting</th></tr></thead><tbody>
+<tr><th scope="row">Accelerometer</th><td>Linear acceleration for boat-motion analysis.</td><td>Enable</td></tr>
+<tr><th scope="row">Gyroscope</th><td>Rotation of the phone and hull.</td><td>Enable</td></tr>
+<tr><th scope="row">Orientation</th><td>Phone attitude needed for the default recorded-attitude analysis. Keep the standard quaternion export.</td><td>Enable</td></tr>
+<tr><th scope="row">Location</th><td>GPS position, speed and route.</td><td>Enable</td></tr>
+<tr><th scope="row">Gravity</th><td>A check on the phone’s attitude and gravity direction.</td><td>Recommended when available</td></tr>
+<tr><th scope="row">Total Acceleration</th><td>Acceleration including gravity; needed for the optional magnetometer-free attitude calculation.</td><td>Recommended when available</td></tr>
+</tbody></table></div>
+<p>Request about <strong>100 Hz</strong> for motion, or up to 200 Hz if supported. GPS can keep its own normal update rate, typically around once per second. Actual rates depend on the phone; do not repeat GPS fixes at the motion sampling rate.</p>
+<details><summary>If Orientation is unavailable</summary><p>Record <strong>Total Acceleration</strong> and <strong>Gyroscope</strong>. In the upload’s analysis settings, choose <strong>Boat attitude source → Constrained IMU — no magnetometer</strong>. This mode requires the original acceleration including gravity; linear acceleration alone cannot supply it.</p><p>For the default <strong>Recorded phone attitude</strong> mode, keep Orientation. The analysis can use Total Acceleration as a fallback when linear acceleration is unavailable.</p></details>
+</section>
+<section class="rfc-card"><h2>3. Check that background recording works</h2><ol class="rfc-steps"><li><strong>Allow recording access.</strong> Grant the motion, location and background permissions needed by Sensor Logger.</li><li><strong>Make a short trial.</strong> Start Sensor Logger, switch to WitMotion and record both sensors for a few minutes.</li><li><strong>Check both exports.</strong> Confirm Sensor Logger kept recording while WitMotion was in the foreground and that the two recordings overlap. If Android stopped the logger, review its battery restrictions and background-location settings, then repeat the trial.</li></ol></section>
+<section class="rfc-card"><h2>4. Record the same workout</h2><p>Start Sensor Logger shortly before the WitMotion workout recording. Keep WitMotion in the foreground throughout the row, then stop and save both recordings.</p><p>Use the phone’s correct date, time and timezone. The apps do not have to start at exactly the same instant. Avoid applying a separate clock correction in only one app.</p></section>
+<section class="rfc-card" id="android-phone-export"><h2>5. Export separate sensor CSVs in one ZIP</h2><ol class="rfc-steps"><li><strong>Choose Export → CSV in Zip File.</strong> Keep the separate sensor CSVs and <strong>Metadata.csv</strong> together, with their original filenames.</li><li><strong>Select the matching files for upload.</strong> Choose the WitMotion workout TXT and Sensor Logger ZIP together. Include the short alignment TXT when you need a new oar alignment.</li><li><strong>Use one phone recording per workout.</strong> Do not mix different phones or multiple Sensor Logger sessions in the same upload.</li></ol>
+<p class="rfc-note">Choose the separate-CSV ZIP export, not <strong>Combined CSV</strong>, JSON or SQLite. Combined CSV resamples the sensor streams. The separate files preserve the original motion and GPS timing.</p>
+<p>You can also select the extracted CSVs, keeping their filenames, or place the WitMotion TXT beside an extracted Sensor Logger folder in one outer workout ZIP. There is no need to merge rows or convert files.</p></section>
+<section class="rfc-card" id="android-phone-timezone"><h2>6. Review the recording timezone</h2><p>Before running analysis, check <strong>Recording timezone</strong> matches the location of the row, for example <strong>America/Los_Angeles</strong>. The server can read this from Sensor Logger’s metadata; an explicitly selected setting takes precedence.</p><p>Sensor Logger records absolute timestamps, while WitMotion’s date/time text normally represents local time. A wrong timezone can put the recordings hours apart. Keep Metadata.csv and the original clocks; do not move the first rows into alignment by hand.</p><p>If the report has no overlapping phone data, check the timezone and that you selected the matching workout before changing other settings.</p></section>
+<section class="rfc-card"><h2>Continue in Cloud Analysis</h2><p>Once the recordings are uploaded, use the shared analysis settings and report guide. Optional phone data adds supported boat and GPS outputs; missing or unusable streams remain unavailable. A Sensor Logger ZIP does not replace the oar workout TXT.</p><div class="guide-links"><a class="button-link primary" href="https://autoanalysis.ritmoforcecurve.com/" rel="noopener noreferrer" target="_blank">Open Cloud Analysis</a><a class="button-link" href="cloud_analysis.html">Analysis settings &amp; reports →</a><a class="button-link" href="boat_motion.html">Understand boat motion</a></div></section>
+<footer class="site-footer"><span>© 2026 RitmoForceCurve</span><a href="index.html">All guides</a></footer>
+</main>
+</body>
+</html>

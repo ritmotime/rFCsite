@@ -1,55 +1,50 @@
-# ritmoForceCurve complete website — 6 October 2026, v8
+# ritmoForceCurve complete website — 7 October 2026, v10
 
-This is a complete replacement website. You do not need to install or download the previous v7 package first. It contains the earlier website updates plus the cross-thread instruction review described below.
+This is a complete replacement website, including all previous website changes and the v58 example report. No earlier ZIP is needed.
 
 ## Install
 
-Copy the contents of `rFCsite/` into your existing website checkout, replacing matching website files. Preserve your existing repository history and deployment configuration, then publish through your normal workflow. The included `CNAME` keeps `www.ritmoforcecurve.com`.
+Copy the contents of `rFCsite/` into your existing website checkout, replacing matching website files. Preserve the repository history and deployment configuration, then publish through your normal workflow. `CNAME` keeps `www.ritmoforcecurve.com`.
 
-This package updates the website. It does not install an iOS app or update the analysis server. App controls and upload features require the corresponding app/server build.
+This folder installs the website. Install the matching iOS and server updates separately using the consolidated package’s top-level instructions. Updating website files does not update an app already installed on a phone or an existing analysis server.
 
-For a local preview, open a terminal in `rFCsite` and run:
+For a local preview, run `python3 -m http.server 8000` inside `rFCsite`, then open `http://localhost:8000/`. Interactive curves, replay and CSV downloads require JavaScript. The static report preview also shows the stroke checks and summary averages. Optional map backgrounds need internet access.
 
-```bash
-python3 -m http.server 8000
-```
+## Changes in v10 / v58
 
-Then open `http://localhost:8000/`. Use a browser with JavaScript enabled for the report and replay. Optional map backgrounds need internet access.
+- Distance check, Speed check and Energy-loss check are visible in workout, group, piece, selected-group and individual-stroke views. Summary labels begin with **Average**.
+- All three summary checks are the arithmetic means of valid individual stroke values. Each valid stroke contributes equally, including valid zero values. Missing values are excluded. Checks are never summed; the energy summary averages stroke percentages rather than reconstructing a ratio from summed energy integrals.
+- Workout and individual values wrap on narrow screens. The three checks appear near the start of All Strokes. **Show stroke checks** in Session Overview and All Strokes provides direct access.
+- The complete reference documents all **81 shared catalog metrics**, including Peak work per degree, plus the four separately identified iOS magnetic metrics and the available curve families.
+- Six guides explain the saved iOS path **Workout Metrics → Recalculate boat checks**, which uses the workout’s original native phone/GPS files and saved settings. Missing source data stays unavailable; other stroke metrics are preserved.
+- The no-JavaScript report preview now includes workout, group and piece check averages and individual checks in its first-20-stroke table. The visible **Example report v58** label distinguishes this report from older downloads.
 
-## Separate recording paths
+## Separate recording instructions
 
-- **iOS App:** connection, active-oar setup, alignment, live views, recording and whole-workout upload.
-- **Android:** WitMotion connection, its four-block TXT alignment recording, a separate rowing recording, and export/upload.
-- **Android Phone Motion & GPS:** Sensor Logger streams, background-recording test, separate-CSV ZIP export and timezone matching.
-- **Cloud Analysis:** common settings and results after either platform's data has been uploaded.
+- **iOS App:** connection, active-oar setup, six-step alignment, live views, recording and whole-workout upload. Alignment keeps four required core movements, optional square swoop and optional squared float. Hold the square blade floating steadily for 12 seconds; its saved reference remains with the oar.
+- **Android:** WitMotion connection, five-block TXT alignment ending with the floating square blade, a separate rowing recording, and export/upload. The final block is retained; the importer does not automatically turn it into a calibrated waterline.
+- **Android Phone Motion & GPS:** Sensor Logger streams, background-recording checks, separate-CSV ZIP export and timezone matching.
+- **Cloud Analysis:** common settings and reports after either platform’s data has been uploaded.
 
-The physical kit-assembly and sensor-direction guides are common to the hardware and lead to the correct platform guide. Old links to the iOS section of the former combined guide open the new iOS guide.
+Hardware assembly and sensor-direction guides lead to the appropriate platform. Historical iOS links in the former combined guide still resolve to the iOS guide.
 
-## New instruction review
+## Example provenance
 
-- Added the latest six-step iOS alignment sequence: four core movements, optional square swoop and optional squared float in the same series.
-- Simplified squared-float guidance: square the blade, let it float, and keep it steady for 12 seconds. Its saved reference stays with the oar and travels with the workout upload.
-- Kept the Android TXT alignment procedure separate; the iOS-only float capture is not presented as an Android importer feature.
-- Updated recording guidance for new full-rate acceleration, separate fresh magnetic samples and the frozen per-oar dimensions/calibration snapshot, including manual-factor setups.
-- Distinguished stored/uploaded inputs from server magnetic catch-angle reconstruction, which is not added by the recording update.
-- Corrected active-oar versus managed-collection guidance and sharing instructions after reviewing the current Swift source.
-- Updated Moment/Bend Factor terminology, units, override priority and geometry guidance.
-- Reconciled metric and curve choices with the report's current Core/Advanced/Diagnostics controls, including the unified choices and hidden internal geometry fields.
-- Updated the shared settings, calibration, source/reference and report-control explanations.
+The example uses the 29 September 2026 workout and preserves the native scalar values, averaged curves and packed individual samples supplied in the 5 October gravity-parity v54 report. The v57 update added three check estimates from its retained, reduced fused-speed profiles; v58 preserves those individual estimates and changes their summary aggregation and presentation.
 
-## Preserved from the previous complete update
+Checks are available for **620 of 634 strokes**. Their arithmetic means are **55.81 cm distance check**, **1.49 m/s speed check** and **2.21% energy-loss check**. These are visibly labelled retained-profile estimates, not a fresh full-resolution analysis. New server/iOS analyses use original supported native fused-speed samples before display reduction. The energy check follows the requested V² model; it is not measured rowing energy loss.
 
-The corrected welcome movie and poster, mounting photographs and drawings, pricing and guarantees, TestFlight link, domain configuration, navigation fixes, and latest available self-contained example report are included.
+Saved squared-float references remain distinct from an explicitly applied physical report waterline.
 
-The example remains the delivered **5 October gravity-parity v54** report for the 29 September workout. Its bytes and numerical data are unchanged. It demonstrates the plots, boat/oar replay and inner blade/shaft contact model; it predates the 6 October additions to recording metadata. A saved squared-float reference and a physically applied report waterline are documented as separate concepts, rather than silently assumed equivalent.
+## Earlier work preserved
 
-## Source review
+The corrected welcome video and poster, mounting photographs and drawings, pricing and guarantees, TestFlight link, domain configuration, navigation fixes, calibration units and override priority, full-rate recording guidance, frozen per-oar settings, sharing guidance and shared after-upload settings workflow remain included.
 
-The review used the current v54 complete iOS source, the v54 server/report, the v55 sensor-recording/import update and the subsequent delivered six-step iOS alignment instructions. Previously packaged controls are documented as beta controls; the website does not imply that an uninstalled app/server update is already running on your devices or hosted server.
+Source history: v54 complete iOS/server sources and report; cumulative v56 recording/alignment changes; v57 native checks and report restoration; v58 metric availability and summary consistency fixes. This history identifies the supplied code; it does not imply the new app or server is already deployed.
 
 ## Future edits
 
-Individual guide HTML files are the content sources. Update the release in `WEB-RELEASE.json`, then rebuild and check:
+Individual guide HTML files are the content sources. Update `WEB-RELEASE.json`, then run:
 
 ```bash
 python3 -m pip install beautifulsoup4 tinycss2
@@ -57,8 +52,6 @@ python3 tools/rebuild_site.py
 python3 tools/validate_site.py
 ```
 
-The build combines the guides into `index.html` and gives local assets the current cache version. It leaves `example_workout.html` untouched. Replace that file with a newly generated complete report when a newer example is ready.
+The build combines guides into `index.html`, scopes their styles and adds the current cache version to local assets. It leaves `example_workout.html` untouched. After replacing the example, update its SHA-256 in `WEB-RELEASE.json`.
 
-After publishing, check both `/` and `/index.html`. They should load the same v8 site. If your host retains an old entry page, refresh its HTML cache through your normal deployment process.
-
-Validation details are in `WEB-VALIDATION.md`.
+After publishing, check both `/` and `/index.html`, plus the example link. They should show the v10 site and v58 report. Refresh the host’s HTML cache if it retains an older entry page. Updating a website cannot change an older HTML file already downloaded by a reader.

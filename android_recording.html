@@ -6,10 +6,10 @@
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="#242a32" name="theme-color"/>
 <title>Android · Align &amp; record · ritmoForceCurve™</title>
-<meta content="Connect two oar sensors in WitMotion, record the four alignment blocks, export your rowing TXT and upload for analysis." name="description"/>
-<script src="site-theme.js?v=2026-10-06-public-v8"></script>
-<link href="site.css?v=2026-10-06-public-v8" rel="stylesheet"/>
-<link href="kit-guide.css?v=2026-10-06-public-v8" rel="stylesheet"/>
+<meta content="Connect two oar sensors in WitMotion, record the five alignment blocks, export your rowing TXT and upload for analysis." name="description"/>
+<script src="site-theme.js?v=2026-10-07-public-v10"></script>
+<link href="site.css?v=2026-10-07-public-v10" rel="stylesheet"/>
+<link href="kit-guide.css?v=2026-10-07-public-v10" rel="stylesheet"/>
 <script>if (location.pathname.endsWith('/android_recording.html') && location.hash === '#ios') location.replace('ios_alignment.html');</script>
 </head>
 <body>
@@ -18,7 +18,7 @@
 <p class="eyebrow">Android · WitMotion oar recording</p>
 <h1>Align &amp; record on Android</h1>
 <p class="lead">Connect both oar sensors in WitMotion. Make one short alignment recording, then a separate recording of your row. Add a Sensor Logger recording if you also want boat motion and GPS.</p>
-<div class="guide-links"><a class="button-link primary" href="#android">Connect sensors</a><a class="button-link" href="#alignment-recording">Four alignment blocks</a><a class="button-link" href="#android-workout">Record your row</a><a class="button-link" href="android_phone_recording.html">Phone motion &amp; GPS</a></div>
+<div class="guide-links"><a class="button-link primary" href="#android">Connect sensors</a><a class="button-link" href="#alignment-recording">Five alignment blocks</a><a class="button-link" href="#android-workout">Record your row</a><a class="button-link" href="android_phone_recording.html">Phone motion &amp; GPS</a></div>
 <section class="rfc-card" id="android"><h2>1. Connect your two sensors</h2>
 <p>Charge both sensors and mount them securely in their rowing positions. Keep the same oar, sensor pair, mounting positions and strap tension for alignment and rowing.</p>
 <ul><li>Turn on Bluetooth and grant the Bluetooth/location permissions Android requests.</li><li>Connect inside WitMotion. Use the last 3–4 characters of each sensor address to recognise your pair when other sensors are nearby.</li><li>Set both supported oar sensors to <strong>200 Hz</strong> and check that both are streaming.</li></ul>
@@ -43,12 +43,12 @@
 <figcaption><strong>4. Connected sensors.</strong> Both switches are on. Use the back arrow to return to Main and verify live data.</figcaption>
 </figure>
 </div></details>
-<section id="alignment-recording"><h2>2. Record four alignment blocks</h2>
-<p>With both sensors connected, tap the red record circle. Keep <strong>one continuous recording</strong> running through all four blocks below. Use an open space and keep the blade clear of the water.</p>
-<ol class="motion-blocks"><li><h3>Rest still · 10 seconds</h3><p>Rest the oar on stable supports. Keep both sensors motionless.</p></li><li><h3>Feather and square · 5–6 times</h3><p>Point the shaft in one direction. Rotate between feathered and square without sweeping or lifting it.</p></li><li><h3>Feathered level sweeps · 5–6 times</h3><p>Keep the blade feathered and the shaft approximately horizontal. Sweep back and forth through at least 90° without rolling the shaft.</p></li><li><h3>Square level sweeps · 5–6 times</h3><p>Keep the blade square and the shaft approximately horizontal. Make the same back-and-forth sweeps through at least 90° without feathering.</p></li></ol>
+<section id="alignment-recording"><h2>2. Record five alignment blocks</h2>
+<p>With both sensors connected, tap the red record circle. Keep <strong>one continuous recording</strong> running through all five blocks below. Keep the blade clear of the water during the moving blocks, then use the water for the final floating-square-blade reference.</p>
+<ol class="motion-blocks"><li><h3>Rest still · 10 seconds</h3><p>Rest the oar on stable supports. Keep both sensors motionless.</p></li><li><h3>Feather and square · 5–6 times</h3><p>Point the shaft in one direction. Rotate between feathered and square without sweeping or lifting it.</p></li><li><h3>Feathered level sweeps · 5–6 times</h3><p>Keep the blade feathered and the shaft approximately horizontal. Sweep back and forth through at least 90° without rolling the shaft.</p></li><li><h3>Square level sweeps · 5–6 times</h3><p>Keep the blade square and the shaft approximately horizontal. Make the same back-and-forth sweeps through at least 90° without feathering.</p></li><li><h3>Floating square blade · 12 seconds</h3><p>With the oar in its normal rowing position, keep the blade square and let it float naturally at the water surface. Hold the oar still for 12 seconds, without pressing it down, lifting it out or feathering. Record this as the <strong>fifth block</strong>, after the square level sweeps.</p></li></ol>
 <p class="rfc-note">Pause for a few still seconds between blocks. Do one type of movement at a time. Finish with a few still seconds, then stop and save the recording.</p>
 <p>Keep this short TXT clearly named as your <strong>alignment</strong> recording. Start a new recording for the workout.</p>
-<details><summary>When to repeat alignment</summary><p>Repeat it after moving, rotating or removing a sensor, changing the sensor pair, or changing the oar setup. A saved alignment only applies to the setup used to record it.</p><p>Cloud Analysis looks for all four blocks. If a new alignment cannot be fitted, repeat the recording rather than relying on a plausible-looking curve.</p></details>
+<details><summary>When to repeat alignment</summary><p>Repeat it after moving, rotating or removing a sensor, changing the sensor pair, or changing the oar setup. A saved alignment only applies to the setup used to record it.</p><p>The initial still block supplies the gyro-bias reference; the first four blocks supply the core mounting alignment. The fifth records the floating-square-blade reference. This final block is still, not a swooping or rotating movement. Keep all five in the same TXT. If a new alignment cannot be fitted, repeat the recording rather than relying on a plausible-looking curve. Review the report’s reference notes before assuming the float has been applied to waterline or blade-depth calculations.</p></details>
 <details><summary>Alignment and stiffness are different</summary><p>Alignment puts the sensor measurements in the same oar reference. <a href="oar_calibration.html">Oar stiffness calibration</a> supplies the scale used for moment, work and power. Review your side, boat type and force/bending factor before running the report.</p></details>
 </section>
 <section class="rfc-card" id="android-workout"><h2>3. Record your row separately</h2>
