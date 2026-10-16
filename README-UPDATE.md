@@ -1,7 +1,14 @@
-# ritmoForceCurve complete website
+# ritmoForceCurve website — 16 October 2026, v11
 
-This is the complete 7 October 2026 **v10 website**, with the **v58 example report** and all earlier website updates. No previous ZIP is needed.
+This is the complete website. It includes the welcome video, setup illustrations, updated app and analysis guides, and a newly generated example workout. No earlier ZIP is needed.
 
-The update makes the three stroke checks visible across report views, documents all 81 shared metrics, and adds the saved iOS **Workout Metrics → Recalculate boat checks** workflow. Summary checks are arithmetic means of valid stroke values; every valid stroke contributes equally.
+## Publish
 
-See `WEBSITE-UPDATE.md` for installation and changes, and `WEB-VALIDATION.md` for checks performed. iOS and Android recording instructions remain separate; analysis guidance is shared after upload.
+1. Extract the ZIP and open the `rFCsite` folder.
+2. Copy its contents into the existing website repository, replacing matching files. Keep the repository's `.git` and `.github` folders and existing hosting configuration.
+3. Review the changes, commit and push using your normal website workflow. `CNAME` remains `www.ritmoforcecurve.com`.
+4. Refresh the published site and open the example report. If an older page remains cached, use a hard refresh.
+
+The pages are ready to serve; no website build or app/server installation is required. This package updates the public website only. It does not install an iPhone app or deploy the analysis server.
+
+See `WEBSITE-UPDATE.md` for the content changes and `WEB-VALIDATION.md` for validation details.
