@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html data-rfc-accent="teal" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="#242a32" name="theme-color">
+<meta content="Upload a workout, choose its settings and review the curves, metrics, map and boat replay." name="description">
+<title>Upload &amp; analysis help · ritmoForceCurve™</title>
+<script src="site-theme.js?v=2026-10-16-public-v11"></script>
+<link href="site.css?v=2026-10-16-public-v11" rel="stylesheet">
+</head>
+<body>
+<nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a><a href="help.html" aria-label="All help">Help</a></nav>
+<main class="container">
+<p><a href="index.html#help">← All help</a></p><p class="eyebrow">UPLOAD &amp; ANALYSIS HELP</p>
+<h1>Upload &amp; analysis help</h1>
+<p class="lead">Upload your recording, review the settings and open a report of your row.</p>
+<div class="actions"><a class="button-link primary" href="https://autoanalysis.ritmoforcecurve.com/" rel="noopener noreferrer" target="_blank">Open cloud analysis ↗</a><a class="button-link" href="report_help.html">Report guide</a><a class="button-link" href="example_workout.html?v=2026-10-16-public-v11" rel="noopener noreferrer" target="_blank">Example report</a></div>
+<section class="card" id="prepare-recording"><h2>Prepare your recording</h2>
+<p><span><strong>iPhone:</strong> open <strong>Home → Cloud Analysis</strong>. Choose <strong>Analyze latest</strong> for the most recent workout or <strong>Choose a workout</strong> to select a recording. You can also export the complete workout. Keep its oar recording, phone motion, GPS and saved oar settings together.</span></p><p><strong>Android:</strong> select the WitMotion workout TXT and its alignment TXT when needed. Add the matching Sensor Logger ZIP for boat motion and GPS. Keep the original filenames and columns.</p>
+<div class="actions"><a class="button-link" href="iphone_help.html">iPhone guide</a><a class="button-link" href="android_recording.html">Android guide</a></div></section>
+<section class="card" id="upload-and-analyze"><h2>Upload and analyze</h2>
+<ol><li><strong>Start new upload.</strong> Use this before selecting a different recording or rower. It clears the active files and current analysis; saved workouts remain in your history.</li>
+<li><strong>Select the complete workout.</strong> Upload its ZIP or supported files from the same session. Confirm the rower and recording.</li>
+<li><strong>Choose settings.</strong> Use the settings recorded with the session, a saved set or defaults. If a choice is shown, press <strong>Use these settings</strong>, then review the editable fields.</li>
+<li><strong>Review the oar and boat setup.</strong> Confirm side, oar type, calibration and dimensions. For Android, also confirm the recording timezone and alignment source.</li>
+<li><strong>Press Analyze workout.</strong> Open the report when processing finishes. You can change settings after upload; no extra approval checkbox is required.</li></ol>
+<p>Each new upload receives a new workout ID, including recordings for the same rower and day. <strong>Re-analyze</strong> reruns the selected existing workout and keeps its ID. Use it to change processing settings for that recording.</p></section>
+<section class="card" id="cloud-calibration"><h2>Oar setup and calibration</h2>
+<p>Mounting alignment puts both sensors into the same oar frame. Stiffness calibration converts oar bend into moment, work and power. Estimated handle force also needs the correct inboard length.</p>
+<p>Current iPhone exports carry the oar’s dimensions and calibration, including manually entered values. Review them under <strong>Recorded oar settings</strong>. Two-oar recordings retain separate settings for each oar. Analysis changes do not overwrite the recorded setup.</p>
+<p>For iPhone DAT recordings, the server uses the mounting alignment already applied by the app. Raw Android TXT recordings need a suitable uploaded alignment or a saved alignment for the same unchanged setup. A newly uploaded alignment normally takes priority.</p>
+<p>Keep factor names and units together when entering calibration manually. See <a href="oar_calibration.html">oar stiffness calibration</a> for the app and server fields.</p></section>
+<section class="card" id="checks-after-upload"><h2>Review the result</h2>
+<p>Use <strong>Session Overview</strong> to see rate, power, pace and your chosen metrics across the row. The GPS map shows the route when position data is available. <strong>Piece Summary</strong> compares continuous efforts; <strong>All Strokes</strong> shows individual values.</p>
+<p>In <strong>Boat &amp; Oar</strong>, compare averaged curves or inspect individual strokes with the animation. Select metrics and curves under <strong>Oar, Boat, GPS, Time</strong> and <strong>Body</strong>. <strong>Core</strong> gives a shorter list; <strong>Advanced</strong> includes Core and is the default.</p>
+<p>Phone motion adds boat outputs; GPS and heart rate appear when recorded. A value with missing input remains unavailable. Read the <a href="data_metrics.html">metric reference</a> for definitions and required inputs.</p></section>
+<section class="card" id="pieces-and-groups"><h2>Pieces and groups</h2>
+<p><strong>Pieces</strong> are continuous rowing efforts. <strong>Automatic groups</strong> collect strokes with similar properties. To make your own comparison, zoom Session Overview and use the visible strokes to create a named group. The group controls sit below the curves.</p>
+<p>Compare pieces or groups in the summaries, averaged curves and map. Use individual strokes to see how much the technique varies within the selection.</p></section>
+<section class="card" id="reanalyze"><h2>When to re-analyze</h2>
+<div aria-label="Report and analysis settings" class="table-wrap" role="region" tabindex="0"><table class="metric-table"><thead><tr><th scope="col">Change</th><th scope="col">Where to make it</th></tr></thead><tbody>
+<tr><th scope="row">Displayed metrics, curves, scales, zoom, map and replay view</th><td>In the open report. Save the arrangement under <strong>Setups</strong>.</td></tr>
+<tr><th scope="row">Display calibration factor</th><td>In the report where offered. This rescales supported load and effort values; it leaves the original detection and grouping in place.</td></tr>
+<tr><th scope="row">Stroke or piece detection, original groups, alignment, boat processing or analytical geometry</th><td><strong>Re-analyze</strong> on the server. Rerun power-based detection after changing its calibration.</td></tr>
+</tbody></table></div></section>
+<section class="card" id="keep-report"><h2>Keep your report and reuse your view</h2>
+<p>Download the report ZIP, extract it and open the HTML in a browser with JavaScript enabled. The report contains its plots and data; background maps need internet access. Keep the original workout files for future analysis.</p>
+<p>Use <strong>Setups → Save new → Download setup</strong> to save your plot, map and animation preferences. Open another workout’s report and choose <strong>Setups → Import setup</strong> to reuse them. See the <a href="report_help.html#saved-setups">saved-view guide</a> for what carries over.</p>
+<p>Downloaded reports keep the data and controls with which they were generated. Re-analyze the original recording to use newer processing.</p></section>
+<footer class="site-footer">© 2026 RitmoForceCurve <a href="index.html#help">All help</a></footer>
+</main>
+</body>
+</html>

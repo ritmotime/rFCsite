@@ -12,7 +12,7 @@
 <link href="kit-guide.css?v=2026-10-16-public-v11" rel="stylesheet"/>
 </head>
 <body>
-<nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a></nav>
+<nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a><a href="help.html" aria-label="All help">Help</a></nav>
 <main class="container alignment-guide">
 <p class="eyebrow">Android · optional phone recording</p>
 <h1>Phone motion &amp; GPS</h1>
@@ -36,8 +36,8 @@
 <p class="rfc-note">Choose the separate-CSV ZIP export, not <strong>Combined CSV</strong>, JSON or SQLite. Combined CSV resamples the sensor streams. The separate files preserve the original motion and GPS timing.</p>
 <p>You can also select the extracted CSVs, keeping their filenames, or place the WitMotion TXT beside an extracted Sensor Logger folder in one outer workout ZIP. There is no need to merge rows or convert files.</p></section>
 <section class="rfc-card" id="android-phone-timezone"><h2>6. Review the recording timezone</h2><p>Before running analysis, check <strong>Recording timezone</strong> matches the location of the row, for example <strong>America/Los_Angeles</strong>. The server can read this from Sensor Logger’s metadata; an explicitly selected setting takes precedence.</p><p>Sensor Logger records absolute timestamps, while WitMotion’s date/time text normally represents local time. A wrong timezone can put the recordings hours apart. Keep Metadata.csv and the original clocks; do not move the first rows into alignment by hand.</p><p>If the report has no overlapping phone data, check the timezone and that you selected the matching workout before changing other settings.</p></section>
-<section class="rfc-card"><h2>Continue in Cloud Analysis</h2><p>After upload, review the settings and press <strong>Analyze workout</strong>. Phone motion adds boat curves and replay; location adds the route and GPS speed or pace. A Sensor Logger ZIP accompanies the oar workout TXT. Use <strong>Start new upload</strong> for another recording, or <strong>Re-analyze</strong> to change settings for the existing one.</p><div class="guide-links"><a class="button-link primary" href="https://autoanalysis.ritmoforcecurve.com/" rel="noopener noreferrer" target="_blank">Open Cloud Analysis</a><a class="button-link" href="cloud_analysis.html">Analysis settings &amp; reports →</a><a class="button-link" href="boat_motion.html">Understand boat motion</a></div></section>
-<footer class="site-footer"><span>© 2026 RitmoForceCurve</span><a href="index.html">All guides</a></footer>
+<section class="rfc-card"><h2>Continue in Cloud Analysis</h2><p>After upload, review the settings and press <strong>Analyze workout</strong>. Phone motion adds boat curves and replay; location adds the route and GPS speed or pace. A Sensor Logger ZIP accompanies the oar workout TXT. Use <strong>Start new upload</strong> for another recording, or <strong>Re-analyze</strong> to change settings for the existing one.</p><div class="guide-links"><a class="button-link primary" href="https://autoanalysis.ritmoforcecurve.com/" rel="noopener noreferrer" target="_blank">Open Cloud Analysis</a><a class="button-link" href="cloud_help.html">Analysis settings &amp; reports →</a><a class="button-link" href="boat_motion.html">Understand boat motion</a></div></section>
+<footer class="site-footer"><span>© 2026 RitmoForceCurve</span></footer>
 </main>
 </body>
 </html>

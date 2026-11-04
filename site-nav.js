@@ -16,6 +16,7 @@
   }
   function resolve(value) {
     value = decode((value || '').replace(/^#/, '').replace(/^page-/, ''));
+    if (value === 'android') value = 'android-recording';
     value = files[value] || value;
     return pages.find(function (page) { return page.id === value; });
   }
@@ -28,20 +29,24 @@
     var parts = (value || '').replace(/^#/, '').split('/');
     var legacy = decode(parts.join('/'));
     if (legacy === 'ios' || legacy === 'android-recording/ios') {
-      return {page:resolve('ios-alignment'), anchor:''};
+      return {page:resolve('iphone-help-guide'), anchor:''};
     }
     var page = resolve(parts[0]);
     if (!page) {
       var category = nav.find(function (item) { return item.id === decode(parts[0]); });
       if (category) page = resolve(category.pages[0].id);
     }
-    if (page) return {page:page, anchor:decode(parts.slice(1).join('/'))};
+    if (page) {
+      var anchor = decode(parts.slice(1).join('/'));
+      return {page:anchor ? pageForAnchor(anchor) || page : page, anchor:anchor};
+    }
     // Old bookmarks and ordinary section links must also reveal their guide.
     page = pageForAnchor(parts.join('/'));
     return page ? {page:page, anchor:decode(parts.join('/'))} : null;
   }
   function activate(page, push, anchor) {
     page = page || pages[0];
+    if (anchor) page = pageForAnchor(anchor) || page;
     var panel = document.getElementById('page-' + page.id);
     if (!panel) { window.location.href = page.file + (anchor ? '#' + encodeURIComponent(anchor) : ''); return; }
     document.querySelectorAll('.rfc-page-panel').forEach(function (item) { item.hidden = item !== panel; });
@@ -53,9 +58,22 @@
     var category = nav.find(function (item) { return item.id === page.category; });
     var sub = document.getElementById('subnav');
     if (sub) {
-      sub.textContent = ''; sub.hidden = category.pages.length < 2;
-      category.pages.forEach(function (item) {
+      sub.textContent = '';
+      var members = category.pages;
+      if (category.id === 'help') {
+        members = page.id === 'help' ? [] : category.pages.filter(function (item) {
+          return item.id === 'help' || item.group === page.group;
+        });
+        if (members.length && category.groups && category.groups[page.group]) {
+          var label = document.createElement('span');
+          label.className = 'nav-group-label'; label.textContent = category.groups[page.group];
+          sub.appendChild(label);
+        }
+      }
+      sub.hidden = members.length < 2;
+      members.forEach(function (item) {
         var link = document.createElement('a'); link.href = item.file; link.textContent = item.title;
+        if (category.id === 'help' && item.id === 'help') { link.textContent = 'All help'; link.className = 'help-back'; }
         if (item.id === page.id) { link.className = 'active'; link.setAttribute('aria-current', 'page'); }
         sub.appendChild(link);
       });
@@ -68,7 +86,7 @@
     if (anchor) {
       var target = document.getElementById(anchor);
       if (target && panel.contains(target)) {
-        var ancestor = target.parentElement;
+        var ancestor = target;
         while (ancestor && ancestor !== panel) {
           if (ancestor.tagName === 'DETAILS') ancestor.open = true;
           ancestor = ancestor.parentElement;
@@ -96,7 +114,7 @@
     var page = resolve(file);
     var anchor = decode(url.hash.slice(1));
     if (file === 'android_recording.html' && anchor === 'ios') {
-      page = resolve('ios-alignment'); anchor = '';
+      page = resolve('iphone-help-guide'); anchor = '';
     }
     if (file === 'index.html' || !file) {
       var indexRoute = route(url.hash);

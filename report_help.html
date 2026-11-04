@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html data-rfc-accent="teal" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="#242a32" name="theme-color">
+<meta content="Choose metrics, compare strokes, use the map and animation, and save a report setup for another workout." name="description">
+<title>Report help · ritmoForceCurve™</title>
+<script src="site-theme.js?v=2026-10-16-public-v11"></script>
+<link href="site.css?v=2026-10-16-public-v11" rel="stylesheet">
+</head>
+<body>
+<nav aria-label="Site" class="page-topnav"><a class="wordmark" href="index.html">ritmo<span>ForceCurve</span><sup class="trademark">™</sup></a><a href="help.html" aria-label="All help">Help</a></nav>
+<main class="container">
+<p><a href="index.html#help">← All help</a></p><p class="eyebrow">REPORT HELP</p>
+<h1>Report help</h1>
+<p class="lead">Compare parts of your row, inspect individual strokes and replay the boat and oar together.</p>
+<div class="actions"><a class="button-link primary" href="example_workout.html?v=2026-10-16-public-v11" rel="noopener noreferrer" target="_blank">Open example report</a><a class="button-link" href="cloud_help.html">Upload a workout</a><a class="button-link" href="data_metrics.html">Metric reference</a><a class="button-link" href="#saved-setups">Save a view</a></div>
+<section class="card" id="report-sections"><h2>Find your way around</h2>
+<div aria-label="Report sections" class="table-wrap" role="region" tabindex="0"><table class="metric-table"><thead><tr><th scope="col">Section</th><th scope="col">Use it for</th></tr></thead><tbody>
+<tr><th scope="row">Session Overview</th><td>Metrics over time, zooming into an effort, selecting strokes and viewing the GPS route.</td></tr>
+<tr><th scope="row">Boat &amp; Oar</th><td>Averaged or individual curves with the matching boat-and-oar animation.</td></tr>
+<tr><th scope="row">Piece Summary</th><td>Continuous efforts, their duration, rest and selected summary metrics.</td></tr>
+<tr><th scope="row">All Strokes</th><td>Individual stroke values, selectable columns, search and CSV export.</td></tr>
+</tbody></table></div>
+<p>Open the HTML in a browser with JavaScript enabled. A file preview may show only static content.</p></section>
+<section class="card" id="make-a-comparison"><h2>Make a comparison</h2>
+<ol><li>In <strong>Session Overview</strong>, choose rate and power. Add GPS pace or heart rate if recorded.</li>
+<li>Zoom the part of the row you want to compare. Use the group controls below the curves to create a named group from the visible strokes.</li>
+<li>Open <strong>Boat &amp; Oar → Averaged curves</strong>. Select that group and another group or piece.</li>
+<li>Switch to <strong>Individual strokes</strong> to inspect the strokes behind an average.</li></ol>
+<p>Searching the stroke table only filters that table. Create a group when you want a new selection to determine the averages.</p></section>
+<section class="card" id="metrics-and-curves"><h2>Choose metrics and curves</h2>
+<p><strong>Advanced</strong> is the default detail level and includes all Core choices. Choose <strong>Core</strong> for a shorter list. Choices stay grouped by <strong>Oar, Boat, GPS, Time</strong> and <strong>Body</strong>; changing the detail filter preserves your selected plots.</p>
+<p>Choose bend, moment or estimated handle force for the load display. GPS speed and GPS pace are separate choices, as are peak moment and peak handle force. Use <strong>Show variability</strong> to add stroke-to-stroke spread to supported averaged curves.</p>
+<p>Boat metrics include set, pitch, heave, distance check, speed check and energy-loss check. See the <a href="data_metrics.html">metric reference</a> for their meanings and inputs.</p></section>
+<section class="card" id="read-curves"><h2>Read and adjust the curves</h2>
+<ul><li><strong>Time or sweep angle:</strong> time shows when events occur; sweep angle shows where they occur along the stroke.</li>
+<li><strong>Full-cycle context:</strong> the default time view spans 1.5 cycles, including a quarter-cycle before catch and after the next catch. This shows the transitions between recovery and drive.</li>
+<li><strong>Horizontal sweep angle:</strong> select it under Oar at Advanced level. It combines the two supported horizontal gyro sweeps. Oar depth angle is also available.</li>
+<li><strong>Scale and position:</strong> adjust each curve’s range and vertical position. Use Auto for the relevant visible data, All for a broader range or Fit this stroke for a closer view.</li>
+<li><strong>Hover:</strong> read each curve’s value in its own units. The shared time or angle appears at the bottom of the cursor line.</li></ul>
+<p>Horizontal sweep joins smoothly through late recovery where the next catch is recorded. This display adjustment preserves drive values and workout metrics. Missing neighbouring data remains a gap.</p>
+<p>Curve heights are independently scaled. Use the labels and units when comparing magnitudes.</p></section>
+<section class="card" id="animation-controls"><h2>Arrange and play the animation</h2>
+<p>Use <strong>Layout</strong> for side by side, animation above curves, curves above animation, animation only or curves only. Curve and animation views use the same stroke selection.</p>
+<p>Click a curve to make the animation follow the pointer. Click again or press <strong>Escape</strong> to freeze it. Adjust the viewing angle, zoom and water display; use 1× motion exaggeration to judge the size of movement.</p>
+<p>For a sequence, open <strong>Individual strokes</strong>, choose the piece, group or range, and press <strong>Play selected strokes</strong> with <strong>Continue through selected strokes</strong> enabled. Turn continuation off to repeat one stroke. Recorded gaps remain gaps.</p>
+<p>The standalone combined replay also has a stroke navigator, a fixed-centre cursor option and a <strong>Visible strokes</strong> control for up to six cycles. Individual context uses retained neighbouring strokes; averaged context repeats the selected average.</p>
+<p>The animation is a model built from the available data and geometry. A displayed opposite oar may be mirrored from one recording. Read <a href="boat_motion.html">boat motion and replay</a> for the hull reference, waterline and slip.</p></section>
+<section class="card" id="gps-map"><h2>Use the GPS map</h2>
+<p>The map can show a selected group or the strokes visible in Session Overview. Choose a metric to colour the route, then zoom or pan. The track and available pace or speed depend on the GPS recording.</p>
+<p>Map backgrounds need internet access. GPS speed is speed over ground, so current can affect it. Gaps in the recording remain gaps.</p></section>
+<section class="card" id="saved-setups"><h2>Save a view and reuse it</h2>
+<ol><li>Arrange the plots, metrics, scales, layout, map controls and animation camera as you want them.</li>
+<li>Open <strong>Setups</strong>, enter a name and choose <strong>Save new</strong>. Use <strong>Update selected</strong> to replace an existing setup.</li>
+<li>Choose <strong>Make default</strong> to open this report with that setup in this browser.</li>
+<li>Choose <strong>Download setup</strong> to keep the small <code>.ritmo-setup.json</code> file.</li>
+<li>In another workout’s report, choose <strong>Setups → Import setup</strong> and select the file.</li></ol>
+<p>A setup carries the display preferences, including curve choices, summary and table selections, separate average and individual scales, layout, animation camera, zoom and viewing angles. Map display controls carry over; the new workout keeps its own route and map location.</p>
+<p>Importing a setup preserves the new workout’s data, oar side and selected strokes. It skips unavailable metrics and tells you what could not be applied. Workout names, recorded samples and sensor alignment are excluded.</p>
+<p>Local setups can restore selections within the same workout. Use <strong>Back up all</strong> to keep a copy of your saved setup collection. Keep the downloaded JSON to use your preferences in another browser or on another device.</p></section>
+<section class="card" id="averages"><h2>Understand averages</h2>
+<p>Server-generated group and piece curves use the analytical samples. Strokes are compared at matching elapsed times or sweep positions, so the number of contributing strokes can change along a curve.</p>
+<p>Groups created in the browser use the individual curves stored in that HTML. Their curves can be less detailed when the report contains reduced samples; their metric summaries use the stored analytical values. <strong>Show variability</strong> describes differences between strokes.</p>
+<p>Distance check, speed check and energy-loss check summaries are the arithmetic mean of valid member-stroke values. They are not summed. Missing values are excluded, rather than counted as zero.</p></section>
+<section class="card" id="exports"><h2>Export and re-analyze</h2>
+<ul><li><strong>Summary and averaged-curve CSVs:</strong> export the selected comparison.</li>
+<li><strong>All Strokes CSV:</strong> export the columns you have chosen.</li>
+<li><strong>Shown-curves CSV:</strong> export the selected individual curves and units.</li>
+<li><strong>PNG or JPEG:</strong> save the current plot and legend.</li>
+<li><strong>Download animation HTML:</strong> keep a standalone replay of selected content.</li></ul>
+<p>A report calibration change rescales supported load and effort values while preserving the original detection and grouping. Re-analyze on the server to change processing settings or recalculate an older workout. A downloaded HTML keeps the data and controls of the version that generated it.</p></section>
+<footer class="site-footer">© 2026 RitmoForceCurve <a href="index.html#help">All help</a></footer>
+</main>
+</body>
+</html>

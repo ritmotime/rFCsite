@@ -1,0 +1,129 @@
+/* Capability pages only. Help guides and the example report keep their own styles. */
+:is(.report-showcase, .cloud-overview) .report-hero {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(225px, .42fr);
+  align-items: center; gap: 42px; margin-bottom: 38px;
+}
+:is(.report-showcase, .cloud-overview) .report-hero .lead { max-width: 640px; }
+:is(.report-showcase, .cloud-overview) .report-hero .actions { margin-bottom: 0; }
+:is(.report-showcase, .cloud-overview) .report-intro-note {
+  min-width: 0; padding: 26px 26px 24px; border-left: 3px solid var(--rfc-accent);
+  border-radius: 0 14px 14px 0; background: var(--rfc-bg-soft);
+}
+:is(.report-showcase, .cloud-overview) .report-intro-note > span {
+  display: block; color: var(--rfc-detail); letter-spacing: .12em; font-size: .67rem;
+  font-weight: 800; margin-bottom: 16px;
+}
+:is(.report-showcase, .cloud-overview) .report-intro-note strong {
+  display: block; font-size: clamp(1.3rem, 2.2vw, 1.7rem); line-height: 1.25;
+  letter-spacing: -.025em;
+}
+:is(.report-showcase, .cloud-overview) .report-intro-note p {
+  margin: 17px 0 0; color: var(--rfc-muted); font-size: .88rem; line-height: 1.5;
+}
+.report-showcase .report-capabilities {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px;
+  padding: 28px 0 34px; border-top: 1px solid var(--rfc-border);
+}
+.report-showcase .report-capabilities article { min-width: 0; }
+.report-showcase .report-feature-number {
+  display: block; color: var(--rfc-detail); font-size: .8rem; font-weight: 700;
+}
+.report-showcase .report-capabilities h2 {
+  font-size: 1.1rem !important; margin: 13px 0 10px; line-height: 1.25;
+}
+.report-showcase .report-capabilities p {
+  color: var(--rfc-muted); font-size: .9rem; line-height: 1.65; margin-bottom: 0;
+}
+.report-showcase .report-preview-section {
+  border-top: 1px solid var(--rfc-border); padding-top: 30px; margin-top: 4px;
+}
+.report-showcase .report-section-heading {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 18px;
+}
+.report-showcase .report-section-heading .eyebrow { margin-bottom: 12px; }
+.report-showcase .report-section-heading h2 { margin: 0; }
+.report-showcase .report-section-heading > a { flex-shrink: 0; font-size: .88rem; }
+.report-showcase .report-section-description {
+  color: var(--rfc-muted); margin: 16px 0 22px; max-width: 740px; font-size: .98rem;
+}
+.report-showcase .report-preview-frame {
+  overflow: hidden; border: 1px solid var(--rfc-border-strong); border-radius: 12px;
+  background: var(--rfc-bg-soft);
+}
+.report-showcase .report-preview-bar {
+  display: flex; align-items: center; gap: 10px; padding: 13px 16px;
+  border-bottom: 1px solid var(--rfc-border); font-size: .79rem; color: var(--rfc-muted);
+}
+.report-showcase .report-preview-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--rfc-detail);
+  flex: 0 0 auto;
+}
+.report-showcase .report-preview-bar > a { margin-left: auto; flex-shrink: 0; }
+.report-showcase .report-preview-frame iframe {
+  display: block; width: 100%; height: 660px; border: 0; background: #fff;
+}
+.report-showcase .report-orientation { margin-top: 40px; }
+.report-showcase .report-orientation > .eyebrow { margin-bottom: 12px; }
+.report-showcase .report-orientation > h2 { margin-top: 0; }
+.report-showcase .report-orientation table th:first-child { width: 31%; }
+.report-showcase .report-continuity {
+  max-width: 790px; color: var(--rfc-muted); font-size: .98rem; margin-top: 23px;
+}
+:is(.report-showcase, .cloud-overview) .report-help-link {
+  border-top: 1px solid var(--rfc-border); padding-top: 21px; margin: 26px 0 0;
+  font-size: .9rem;
+}
+.cloud-overview .cloud-story {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0;
+  border: 1px solid var(--rfc-border); border-radius: 12px; overflow: hidden;
+  background: var(--rfc-bg-soft); margin: 14px 0 38px;
+}
+.cloud-overview .cloud-story > div { padding: 25px; min-width: 0; }
+.cloud-overview .cloud-story > div + div { border-left: 1px solid var(--rfc-border); }
+.cloud-overview .cloud-story-label {
+  display: block; font-size: .7rem; letter-spacing: .12em; font-weight: 800;
+  color: var(--rfc-detail);
+}
+.cloud-overview .cloud-story h2 { font-size: 1.17rem !important; margin: 16px 0 12px; }
+.cloud-overview .cloud-story p { color: var(--rfc-muted); font-size: .94rem; margin: 0; }
+.cloud-overview .cloud-features > .eyebrow { margin-bottom: 12px; }
+.cloud-overview .cloud-features > h2 { margin: 0 0 23px; }
+.cloud-overview .cloud-feature-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 36px;
+}
+.cloud-overview .cloud-feature-grid article { padding: 4px 0 10px; }
+.cloud-overview .cloud-feature-grid h3 { margin: 0 0 9px; }
+.cloud-overview .cloud-feature-grid p { color: var(--rfc-muted); font-size: .98rem; margin: 0; }
+.cloud-overview .cloud-report-invitation {
+  display: flex; align-items: center; justify-content: space-between; gap: 25px;
+  padding: 26px 28px; margin-top: 32px; border: 1px solid var(--rfc-detail-strong);
+  border-radius: 12px; background: var(--rfc-detail-soft);
+}
+.cloud-overview .cloud-report-invitation .eyebrow { margin-bottom: 11px; }
+.cloud-overview .cloud-report-invitation h2 { margin: 0 0 11px; }
+.cloud-overview .cloud-report-invitation p:last-child { margin: 0; color: var(--rfc-muted); }
+.cloud-overview .cloud-report-invitation > a { flex-shrink: 0; }
+@media (max-width: 940px) {
+  .report-showcase .report-capabilities { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
+  :is(.report-showcase, .cloud-overview) .report-hero { grid-template-columns: minmax(0, 1fr) minmax(190px, .42fr); gap: 24px; }
+  .cloud-overview .cloud-story > div { padding: 22px 19px; }
+}
+@media (max-width: 680px) {
+  :is(.report-showcase, .cloud-overview) .report-hero { grid-template-columns: 1fr; gap: 28px; margin-bottom: 27px; }
+  :is(.report-showcase, .cloud-overview) .report-intro-note { padding: 20px 22px; }
+  :is(.report-showcase, .cloud-overview) .report-intro-note strong { max-width: 320px; }
+  :is(.report-showcase, .cloud-overview) .report-intro-note p { margin-top: 12px; }
+  .report-showcase .report-section-heading { align-items: flex-start; flex-direction: column; gap: 13px; }
+  .report-showcase .report-preview-frame iframe { height: 580px; }
+  .report-showcase .report-preview-bar { flex-wrap: wrap; gap: 7px; font-size: .72rem; padding: 12px; }
+  .report-showcase .report-orientation table th:first-child { width: 37%; }
+  .report-showcase .report-orientation th, .report-showcase .report-orientation td { padding: 12px 10px !important; font-size: .9rem; }
+  .cloud-overview .cloud-story { grid-template-columns: 1fr; }
+  .cloud-overview .cloud-story > div + div { border-left: 0; border-top: 1px solid var(--rfc-border); }
+  .cloud-overview .cloud-feature-grid { grid-template-columns: 1fr; gap: 22px; }
+  .cloud-overview .cloud-report-invitation { flex-direction: column; align-items: flex-start; padding: 22px; }
+}
+@media (max-width: 380px) {
+  .report-showcase .report-capabilities { grid-template-columns: 1fr; gap: 25px; }
+  .report-showcase .report-preview-bar > a { width: 100%; margin-left: 14px; }
+}
