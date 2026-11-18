@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650" role="img" aria-labelledby="title desc">
+<title id="title">The same sensor axes in the assembled mount</title><desc id="desc">Front view of the sensor in its black cage with a flexible ring, yellow side clips and hook-and-loop strap. Positive Y is toward the handle, positive X right and positive Z out of the visible sticker face. The USB-C port is hidden at the negative Y button end. The curved saddle is behind the housing, toward the oar, with its snap lips facing the housing.</desc>
+<defs><marker id="x" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#ffb390"/></marker><marker id="y" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#8ce0bf"/></marker><pattern id="strap" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#15212b"/><path d="M0 0L8 8M-4 4L4 12M4-4L12 4" stroke="#4a606e"/></pattern><style>text{font-family:Arial,sans-serif;fill:#f0f5f8}.h{font-size:24px;font-weight:700}.t{font-size:20px}.s{font-size:18px;fill:#c2d2dc}.leader{fill:none;stroke:#bdcdd5;stroke-width:1.5}.axis{fill:none;stroke-width:3.5}.x{fill:#ffb390}.y{fill:#8ce0bf}.z{fill:#8bcfff}</style></defs>
+<rect width="900" height="650" rx="16" fill="#283540"/>
+<text x="30" y="43" class="h">Assembled mount · same axes, same button end</text><text x="30" y="72" class="s">Front view. The saddle and oar sit behind the housing.</text>
+<!-- Two strap ends pass through the side clips; central span is behind the housing. -->
+<rect x="165" y="266" width="520" height="116" rx="14" fill="url(#strap)" stroke="#9aadb9"/>
+<path d="M282 203H316V475H282Q268 475 268 457V221Q268 203 282 203Z M534 203H568Q582 203 582 221V457Q582 475 568 475H534Z" fill="#e8d54d" stroke="#fff0a3" stroke-width="2"/>
+<rect x="279" y="283" width="12" height="80" rx="6" fill="#263540"/><rect x="559" y="283" width="12" height="80" rx="6" fill="#263540"/>
+<path d="M169 285H285V359H169 M565 285H681V359H565" fill="url(#strap)" stroke="#a0b2be" stroke-width="2"/>
+<rect x="302" y="183" width="246" height="320" rx="21" fill="#17252f" stroke="#b3c7d2" stroke-width="2"/>
+<rect x="319" y="202" width="212" height="282" rx="32" fill="#e0cc42" stroke="#fff0a3"/>
+<rect x="326" y="209" width="198" height="268" rx="28" fill="#1a252d"/>
+<path d="M343 349Q420 124 508 349" fill="none" stroke="#f2cc39" stroke-width="5"/>
+<circle cx="425" cy="397" r="20" fill="#eabf21" stroke="#fff4c0" stroke-width="2"/><circle cx="425" cy="397" r="11" fill="none" stroke="#fff4c0" stroke-width="2"/>
+<text x="425" y="447" font-size="17" text-anchor="middle" style="fill:#f2cc39">ritmoForceCurve</text>
+<path d="M425 317V115" class="axis" stroke="#8ce0bf" marker-end="url(#y)"/><text x="448" y="127" class="t y">+Y · handle</text>
+<path d="M425 317H742" class="axis" stroke="#ffb390" marker-end="url(#x)"/><text x="728" y="296" class="t x">+X</text>
+<circle cx="425" cy="317" r="14" fill="#283540" stroke="#8bcfff" stroke-width="3"/><circle cx="425" cy="317" r="4.5" fill="#8bcfff"/>
+<path d="M411 317H215V227" class="leader"/><text x="38" y="190" class="t z">+Z · out of face</text><text x="38" y="216" class="s">RZ rotates about Z</text>
+<path d="M530 222L609 170" class="leader"/><text x="619" y="169" class="t">Black housing</text>
+<path d="M567 230H609" class="leader"/><text x="619" y="236" class="t">Side clip</text>
+<path d="M624 378V413" class="leader"/><text x="594" y="438" class="t">Hook-and-loop</text><text x="594" y="464" class="t">strap (Velcro)</text>
+<path d="M319 431H205V456" class="leader"/><text x="38" y="481" class="t">Flexible ring</text><text x="38" y="507" class="s">Around sensor edge</text>
+<path d="M425 503V553" class="axis" stroke="#8ce0bf" marker-end="url(#y)"/><text x="449" y="552" class="t y">−Y · blade / button end</text>
+<path d="M30 583H870" stroke="#526976"/><text x="30" y="612" class="s">USB-C is hidden here by the ring and cage. Use the visible button and sticker.</text>
+</svg>

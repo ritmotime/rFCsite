@@ -39,3 +39,14 @@
 .kit-guide .guide-diagram{border-radius:10px}
 .kit-guide .guide-diagram figcaption{font-size:.78rem;letter-spacing:.025em}
 @media(max-width:700px){.kit-guide .kit-photo-grid{grid-template-columns:1fr;gap:16px}.kit-guide .kit-photo-stage{max-height:none}.kit-guide .kit-callout{width:25px;height:25px;font-size:13px}.kit-guide .guide-layout .guide-diagram{margin-top:4px}.kit-guide .kit-product-photo figcaption{padding:12px 14px}.kit-guide .kit-part-key{padding:0 14px 15px}}
+
+/* Physical sensor reference: preserve the original assembly diagrams and photos. */
+.kit-guide .orientation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+.kit-guide .orientation-grid>div{min-width:0}
+.kit-guide .orientation-reference figcaption{display:flex;flex-direction:column;gap:5px;font-size:.9rem;letter-spacing:normal;line-height:1.5;padding:14px 16px}
+.kit-guide .orientation-reference figcaption strong{font-size:1rem}
+.kit-guide .sensor-orientation-guide{margin-top:24px;scroll-margin-top:24px}
+.kit-guide .sensor-orientation-guide .axis-key{margin:24px 0}
+.kit-guide .orientation-checklist{padding-left:1.4em;line-height:1.65}
+.kit-guide .orientation-checklist li{margin:10px 0}
+@media(max-width:1050px){.kit-guide .orientation-grid{grid-template-columns:1fr;gap:12px}}

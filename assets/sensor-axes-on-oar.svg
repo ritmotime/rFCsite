@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="760" viewBox="0 0 1000 760" role="img" aria-labelledby="title desc">
+<title id="title">Mount both sensors so RZ measures drive and bend rotation</title><desc id="desc">Top view: blade at left, handle at right, one sensor each side of the oar collar, attached with hook-and-loop straps. Both offset buttons and hidden USB-C ends face the blade; positive Y faces the handle. With the blade square, both sticker faces point upward, parallel to the horizontal drive plane; positive Z is upward, perpendicular to that plane. RZ is rotation about Z. An end view shows a vertical squared blade and a face-up mount above the shaft; the curved saddle contacts the shaft and its snap lips engage the housing above.</desc>
+<defs><marker id="x" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#ffb390"/></marker><marker id="y" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#8ce0bf"/></marker><marker id="z" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#8bcfff"/></marker><pattern id="strap" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#192631"/><path d="M0 6L6 0" stroke="#8c9fac"/></pattern><style>text{font-family:Arial,sans-serif;fill:#f0f5f8}.h{font-size:24px;font-weight:700}.t{font-size:20px}.s{font-size:18px;fill:#c2d2dc}.leader{fill:none;stroke:#bdcdd5;stroke-width:1.5}.axis{fill:none;stroke-width:3}.x{fill:#ffb390}.y{fill:#8ce0bf}.z{fill:#8bcfff}</style>
+<g id="mount"><rect x="-45" y="-65" width="90" height="130" rx="8" fill="url(#strap)" stroke="#a9becb"/><rect x="-50" y="-44" width="100" height="88" rx="8" fill="#e8d54d" stroke="#fff0a3"/><rect x="-57" y="-34" width="114" height="68" rx="12" fill="#15242e" stroke="#a9becb" stroke-width="2"/><rect x="-48" y="-26" width="96" height="52" rx="9" fill="#34424c"/><path d="M3-20Q69 0 3 20" fill="none" stroke="#efd34b" stroke-width="2"/><circle cx="-25" cy="0" r="8" fill="#eabf21" stroke="#fff4c0"/><path d="M5 0H99" class="axis" stroke="#8ce0bf" marker-end="url(#y)"/><path d="M5 0V94" class="axis" stroke="#ffb390" marker-end="url(#x)"/><circle cx="5" cy="0" r="8" fill="#283540" stroke="#8bcfff" stroke-width="2"/><circle cx="5" cy="0" r="2.5" fill="#8bcfff"/></g></defs>
+<rect width="1000" height="760" rx="16" fill="#283540"/>
+<text x="30" y="43" class="h">On the oar · square the blade before checking orientation</text>
+<text x="30" y="74" class="s">TOP VIEW · sensors enlarged for clarity; spacing is schematic</text>
+<path d="M188 193H910V215H188Z" fill="#455d6c" stroke="#b4c7d3" stroke-width="2"/>
+<path d="M41 199L182 193H214V215H182L41 209Z" fill="#84bfc0" stroke="#c7edf0" stroke-width="2"/>
+<rect x="907" y="188" width="62" height="32" rx="10" fill="#b6c9d4"/>
+<rect x="633" y="177" width="25" height="54" rx="4" fill="#8c9b4a" stroke="#d8e591" stroke-width="2"/>
+<use href="#mount" transform="translate(398 204)"/><use href="#mount" transform="translate(790 204)"/>
+<text x="40" y="133" class="t">Blade</text><text x="40" y="158" class="s">Square: seen edge-on</text><path d="M121 165V193" class="leader"/>
+<text x="902" y="151" class="t">Handle</text><path d="M938 160V188" class="leader"/>
+<text x="281" y="117" class="t">Outboard sensor</text><path d="M393 124V139" class="leader"/>
+<text x="729" y="117" class="t">Inboard sensor</text><path d="M790 124V139" class="leader"/>
+<text x="512" y="137" class="t">Oar button / collar</text><path d="M641 147V176" class="leader"/>
+<text x="496" y="191" class="t y">+Y</text><text x="887" y="191" class="t y">+Y</text><text x="415" y="298" class="t x">+X</text><text x="808" y="298" class="t x">+X</text>
+<path d="M276 265L371 209" class="leader"/><text x="38" y="284" class="s">Both sensor buttons face blade (−Y).</text>
+<path d="M566 278A90 90 0 0 1 552 179" class="axis" stroke="#8bcfff" marker-end="url(#z)"/><text x="575" y="302" class="t z">RZ</text><text x="489" y="333" class="s">Drive / bend rotation in this plane</text>
+<text x="38" y="335" class="s">Straps wrap around the shaft.</text>
+<path d="M30 362H970" stroke="#526976"/>
+<text x="30" y="398" class="h">END VIEW · blade squared, sensor face upward</text>
+<!-- End view along the oar: blade shown behind the shaft, square and vertical. -->
+<rect x="258" y="438" width="16" height="234" rx="6" fill="#6f9caa" stroke="#c1d9e2" stroke-width="2"/>
+<circle cx="266" cy="571" r="58" fill="#455d6c" stroke="#b4c7d3" stroke-width="2"/>
+<!-- Strap wraps under shaft, saddle concave surface above shaft. -->
+<path d="M196 520V574A70 70 0 0 0 336 574V520" fill="none" stroke="#a4b5c0" stroke-width="10"/><path d="M196 520V574A70 70 0 0 0 336 574V520" fill="none" stroke="#263b49" stroke-width="6"/>
+<path d="M216 541.606123A58 58 0 0 1 316 541.606123V528Q266 485 216 528Z" fill="#e8d54d" stroke="#fff0a3" stroke-width="1.5"/>
+<path d="M216 528V488H316V528Q266 485 216 528Z" fill="#17252f" stroke="#b3c7d2" stroke-width="1.5"/>
+<path d="M214 525V510H222M318 525V510H310" fill="none" stroke="#e8d54d" stroke-width="5"/>
+<!-- Side clips connect housing to the strap; split segments expose the strap slots. -->
+<path d="M216 506H196V514M196 526V536M316 506H336V514M336 526V536" fill="none" stroke="#e8d54d" stroke-width="7" stroke-linejoin="round"/>
+<rect x="221" y="483" width="90" height="10" rx="4" fill="#ecd343"/>
+<path d="M266 481V423" class="axis" stroke="#8bcfff" marker-end="url(#z)"/><text x="286" y="447" class="t z">+Z · up</text>
+<path d="M218 488H157V464" class="leader"/><text x="38" y="438" class="t">Sticker face up</text><text x="38" y="463" class="s">Both mounts</text>
+<text x="38" y="584" class="t">Square blade</text><text x="38" y="609" class="s">Vertical blade face</text><path d="M177 613L257 662" class="leader"/>
+<path d="M318 535H385" class="leader"/><text x="398" y="541" class="t">Saddle against shaft</text><text x="398" y="568" class="s">Snap lips face housing, away from shaft.</text>
+<text x="551" y="434" class="t z">Z is perpendicular to the drive plane.</text><text x="551" y="464" class="s">RZ is rotation ABOUT Z.</text><text x="551" y="491" class="s">It is not a force arrow pointing along Z.</text>
+<text x="398" y="625" class="s">Feather / square rotation is about shaft axis Y.</text><text x="398" y="653" class="s">The mount turns with the oar during feathering.</text>
+<path d="M30 696H970" stroke="#526976"/><text x="30" y="729" class="s">Keep clear of hands and oarlock. Enter actual positions, then repeat motion alignment.</text>
+</svg>

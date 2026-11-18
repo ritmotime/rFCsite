@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650" role="img" aria-labelledby="title desc">
+<title id="title">Bare sensor: axes, sticker, button and USB-C</title><desc id="desc">Looking straight at the sticker with the offset button near the bottom: positive Y points up toward the handle, positive X points right, and positive Z points out of the sticker toward you. The USB-C port is on the bottom short edge, nearest the offset button, toward negative Y and the blade. RZ means rotation about Z.</desc>
+<defs><marker id="x" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#ffb390"/></marker><marker id="y" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#8ce0bf"/></marker><marker id="z" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#8bcfff"/></marker><style>text{font-family:Arial,sans-serif;fill:#f0f5f8}.h{font-size:24px;font-weight:700}.t{font-size:20px}.s{font-size:18px;fill:#c2d2dc}.leader{fill:none;stroke:#bdcdd5;stroke-width:1.5}.axis{fill:none;stroke-width:3.5}.x{fill:#ffb390}.y{fill:#8ce0bf}.z{fill:#8bcfff}</style></defs>
+<rect width="900" height="650" rx="16" fill="#283540"/>
+<text x="30" y="43" class="h">Bare sensor · look directly at the sticker</text>
+<text x="30" y="72" class="s">Button end below; yellow curve points toward the handle.</text>
+<!-- Front face, with the short USB edge exposed at the bottom. -->
+<rect x="300" y="200" width="250" height="306" rx="48" fill="#131f28" stroke="#8195a2" stroke-width="2"/>
+<rect x="300" y="183" width="250" height="305" rx="48" fill="#3f4b55" stroke="#c4d2dc" stroke-width="2"/>
+<rect x="314" y="196" width="222" height="276" rx="36" fill="#1a252d" stroke="#778b97"/>
+<path d="M340 354Q421 99 510 354" fill="none" stroke="#f2cc39" stroke-width="5"/>
+<circle cx="425" cy="393" r="21" fill="#eabf21" stroke="#fff4c0" stroke-width="2"/><circle cx="425" cy="393" r="12" fill="none" stroke="#fff4c0" stroke-width="2"/>
+<text x="425" y="448" font-size="18" text-anchor="middle" fill="#f2cc39" style="fill:#f2cc39">ritmoForceCurve</text>
+<rect x="396" y="484" width="58" height="13" rx="6.5" fill="#0e161d" stroke="#b0c0ca" stroke-width="2"/>
+<!-- Right-handed X/Y/Z viewed from +Z. -->
+<path d="M425 315V115" class="axis" stroke="#8ce0bf" marker-end="url(#y)"/><text x="448" y="127" class="t y">+Y · handle</text>
+<path d="M425 315H680" class="axis" stroke="#ffb390" marker-end="url(#x)"/><text x="624" y="293" class="t x">+X</text>
+<circle cx="425" cy="315" r="14" fill="#283540" stroke="#8bcfff" stroke-width="3"/><circle cx="425" cy="315" r="4.5" fill="#8bcfff"/>
+<path d="M411 315H236" class="leader"/><text x="38" y="294" class="t z">+Z · toward you</text><text x="38" y="321" class="s">Out of the sticker face</text>
+<path d="M509 285A93 93 0 0 0 473 236" class="axis" stroke="#8bcfff" marker-end="url(#z)"/><text x="570" y="207" class="t z">RZ</text><text x="570" y="234" class="s">Rotation about Z</text><path d="M557 224L513 253" class="leader"/>
+<path d="M447 393H597" class="leader"/><text x="611" y="399" class="t">Offset button</text>
+<path d="M350 438H213V420" class="leader"/><text x="39" y="392" class="t">Ritmo sticker</text><text x="39" y="417" class="s">Words near button end</text>
+<path d="M454 491H588V475" class="leader"/><text x="602" y="477" class="t">USB-C</text><text x="602" y="504" class="s">Short edge by button</text>
+<path d="M425 515V565" class="axis" stroke="#8ce0bf" marker-end="url(#y)"/><text x="449" y="561" class="t y">−Y · blade</text>
+<path d="M30 593H870" stroke="#526976"/><text x="30" y="625" class="s">Axes belong to the sensor. The sticker and button are your visible orientation cues.</text>
+</svg>
