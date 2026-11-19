@@ -1,0 +1,12 @@
+.recording-help{max-width:1000px!important}
+.recording-help .lead{max-width:780px}
+.recording-help .help-jumps{display:flex;flex-wrap:wrap;gap:.45rem 1.1rem;margin:1.5rem 0 2rem}
+.recording-help .help-jumps a{font-size:1rem}
+.recording-help section{scroll-margin-top:1.5rem}
+.recording-help .section-heading{display:flex;gap:1rem;align-items:baseline;justify-content:space-between}
+.recording-help .section-heading h2{margin:0 0 1rem!important}
+.recording-help .section-link{font-size:.875rem;white-space:nowrap}
+.recording-help li{margin-bottom:.45rem}
+.recording-help .related-links{border-top:1px solid var(--rfc-border);padding-top:1rem;margin-bottom:0;display:flex;gap:.5rem 1rem;flex-wrap:wrap}
+.recording-help .scope-note{font-size:1rem;color:var(--rfc-muted)}
+@media(max-width:600px){.recording-help .section-heading{display:block}.recording-help .section-link{display:inline-block;margin-bottom:1rem}}
