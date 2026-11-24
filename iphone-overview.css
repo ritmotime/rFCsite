@@ -176,3 +176,22 @@
 .ios-help .ios-help-back > span { color: var(--rfc-muted); padding: 0 9px; }
 .ios-help .ios-guide-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 27px; }
 .ios-help .ios-guide-links .button-link { margin: 0; }
+
+.iphone-overview .ios-app-preview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(150px, 210px);
+  align-items: center;
+  gap: clamp(24px, 6vw, 78px);
+}
+.iphone-overview .ios-home-shot { display: block; }
+.iphone-overview .ios-home-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rfc-border);
+  border-radius: 22px;
+}
+@media (max-width: 650px) {
+  .iphone-overview .ios-app-preview { grid-template-columns: 1fr; }
+  .iphone-overview .ios-home-shot { width: min(58%, 190px); margin: 0 auto; }
+}

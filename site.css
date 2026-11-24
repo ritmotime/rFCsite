@@ -148,3 +148,39 @@ p[class^="p"],li[class^="li"],span[class^="s"],body [style*="color:"] { font-fam
  .price-card { padding:18px 14px!important; }
  .fc-top-buttons { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
+
+/* Current iPhone help screenshots can be opened at their full size. */
+.guide-with-screen {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(145px, 205px);
+  align-items: start;
+  gap: clamp(18px, 4vw, 48px);
+}
+.guide-screen { width: 100%; max-width: 215px; margin: 0; }
+.guide-screen a { display: block; }
+.guide-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rfc-border);
+  border-radius: 15px;
+}
+.guide-screen figcaption {
+  margin: .65rem 0 0;
+  color: var(--rfc-muted);
+  font-size: .9rem;
+  line-height: 1.45;
+}
+.connection-shots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 215px));
+  gap: clamp(16px, 4vw, 40px);
+  margin: 1.5rem 0 0;
+}
+.ios-connect-page .step-card > h2:first-child,
+.ios-connect-page .guide-with-screen > div > h2:first-child { margin-top: 0 !important; }
+@media (max-width: 660px) {
+  .guide-with-screen { grid-template-columns: 1fr; }
+  .guide-screen { margin-inline: auto; }
+  .connection-shots { grid-template-columns: repeat(auto-fit,minmax(min(100%, 135px),1fr)); }
+}
